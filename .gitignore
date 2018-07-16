@@ -28,6 +28,8 @@ shared/storage/**
 *.bolt*
 *.bbolt*
 
+_*
+
 .env
 .secret
 snk.golang.vuejs-multi-backend
