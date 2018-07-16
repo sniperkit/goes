@@ -28,6 +28,12 @@ shared/storage/**
 *.bolt*
 *.bbolt*
 
+config.yaml
+config.json
+config.toml
+config.ini
+config.xml
+
 _*
 
 .env

@@ -23,23 +23,19 @@ import (
 	xwebsocket "golang.org/x/net/websocket"
 
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mssql"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
+	// _ "github.com/jinzhu/gorm/dialects/mssql"
+	// _ "github.com/jinzhu/gorm/dialects/postgres"
 
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/middleware/logger"
 	"github.com/kataras/iris/middleware/recover"
 	"github.com/kataras/iris/websocket"
-	//"github.com/kataras/iris/sessions"
+	// "github.com/kataras/iris/context"
+	// "github.com/kataras/iris/mvc"
+	// "github.com/kataras/iris/sessions"
 )
-
-/*
-	Refs:
-	- https://github.com/kataras/iris/blob/master/_examples/websocket/custom-go-client/main.go#/L134
-	-
-*/
 
 const VERSION = "1.3.0"
 
@@ -251,6 +247,11 @@ func main() {
 		ctx.Write(websocket.ClientSource)
 	})
 
+	// http://localhost:8080/todos/iris-ws.js
+	// serve the javascript client library to communicate with
+	// the iris high level websocket event system.
+	// app.Any("/iris-ws.js", websocket.ClientHandler())
+
 	serverSocketIO, err := newSocketIO(nil)
 	if err != nil {
 		Error("create socket.io error.")
@@ -262,7 +263,7 @@ func main() {
 
 	// serve the index.html and the javascript libraries at
 	// http://localhost:8080
-	app.StaticWeb("/", "./public")
+	// app.StaticWeb("/", "./public")
 
 	app.OnErrorCode(iris.StatusNotFound, func(ctx iris.Context) {
 		ctx.JSON(iris.Map{
@@ -279,6 +280,88 @@ func main() {
 			"data":    iris.Map{},
 		})
 	})
+
+	// serve our app in public, public folder
+	// contains the client-side vue.js application,
+	// no need for any server-side template here,
+	// actually if you're going to use vue without any
+	// back-end services, you can just stop after this line and start the server.
+	// app.StaticWeb("/admin", "./shared/dist/web/")
+	// app.StaticWeb("/admin/js", "./shared/dist/web/js")
+
+	// $ go get -u github.com/jteeuwen/go-bindata/...
+	// go-bindata -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
+	// app.StaticWeb("/admin", "./static")
+	// app.StaticEmbedded("/admin", "./shared/dist/web/", Asset, AssetNames)
+
+	// $ go get -u github.com/kataras/bindata/cmd/bindata
+	// bindata -pkg embedded -o ./embedded/bindata-gz.go ./shared/dist/web/...
+	// bindata -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
+	app.StaticEmbeddedGzip("/admin", "shared/dist/web", GzipAsset, GzipAssetNames)
+
+	/*
+		app.Get("/admin/{p:path}", func(ctx iris.Context) {
+			context.AddGzipHeaders(ctx.ResponseWriter())
+			ctx.ContentType("text/html")
+			ctx.Write(_gzipBindataWebindexhtml)
+		})
+	*/
+
+	// app.StaticWeb("/admin", "./shared/dist/web/")
+	// app.StaticWeb("/admin/js", "./shared/dist/web/js")
+
+	// $ go get -u github.com/shuLhan/go-bindata/...
+	// $ go-bindata ./templates/...
+	// $ go build
+	// $ ./embedding-templates-into-app
+	// html files are not used, you can delete the folder and run the example.
+	// tmpl.Binary(views.Asset, views.AssetNames) // <-- IMPORTANT
+
+	// app.RegisterView(tmpl)
+
+	/*
+		// // DASH
+		// create a sub router an register the client-side library for the iris websockets,
+		// you could skip it but iris websockets supports socket.io-like API.
+		dashRouter := app.Party("/dash")
+		// http://localhost:8080/todos/iris-ws.js
+		// serve the javascript client library to communicate with
+		// the iris high level websocket event system.
+		dashRouter.Any("/iris-ws.js", websocket.ClientHandler())
+
+		//create our mvc app targeted to /dash relative sub path.
+		dashApp := mvc.New(dashRouter)
+
+		// any dependencies bindings here . . .
+		dashApp.Register(
+			// dash.NewMemoryService(),
+			// sess.Start,
+			ws.Upgrade,
+		)
+
+		// controllers registration here
+		dashApp.Handle(new(controller.ProcessController))
+
+		// app.Party("/process", )
+
+		// PartyFunc is working ! Yay !
+		app.PartyFunc("/process", func(process iris.Party) {
+			// users.Use(myAuthMiddlewareHandler)
+
+			// http://localhost:8080/users/42/profile
+			process.Put("/start/{name:string}", controller.StartProcess)
+			// http://localhost:8080/users/messages/1
+			// users.Get("/inbox/{id:int}", userMessageHandler)
+		})
+
+		// process := app.Party("/process")
+		// app.PartyFunc("/process", func (process iris.Party)) {
+		//	process.Put("/start/{name:string}", controller.ProcessController.StartProcess())
+		// })
+	*/
+
+	// create our mvc app targeted to /dash relative sub path.
+	// snkApp := mvc.New(dashRouter)
 
 	if *testServers {
 		// start a secondary server listening on localhost:9090.

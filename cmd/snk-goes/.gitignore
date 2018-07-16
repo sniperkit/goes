@@ -1,3 +1,5 @@
 *
 !.gitignore
 !main.go
+!bindata.go
+!staticfiles.go

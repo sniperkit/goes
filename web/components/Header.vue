@@ -3,7 +3,10 @@
 		<div class="golang-top-box">
 			<div class="golang-top-header-left">
 				<div class="golang-logo-container">
-                    <a href="/"><img src="~assets/images/logo.png" alt=""></a>
+                    <a href="/">
+                        Title
+                        <!--<img src="~assets/images/logo.png" alt="">-->
+                    </a>
 				</div>
 				<div class="golang-header-search">
 					<form action="" class="golang-top-search">

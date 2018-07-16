@@ -1,5 +1,5 @@
-hash: 152b9fc2d7a3a50c29355b7bca59e195bb8631df1f41226f93b436432c644de3
-updated: 2018-07-16T18:47:40.091541895+02:00
+hash: 79cf3c076887bdf58a876efd9bd8d4c3ff194b76b648be4d79aa697ac5232faa
+updated: 2018-07-16T23:15:29.972706916+02:00
 imports:
 - name: cloud.google.com/go
   version: 24ff62bdf36b8c3c10021d8ffb46ef6f2d82da9c
@@ -17,18 +17,16 @@ imports:
   version: 242fa5aa1b45aeb9fcdfeee88822982e3f548e22
   subpackages:
   - internal/cp
-- name: github.com/dgrijalva/jwt-go
-  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
 - name: github.com/eknkc/amber
   version: cdade1c073850f4ffc70a829e31235ea6892853b
   subpackages:
   - parser
+- name: github.com/fatih/color
+  version: 2d684516a8861da43017284349b7e303e809ac21
 - name: github.com/fatih/structs
   version: ebf56d35bba727c68ac77f56f2fcf90b181851aa
 - name: github.com/flosch/pongo2
   version: 67f4ff8560dfa2b00920118f228c0a2f68760631
-- name: github.com/fsnotify/fsnotify
-  version: c2828203cd70a50dcccfb2761f8b1f8ceef9a8e9
 - name: github.com/go-sql-driver/mysql
   version: 749ddf1598b47e3cd909414bda735fe790ef3d30
 - name: github.com/googollee/go-engine.io
@@ -41,18 +39,12 @@ imports:
   - websocket
 - name: github.com/googollee/go-socket.io
   version: f12da5711bc66c18a0724987fff7f4f3db35c70f
-- name: github.com/gorilla/context
-  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
-- name: github.com/gorilla/mux
-  version: cb4698366aa625048f3b815af6a0dea8aef9280a
 - name: github.com/gorilla/websocket
   version: 5ed622c449da6d44c3c8329331ff47a9e5844f71
 - name: github.com/hashicorp/go-version
   version: 78879f5e1be14bb4812abd0bb547a923b5aeac23
 - name: github.com/iris-contrib/formBinder
   version: ad9fb86c356f971f30319c40ddbdcf72129a2791
-- name: github.com/iris-contrib/go.uuid
-  version: 36e9d2ebbde5e3f13ab2e25625fd453271d6522e
 - name: github.com/jinzhu/configor
   version: 4edaf76fe18865e36de734d887f4c01bd05707af
 - name: github.com/jinzhu/gorm
@@ -75,8 +67,9 @@ imports:
 - name: github.com/kataras/golog
   version: 03be101463868edc5a81f094fc68a5f6c1b5503a
 - name: github.com/kataras/iris
-  version: ae0cb9919a3b9148b90fd34b4d4bccea6cf5a1d7
+  version: eba6adbd78bb547b220f7fe7fbda331532134e87
   subpackages:
+  - basicauth
   - cache
   - cache/cfg
   - cache/client
@@ -99,8 +92,18 @@ imports:
   - core/router/macro/interpreter/parser
   - core/router/macro/interpreter/token
   - core/router/node
+  - hero
+  - hero/di
+  - i18n
+  - logger
   - middleware/logger
   - middleware/recover
+  - mvc
+  - pprof
+  - recaptcha
+  - recover
+  - sessions
+  - typescript
   - view
   - websocket
 - name: github.com/kataras/pio
@@ -124,6 +127,11 @@ imports:
   subpackages:
   - hstore
   - oid
+- name: github.com/markbates/grift
+  version: 85236aece32302d564c0cbccffc5bdb52a4f9f22
+  subpackages:
+  - cmd
+  - grift
 - name: github.com/mattes/migrate
   version: 4768a648fbd9e04389a73a21139d14a4ccb1a61a
   subpackages:
@@ -145,16 +153,18 @@ imports:
   version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
 - name: github.com/modern-go/reflect2
   version: 4b7aa43c6742a2c18fdef89dd197aaae7dac7ccd
+- name: github.com/pkg/errors
+  version: 816c9085562cd7ee03e7f8188a1cfd942858cded
 - name: github.com/ryanuber/columnize
   version: abc90934186a77966e2beeac62ed966aac0561d5
+- name: github.com/satori/go.uuid
+  version: 36e9d2ebbde5e3f13ab2e25625fd453271d6522e
 - name: github.com/shurcooL/sanitized_anchor_name
   version: 86672fcb3f950f35f2e675df2240550f2a50762f
-- name: github.com/sniperkit/janus
-  version: a052031165470a18fee2628dcf7026bebe166ea8
+- name: github.com/sniperkit/Dashpanel
+  version: dda447be0325e52bc9a181944baae5199d011779
   subpackages:
-  - config
-  - rest
-  - server
+  - src/model/dash
 - name: github.com/valyala/bytebufferpool
   version: e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7
 - name: golang.org/x/crypto
