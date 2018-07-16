@@ -30,7 +30,7 @@ shared/storage/**
 
 .env
 .secret
-
+snk.golang.vuejs-multi-backend
 .nuxt
 
 bin
