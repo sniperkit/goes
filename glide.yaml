@@ -1,6 +1,7 @@
 package: github.com/sniperkit/snk.golang.vuejs-multi-backend
 ignore:
 - gopkg.in/yaml.v2
+- github.com/sniperkit/janus
 import:
 - package: golang.org/x/crypto
   version: master
@@ -27,10 +28,6 @@ import:
   subpackages:
   - database/mysql
   - source/file
-- package: github.com/sniperkit/janus
-  subpackages:
-  - config
-  - server
 - package: golang.org/x/net
   subpackages:
   - websocket

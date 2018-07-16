@@ -19,7 +19,7 @@ func PrettyPrint(msg interface{}) {
 
 func New(cfgFiles ...string) *Config {
 	cfg := &Config{}
-	configor.New(&configor.Config{ErrorOnUnmatchedKeys: false, Debug: false, Verbose: true, ENVPrefix: "SNK"}).Load(cfg, cfgFiles...)
+	configor.New(&configor.Config{ErrorOnUnmatchedKeys: false, Debug: false, Verbose: false, ENVPrefix: "SNK"}).Load(cfg, cfgFiles...)
 
 	if cfg == nil {
 		fmt.Println("error while loading configuration file")
