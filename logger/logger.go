@@ -1,6 +1,8 @@
 package logger
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func Log(v ...interface{}) {
 	fmt.Println("log: ", v)
@@ -15,5 +17,5 @@ func Warn(v ...interface{}) {
 }
 
 func Error(v ...interface{}) {
-	fmt.Println("error: ",v)
+	fmt.Println("error: ", v)
 }

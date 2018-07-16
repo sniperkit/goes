@@ -1,0 +1,116 @@
+{
+  "port": 3000,
+  "enableLog": true,
+  "delay": 0,
+  "jwt": {
+    "url": "/auth/token",
+    "exp": 12,
+    "secret": "WOW,MuchShibe,ToDogge",
+    "data": {
+      "userid": 1234,
+      "admin": false
+    }
+  },
+  "static": {
+    "path": "../../testdata/fake-api/static",
+    "url": "static"
+  },
+  "resources": [
+    {
+      "name": "accounts",
+      "headers": {
+        "X-Auth-Token": "sample_token"
+      }
+    }
+  ],
+  "urls": [
+    {
+      "url": "/api/searx/settings",
+      "file": "../../testdata/fake-api/search/searx.json",
+      "status": 200,
+      "method": "GET",
+      "headers": {
+        "New-Header": "header value",
+        "Admin": "true"
+      }
+    },
+    {
+      "url": "/api/{user}/enable",
+      "status": 500,
+      "method": "POST"
+    },
+    {
+      "url": "/api/accounts",
+      "status": 200,
+      "content_type": "application/json",
+      "method": "POST",
+      "file": "../../testdata/fake-api/accounts/users.json"
+    },
+    {
+      "url": "/api/accounts/{id}",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/accounts/users/{id}.json"
+    },
+    {
+      "url": "/api/shop/campaigns",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/shop/campaigns.json"
+    },
+    {
+      "url": "/api/shop/campaigns/{id}",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/shop/campaigns/{id}.json"
+    },
+    {
+      "url": "/api/shop/products",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/shop/products.json"
+    },
+    {
+      "url": "/api/shop/products/{id}",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/shop/products/{id}.json"
+    },
+    {
+      "url": "/api/social/facebook",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/social/fb.json"
+    },
+    {
+      "url": "/api/social/flickr",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/social/flickr.json"
+    },
+    {
+      "url": "/api/social/maps",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/social/maps.json"
+    },
+    {
+      "url": "/api/social/twitter",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/social/twitter.json"
+    },
+    {
+      "url": "/api/social/youtube",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/social/youtube.json"
+    },
+    {
+      "url": "/api/vcs/github/search",
+      "status": 200,
+      "method": "GET",
+      "file": "../../testdata/fake-api/vcs/gh-search.json"
+    }
+  ]
+}

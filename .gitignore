@@ -8,5 +8,52 @@ dist
 node_modules
 npm-debug.log
 !vendor/vendor.json
+
 vendor
+vendor/
+vendor/*
+vendor/**
+
 .nuxt
+
+bin
+bin/
+bin/*
+bin/**
+
+dist
+dist/
+dist/*
+dist/**
+
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
+.glide/
+
+# default download directory 
+_dl/
+
+# cache directory
+*_cache/
+*_script/
+*_db/
+
+# temporary directory and file
+tmp/
+*.tmp
+
+# config toml
+config.toml
+
+./goes

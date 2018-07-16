@@ -1,19 +1,23 @@
 package category
 
 import (
-	"github.com/kataras/iris"
-	"github.com/goes/config"
-	"github.com/goes/model"
-	"github.com/goes/controller/common"
-	"strings"
 	"strconv"
+	"strings"
 	"unicode/utf8"
+
+	// external
+	"github.com/kataras/iris"
+
+	// internal
+	"github.com/sniperkit/goes/config"
+	"github.com/sniperkit/goes/controller/common"
+	"github.com/sniperkit/goes/model"
 )
 
 func Save(ctx iris.Context, edit bool) {
 
-	minOrder := config.ServerConfig.MinOrder
-	maxOrder := config.ServerConfig.MaxOrder
+	minOrder := config.Global.Server.MinOrder
+	maxOrder := config.Global.Server.MaxOrder
 
 	var category model.Category
 
@@ -35,8 +39,8 @@ func Save(ctx iris.Context, edit bool) {
 		return
 	}
 
-	if utf8.RuneCountInString(category.Name) > config.ServerConfig.MaxNameLength {
-		msg := "分类名称不能超过" + strconv.Itoa(config.ServerConfig.MaxNameLength) + "个字符"
+	if utf8.RuneCountInString(category.Name) > config.Global.Server.MaxNameLength {
+		msg := "分类名称不能超过" + strconv.Itoa(config.Global.Server.MaxNameLength) + "个字符"
 		common.SendErrorJSON(msg, ctx)
 		return
 	}
@@ -117,8 +121,8 @@ func Info(ctx iris.Context) {
 
 	var category model.Category
 	if err := model.DB.First(&category, id).Error; err != nil {
-	    common.SendErrorJSON("查询ID失败", ctx)
-	    return
+		common.SendErrorJSON("查询ID失败", ctx)
+		return
 	}
 
 	ctx.JSON(iris.Map{
@@ -150,16 +154,16 @@ func FetchAllCategory(ctx iris.Context) {
 		orderString += " desc"
 	}
 
-	offset := (pageNum - 1) * config.ServerConfig.PageSize
-	if err := model.DB.Offset(offset).Limit(config.ServerConfig.PageSize).Order(orderString).Find(&categories).Error; err != nil {
+	offset := (pageNum - 1) * config.Global.Server.PageSize
+	if err := model.DB.Offset(offset).Limit(config.Global.Server.PageSize).Order(orderString).Find(&categories).Error; err != nil {
 		common.SendErrorJSON("查询失败", ctx)
 		return
 	}
 
 	ctx.JSON(iris.Map{
-		"err" : model.SUCCESS,
-		"msg"   : "success",
-		"data"  : iris.Map{
+		"err": model.SUCCESS,
+		"msg": "success",
+		"data": iris.Map{
 			"categories": categories,
 		},
 	})

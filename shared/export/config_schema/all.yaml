@@ -1,0 +1,57 @@
+app:
+  name: ""
+  verbose: false
+  enable_log: false
+  data:
+    storage: ""
+    cache: ""
+    export: ""
+  web:
+    static:
+      prefix_path: ""
+    title: ""
+    javascript_path: ""
+    image_path: ""
+    css_path: ""
+  env: ""
+  env_file: ""
+  use_proxy: false
+  proxy_uri: ""
+  port: 0
+  static_port: 0
+rest:
+  port: 0
+  delay: 0
+  auth: null
+  enable_log: false
+websocket:
+  port: 0
+  delay: 0
+  auth:
+    username: ""
+    password: ""
+  enable_log: false
+database:
+  dialect: sqlite3
+  database: ""
+  user: ""
+  password: ""
+  charset: ""
+  host: ""
+  port: 0
+  dsn: /.db
+  max_idle_conns: 0
+  max_open_conns: 0
+server:
+  env: ""
+  sessionID: ""
+  port: 0
+  page_size: 0
+  max_page_size: 0
+  min_page_size: 0
+  min_order: 0
+  max_order: 0
+  max_name_length: 0
+  max_content_length: 0
+  max_article_cate_count: 0
+  max_comment_length: 0

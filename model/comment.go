@@ -1,6 +1,8 @@
 package model
 
-import "time"
+import (
+	"time"
+)
 
 type Comment struct {
 	Id        uint       `gorm:"primary_key" json:"id"`
@@ -16,11 +18,11 @@ type Comment struct {
 
 const (
 	// CommentVerifying 审核中
-	CommentVerifying      = 1
+	CommentVerifying = 1
 
 	// CommentVerifySuccess 审核通过
-	CommentVerifySuccess  = 2
+	CommentVerifySuccess = 2
 
 	// CommentVerifyFail 审核未通过
-	CommentVerifyFail     = 3
+	CommentVerifyFail = 3
 )

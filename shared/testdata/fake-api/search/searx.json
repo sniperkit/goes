@@ -1,0 +1,1465 @@
+{
+  "number_of_results": 4612413,
+  "corrections": [
+
+  ],
+  "query": "dlib",
+  "infoboxes": [
+    {
+      "engine": "wikidata",
+      "content": "Dlib is a general purpose cross-platform software library written in the programming language C++. Its design is heavily influenced by ideas from design by contract and component-based software engineering. Thus it is, first and foremost, a set of independent software components. It is open-source software released under a Boost Software License.",
+      "infobox": "Dlib",
+      "img_src": null,
+      "urls": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Dlib",
+          "title": "Wikipedia"
+        },
+        {
+          "url": "http://dlib.net/",
+          "title": "Official website"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q17052162?uselang=en",
+          "title": "Wikidata"
+        }
+      ],
+      "attributes": [
+        {
+          "value": "Boost Software License",
+          "label": "License"
+        },
+        {
+          "value": "C++",
+          "label": "Programming language"
+        }
+      ],
+      "id": "https://en.wikipedia.org/wiki/Dlib"
+    }
+  ],
+  "suggestions": [
+    "dlib python",
+    "dlib magazine",
+    "dlib github",
+    "dlib java",
+    "dlib nuk",
+    "dlib install",
+    "dlib face detection",
+    "dlib c++ tutorial",
+    "dlib opencv",
+    "how to install dlib",
+    "dlib tutorial",
+    "cobiss",
+    "dlib slovenija"
+  ],
+  "results": [
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo",
+        "google",
+        "bing",
+        "wikidata",
+        "wikidata"
+      ],
+      "title": "dlib C++ Library",
+      "url": "http://dlib.net/",
+      "positions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.net",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "A library for developing portable applications that deal with networking, threads, graphical interfaces, complex data structures, linear algebra, machine learning, XML and text parsing, numerical optimization, or Bayesian networks. [Open source]",
+      "pretty_url": "http://dlib.net/",
+      "score": 132
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "wikipedia",
+        "duckduckgo",
+        "google",
+        "bing"
+      ],
+      "title": "Dlib - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dlib",
+      "positions": [
+        3,
+        1,
+        3,
+        3,
+        3
+      ],
+      "parsed_url": [
+        "https",
+        "en.wikipedia.org",
+        "/wiki/Dlib",
+        "",
+        "",
+        ""
+      ],
+      "content": "Dlib is a general purpose cross-platform software library written in the programming language C++. Its design is heavily influenced by ideas from design by contract and component-based software engineering.",
+      "pretty_url": "https://en.wikipedia.org/wiki/Dlib",
+      "score": 11.666666666666666
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo",
+        "google",
+        "bing",
+        "yahoo"
+      ],
+      "title": "D-Lib Magazine",
+      "url": "http://dlib.org/",
+      "positions": [
+        7,
+        2,
+        9,
+        6,
+        1
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.org",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "D-Lib Magazine is an electronic publication with a focus on digital library research and development, including new technologies, applications, and contextual social and economic issues.",
+      "pretty_url": "http://dlib.org/",
+      "score": 9.603174603174603
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo",
+        "bing",
+        "yahoo"
+      ],
+      "title": "dlib C++ Library",
+      "url": "http://blog.dlib.net/",
+      "positions": [
+        5,
+        5,
+        4,
+        2
+      ],
+      "parsed_url": [
+        "http",
+        "blog.dlib.net",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Dlib v19.5 is out and there are a lot of new features. There is a dlib to caffe converter, a bunch of new deep learning layer types, cuDNN v6 and v7 support, and a bunch of optimizations that make things run faster in different situations, like ARM NEON support, which makes HOG based detectors ...",
+      "pretty_url": "http://blog.dlib.net/",
+      "score": 4.6
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo",
+        "bing",
+        "yahoo"
+      ],
+      "title": "dlib C++ Library - Machine Learning",
+      "url": "http://dlib.net/ml.html",
+      "positions": [
+        8,
+        8,
+        2,
+        3
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.net",
+        "/ml.html",
+        "",
+        "",
+        ""
+      ],
+      "content": "Dlib contains a wide range of machine learning algorithms. All designed to be highly modular, quick to execute, and simple to use via a clean and modern C++ API.",
+      "pretty_url": "http://dlib.net/ml.html",
+      "score": 4.333333333333333
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "google",
+        "bing"
+      ],
+      "title": "GitHub - davisking/dlib: A toolkit for making real world ...",
+      "url": "https://github.com/davisking/dlib",
+      "positions": [
+        4,
+        2,
+        8
+      ],
+      "parsed_url": [
+        "https",
+        "github.com",
+        "/davisking/dlib",
+        "",
+        "",
+        ""
+      ],
+      "content": "dlib C++ library. Dlib is a modern C++ toolkit containing machine learning algorithms and tools for creating complex software in C++ to solve real world problems. ... Compiling dlib C++ example programs.",
+      "pretty_url": "https://github.com/davisking/dlib",
+      "score": 2.625
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "google",
+        "bing"
+      ],
+      "title": "dlib 19.7.0 : Python Package Index",
+      "url": "https://pypi.python.org/pypi/dlib",
+      "positions": [
+        7,
+        5,
+        7
+      ],
+      "parsed_url": [
+        "https",
+        "pypi.python.org",
+        "/pypi/dlib",
+        "",
+        "",
+        ""
+      ],
+      "content": "The long and short of the license is that you can use dlib however you like, even in closed source commercial software. ## dlib sponsors.",
+      "pretty_url": "https://pypi.python.org/pypi/dlib",
+      "score": 1.457142857142857
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo",
+        "yahoo"
+      ],
+      "title": "Digitalna knjižnica Slovenije - dLib.si",
+      "url": "http://www.dlib.si/?&language=eng",
+      "positions": [
+        6,
+        10,
+        5
+      ],
+      "parsed_url": [
+        "http",
+        "www.dlib.si",
+        "/",
+        "",
+        "&language=eng",
+        ""
+      ],
+      "content": "Digitalna knjižnica Slovenije – dLib.si. ... dLib.si - has been digitizing old Ljubljana postcards carrying the magic of nostalgia and the historical awareness of ...",
+      "pretty_url": "http://www.dlib.si/?&language=eng",
+      "score": 1.4
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo"
+      ],
+      "title": "Digitalna knjižnica Slovenije - dLib.si",
+      "url": "http://www.dlib.si/",
+      "positions": [
+        2,
+        17
+      ],
+      "parsed_url": [
+        "http",
+        "www.dlib.si",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Digitalna knjižnica Slovenije - dLib.si ... Tiskar, knjigovez in knjigotržec Janž Mandelc (tudi Janez Mandelc, Hans Mannel ali Joannes Manlius) je na pobudo Jurija Dalmatina in Jurija Khisla v Ljubljano prišel spomladi leta 1575.",
+      "pretty_url": "http://www.dlib.si/",
+      "score": 1.1176470588235294
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Getting Started with dlib on iOS",
+      "url": "https://www.reddit.com/r/iOSProgramming/comments/6dzqgw/getting_started_with_dlib_on_ios/",
+      "positions": [
+        1
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/iOSProgramming/comments/6dzqgw/getting_started_with_dlib_on_ios/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/iOSProgrammin[...]zqgw/getting_started_with_dlib_on_ios/",
+      "score": 1,
+      "img_src": "https://oktapodi.github.io/2017/05/29/getting-started-with-dlib-on-ios.html",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/Jwxrbmwa8IE8I3pNp3qOjLRMhtAUBi2lnvoAHIX2Iyg.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Home Assistant 0.44: ZigBee, OpenCV and DLib",
+      "url": "https://www.reddit.com/r/homeassistant/comments/69nibc/home_assistant_044_zigbee_opencv_and_dlib/",
+      "positions": [
+        2
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/homeassistant/comments/69nibc/home_assistant_044_zigbee_opencv_and_dlib/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/homeassistant[...]_assistant_044_zigbee_opencv_and_dlib/",
+      "score": 0.5,
+      "img_src": "https://home-assistant.io/blog/2017/05/06/zigbee-opencv-dlib/",
+      "template": "images.html",
+      "thumbnail_src": "https://a.thumbs.redditmedia.com/51XjOc0iPh9Frjv5oF72pk6XbrxoaB6ksoD0GlEwl88.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "dlib vs OpenCV face detection",
+      "url": "https://www.reddit.com/r/JordanShackelford/comments/6mrxp1/dlib_vs_opencv_face_detection/",
+      "positions": [
+        3
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/JordanShackelford/comments/6mrxp1/dlib_vs_opencv_face_detection/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/JordanShackel[...]/6mrxp1/dlib_vs_opencv_face_detection/",
+      "score": 0.3333333333333333,
+      "img_src": "https://www.youtube.com/watch?v=LsK0hzcEyHI&amp;feature=youtu.be",
+      "template": "images.html",
+      "thumbnail_src": "https://a.thumbs.redditmedia.com/iRIrQabLgqtbtqrqhtkHHg_kvqHSt8Qaaxhfrf6yuZ0.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Head Pose Estimation using OpenCV and Dlib. C++ and Python code shared.",
+      "url": "https://www.reddit.com/r/computervision/comments/54lcw8/head_pose_estimation_using_opencv_and_dlib_c_and/",
+      "positions": [
+        4
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/54lcw8/head_pose_estimation_using_opencv_and_dlib_c_and/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]stimation_using_opencv_and_dlib_c_and/",
+      "score": 0.25,
+      "img_src": "http://www.learnopencv.com/head-pose-estimation-using-opencv-and-dlib/",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/PNB_dj9-yd9foxwo_lHWMsdHA4-Rc6N9icxPlBrd5sM.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Fast Multiclass Object Detection in Dlib 19.7",
+      "url": "https://www.reddit.com/r/computervision/comments/71yssd/fast_multiclass_object_detection_in_dlib_197/",
+      "positions": [
+        5
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/71yssd/fast_multiclass_object_detection_in_dlib_197/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]lticlass_object_detection_in_dlib_197/",
+      "score": 0.2,
+      "img_src": "http://blog.dlib.net/2017/09/fast-multiclass-object-detection-in.html",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/PCwkH-B5Py0uVzaBlnFjAeC0vFuPA0g9j4HUyZiZmao.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "[N] Vehicle Detection with Dlib 19.5",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/6wq8ss/n_vehicle_detection_with_dlib_195/",
+      "positions": [
+        6
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/MachineLearning/comments/6wq8ss/n_vehicle_detection_with_dlib_195/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/MachineLearni[...]8ss/n_vehicle_detection_with_dlib_195/",
+      "score": 0.16666666666666666,
+      "img_src": "http://blog.dlib.net/2017/08/vehicle-detection-with-dlib-195_27.html",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/vYTJfoSMs6ui6XWRYXdCn2DHr2ScC7xwZziSBsukoTs.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Vehicle Detection with Dlib 19.5",
+      "url": "https://www.reddit.com/r/computervision/comments/6wfvto/vehicle_detection_with_dlib_195/",
+      "positions": [
+        7
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/6wfvto/vehicle_detection_with_dlib_195/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]wfvto/vehicle_detection_with_dlib_195/",
+      "score": 0.14285714285714285,
+      "img_src": "http://blog.dlib.net/2017/08/vehicle-detection-with-dlib-195_27.html",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/vYTJfoSMs6ui6XWRYXdCn2DHr2ScC7xwZziSBsukoTs.jpg"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "engines": [
+        "reddit"
+      ],
+      "title": "Dlib 19.2 Released: Easily Create High Quality Object Detectors with Deep Learning",
+      "url": "https://www.reddit.com/r/computervision/comments/56xgwa/dlib_192_released_easily_create_high_quality/",
+      "positions": [
+        8
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/56xgwa/dlib_192_released_easily_create_high_quality/",
+        "",
+        "",
+        ""
+      ],
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]2_released_easily_create_high_quality/",
+      "score": 0.125,
+      "img_src": "http://blog.dlib.net/2016/10/easily-create-high-quality-object.html",
+      "template": "images.html",
+      "thumbnail_src": "https://b.thumbs.redditmedia.com/c8_OOjwH1vJc0Bmg9vtNeb-xDqmx325cCeXsfPezU0U.jpg"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "google"
+      ],
+      "title": "dlib C++ Library download | SourceForge.net",
+      "url": "https://sourceforge.net/projects/dclib/",
+      "positions": [
+        6,
+        4
+      ],
+      "parsed_url": [
+        "https",
+        "sourceforge.net",
+        "/projects/dclib/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Rating: 5 - 17 votes - Free - DeveloperSep 17, 2017 ... Download dlib C++ Library for free. Dlib is a C++ toolkit containing machine learning algorithms and tools for creating complex software in C++ ...",
+      "pretty_url": "https://sourceforge.net/projects/dclib/",
+      "score": 0.8333333333333333
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "yahoo"
+      ],
+      "title": "How to install dlib - PyImageSearch",
+      "url": "http://www.pyimagesearch.com/2017/03/27/how-to-install-dlib/",
+      "positions": [
+        9,
+        4
+      ],
+      "parsed_url": [
+        "http",
+        "www.pyimagesearch.com",
+        "/2017/03/27/how-to-install-dlib/",
+        "",
+        "",
+        ""
+      ],
+      "content": "In this tutorial I demonstrate how to install the dlib library with Python bindings on Ubuntu and macOS.",
+      "pretty_url": "http://www.pyimagesearch.com/2017/03/27/how-to-install-dlib/",
+      "score": 0.7222222222222222
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "bing"
+      ],
+      "title": "dlib C++ Library download | SourceForge.net",
+      "url": "http://dclib.sourceforge.net/",
+      "positions": [
+        9,
+        5
+      ],
+      "parsed_url": [
+        "http",
+        "dclib.sourceforge.net",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Download dlib C++ Library for free. Dlib is a C++ toolkit containing machine learning algorithms and tools for creating complex software in C++ to solve real world ...",
+      "pretty_url": "http://dclib.sourceforge.net/",
+      "score": 0.6222222222222222
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant",
+        "duckduckgo"
+      ],
+      "title": "dlib vs OpenCV face detection - YouTube",
+      "url": "https://www.youtube.com/watch?v=LsK0hzcEyHI",
+      "positions": [
+        4,
+        21
+      ],
+      "parsed_url": [
+        "http",
+        "www.youtube.com",
+        "/watch",
+        "",
+        "v=LsK0hzcEyHI",
+        ""
+      ],
+      "content": "The red boxes are dlib's face detector and the circles are from OpenCV's face detector. Both run at the same speed and detect about the same number of true f...",
+      "pretty_url": "https://www.youtube.com/watch?v=LsK0hzcEyHI",
+      "score": 0.5952380952380952
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "google"
+      ],
+      "title": "dlib | Learn OpenCV",
+      "url": "https://www.learnopencv.com/tag/dlib/",
+      "positions": [
+        12,
+        7
+      ],
+      "parsed_url": [
+        "https",
+        "www.learnopencv.com",
+        "/tag/dlib/",
+        "",
+        "",
+        ""
+      ],
+      "content": "In this post, we will provide step by step instructions on how to install Dlib on Windows.Compiling Python modules such as NumPy, SciPy etc. is a ... Read More ...",
+      "pretty_url": "https://www.learnopencv.com/tag/dlib/",
+      "score": 0.45238095238095233
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo",
+        "google"
+      ],
+      "title": "DLib: Library for Machine Learning - KDnuggets",
+      "url": "http://www.kdnuggets.com/2014/06/dlib-library-machine-learning.html",
+      "positions": [
+        19,
+        6
+      ],
+      "parsed_url": [
+        "http",
+        "www.kdnuggets.com",
+        "/2014/06/dlib-library-machine-learning.html",
+        "",
+        "",
+        ""
+      ],
+      "content": "DLib is an open source C++ library implementing a variety of machine learning algorithms, including classification, regression, clustering, data transformation, ...",
+      "pretty_url": "http://www.kdnuggets.com/2014/06/dlib-library-machine-learning.html",
+      "score": 0.43859649122807015
+    },
+    {
+      "engine": "google",
+      "category": "general",
+      "engines": [
+        "google"
+      ],
+      "title": "Head Pose Estimation using OpenCV and Dlib | Learn OpenCV",
+      "url": "http://www.learnopencv.com/head-pose-estimation-using-opencv-and-dlib/",
+      "positions": [
+        8
+      ],
+      "parsed_url": [
+        "http",
+        "www.learnopencv.com",
+        "/head-pose-estimation-using-opencv-and-dlib/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Sep 26, 2016 ... This is a tutorial on head pose estimation using OpenCV ( C++ and Python ) and Dlib. We use solvePnP and solvePnPRansac for pose ...",
+      "pretty_url": "http://www.learnopencv.com/head-pose-estimation-using-opencv-and-dlib/",
+      "score": 0.125
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2015-12-11 17:19:40",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Dec 11, 2015",
+      "url": "https://www.reddit.com/r/Python/comments/3wee8r/python_based_opencv_dlib_libraries_facetrace/",
+      "positions": [
+        9
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/Python/comments/3wee8r/python_based_opencv_dlib_libraries_facetrace/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/Python/commen[...]based_opencv_dlib_libraries_facetrace/",
+      "score": 0.1111111111111111,
+      "title": "Python based, OpenCV, Dlib libraries: FaceTrace, Facial recognition make-up software"
+    },
+    {
+      "engine": "qwant",
+      "category": "general",
+      "engines": [
+        "qwant"
+      ],
+      "title": "Dilib - Promotions, coupons réduction et cashback ...",
+      "url": "https://www.dilib.fr/index.html",
+      "positions": [
+        10
+      ],
+      "parsed_url": [
+        "https",
+        "www.dilib.fr",
+        "/index.html",
+        "",
+        "",
+        ""
+      ],
+      "content": "Avec dilib, vous bénéficiez gratuitement d’avantages et de réductions permanentes sur vos restaurants, cinémas, loisirs et sorties. Vous découvrez chaque jour ...",
+      "pretty_url": "https://www.dilib.fr/index.html",
+      "score": 0.1
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2016-06-26 15:29:52",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jun 26, 2016",
+      "url": "https://www.reddit.com/r/programming/comments/4py875/dlib_190_clean_c11_deep_learning_api/",
+      "positions": [
+        10
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/programming/comments/4py875/dlib_190_clean_c11_deep_learning_api/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/programming/c[...]/dlib_190_clean_c11_deep_learning_api/",
+      "score": 0.1,
+      "title": "dlib 19.0 - Clean C++11 Deep Learning API"
+    },
+    {
+      "engine": "google",
+      "category": "general",
+      "engines": [
+        "google"
+      ],
+      "title": "Dlib-ml: A Machine Learning Toolkit - Journal of Machine Learning ...",
+      "url": "http://www.jmlr.org/papers/volume10/king09a/king09a.pdf",
+      "positions": [
+        10
+      ],
+      "parsed_url": [
+        "http",
+        "www.jmlr.org",
+        "/papers/volume10/king09a/king09a.pdf",
+        "",
+        "",
+        ""
+      ],
+      "content": "There are many excellent toolkits which provide support for developing machine learning soft- ware in Python, R, Matlab, and similar environments. Dlib-ml is an ...",
+      "pretty_url": "http://www.jmlr.org/papers/volume10/king09a/king09a.pdf",
+      "score": 0.1
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "dlib C++ Library: Vehicle Detection with Dlib 19.5",
+      "url": "http://blog.dlib.net/2017/08/vehicle-detection-with-dlib-195_27.html",
+      "positions": [
+        11
+      ],
+      "parsed_url": [
+        "http",
+        "blog.dlib.net",
+        "/2017/08/vehicle-detection-with-dlib-195_27.html",
+        "",
+        "",
+        ""
+      ],
+      "content": "Dlib v19.5 is out and there are a lot of new features. There is a dlib to caffe converter, a bunch of new deep learning layer types, cuDNN v6 and v7 support, and a bunch of optimizations that make things run faster in different situations, like ARM NEON support, which makes HOG based detectors ...",
+      "pretty_url": "http://blog.dlib.net/2017/08/vehicle-detection-with-dlib-195_27.html",
+      "score": 0.09090909090909091
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2013-02-04 23:49:50",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Feb 4, 2013",
+      "url": "https://www.reddit.com/r/programming/comments/17wcmk/dlib_c_library_v180_released_lots_of/",
+      "positions": [
+        11
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/programming/comments/17wcmk/dlib_c_library_v180_released_lots_of/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/programming/c[...]/dlib_c_library_v180_released_lots_of/",
+      "score": 0.09090909090909091,
+      "title": "dlib C++ Library v18.0 released. Lots of state-of-the-art Machine Learning algorithms and other useful tools meant for use on real world problems."
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2014-11-15 16:51:27",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Nov 15, 2014",
+      "url": "https://www.reddit.com/r/cpp/comments/2me1dy/dlib_1811_released/",
+      "positions": [
+        12
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/cpp/comments/2me1dy/dlib_1811_released/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/cpp/comments/2me1dy/dlib_1811_released/",
+      "score": 0.08333333333333333,
+      "title": "Dlib 18.11 released"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "eScholarship@BC | More Reach For Your Research",
+      "url": "https://dlib.bc.edu/",
+      "positions": [
+        13
+      ],
+      "parsed_url": [
+        "https",
+        "dlib.bc.edu",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "\"The volunteer who seeks to help others also helps himself\": Religion, class, and the development of youth volunteer service in the United States, 1934-1973",
+      "pretty_url": "https://dlib.bc.edu/",
+      "score": 0.07692307692307693
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2013-06-22 11:48:32",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jun 22, 2013",
+      "url": "https://www.reddit.com/r/cpp/comments/1guods/dlib_183_released/",
+      "positions": [
+        13
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/cpp/comments/1guods/dlib_183_released/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/cpp/comments/1guods/dlib_183_released/",
+      "score": 0.07692307692307693,
+      "title": "DLib 18.3 released"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Install Dlib on Windows | Learn OpenCV",
+      "url": "https://www.learnopencv.com/install-dlib-on-windows/",
+      "positions": [
+        14
+      ],
+      "parsed_url": [
+        "https",
+        "www.learnopencv.com",
+        "/install-dlib-on-windows/",
+        "",
+        "",
+        ""
+      ],
+      "content": "In this post, we will provide step by step instructions on how to install Dlib on Windows. Compiling Python modules such as NumPy, SciPy etc. is a tedious task. Anaconda is a great Python distribution which comes with a lot of pre-compiled Python packages. So we will use Anaconda as our Python",
+      "pretty_url": "https://www.learnopencv.com/install-dlib-on-windows/",
+      "score": 0.07142857142857142
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2015-07-30 10:35:28",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jul 30, 2015",
+      "url": "https://www.reddit.com/r/programming/comments/3f591x/so_i_wrote_a_script_that_swaps_peoples_faces_in/",
+      "positions": [
+        14
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/programming/comments/3f591x/so_i_wrote_a_script_that_swaps_peoples_faces_in/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/programming/c[...]_a_script_that_swaps_peoples_faces_in/",
+      "score": 0.07142857142857142,
+      "title": "So I wrote a script that swaps people's faces in Python, using dlib, OpenCV and numpy. Here's how I did it. (Source code included.)"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "dlib C++ Library / Wiki / Known_users - SourceForge",
+      "url": "http://sourceforge.net/p/dclib/wiki/Known_users/",
+      "positions": [
+        15
+      ],
+      "parsed_url": [
+        "http",
+        "sourceforge.net",
+        "/p/dclib/wiki/Known_users/",
+        "",
+        "",
+        ""
+      ],
+      "content": "This page is intended to be a list of the projects or groups using the dlib C++ library. So feel free to add to this page if you are using the library (including links to your project/group's homepage if you like).",
+      "pretty_url": "http://sourceforge.net/p/dclib/wiki/Known_users/",
+      "score": 0.06666666666666667
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2016-11-02 10:46:56",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Nov 2, 2016",
+      "url": "https://www.reddit.com/r/computervision/comments/5ap6z1/can_i_sell_a_program_which_uses_dlib_and_opencv/",
+      "positions": [
+        15
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/5ap6z1/can_i_sell_a_program_which_uses_dlib_and_opencv/",
+        "",
+        "",
+        ""
+      ],
+      "content": "I am not good with licenses so that's why I'm asking you about this. I made a program and I use dlib and opencv. So the big question is: can I sell it?",
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]_a_program_which_uses_dlib_and_opencv/",
+      "score": 0.06666666666666667,
+      "title": "Can I sell a program which uses dlib and OpenCV for face landmark detection?"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Facial landmarks with dlib, OpenCV, and Python - PyImageSearch",
+      "url": "http://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/",
+      "positions": [
+        16
+      ],
+      "parsed_url": [
+        "http",
+        "www.pyimagesearch.com",
+        "/2017/04/03/facial-landmarks-dlib-opencv-python/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Learn how to detect and extract facial landmarks from images using dlib, OpenCV, and Python.",
+      "pretty_url": "http://www.pyimagesearch.com/2017/04/0[...]3/facial-landmarks-dlib-opencv-python/",
+      "score": 0.0625
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2012-12-12 02:39:08",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Dec 12, 2012",
+      "url": "https://www.reddit.com/r/cpp/comments/14pb3t/dlib_a_c_library_for_developing_portable/",
+      "positions": [
+        16
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/cpp/comments/14pb3t/dlib_a_c_library_for_developing_portable/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/cpp/comments/[...]b_a_c_library_for_developing_portable/",
+      "score": 0.0625,
+      "title": "dlib: a C++ library for developing portable applications dealing with networking, threads, graphical interfaces, data structures, linear algebra, machine learning, XML and text parsing, numerical optimization, Bayesian nets, and numerous other tasks."
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2015-06-06 13:41:56",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jun 6, 2015",
+      "url": "https://www.reddit.com/r/programming/comments/38smk1/dlib_c_library_reinforcement_learning_control_and/",
+      "positions": [
+        17
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/programming/comments/38smk1/dlib_c_library_reinforcement_learning_control_and/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/programming/c[...]ry_reinforcement_learning_control_and/",
+      "score": 0.058823529411764705,
+      "title": "dlib C++ Library: Reinforcement Learning, Control, and 3D Visualization"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "dlib.etc.ucla.edu/projects/Karnak - University of California ...",
+      "url": "http://dlib.etc.ucla.edu/projects/Karnak/",
+      "positions": [
+        18
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.etc.ucla.edu",
+        "/projects/Karnak/",
+        "",
+        "",
+        ""
+      ],
+      "content": "The colossal site of Karnak is one of the largest temple complexes in the world, with an incredibly rich architectural, ritual, religious, economic, social and political history. The Amun-Ra precinct, which includes an astonishing number of individual temples, shrines and processional ways, stands",
+      "pretty_url": "http://dlib.etc.ucla.edu/projects/Karnak/",
+      "score": 0.05555555555555555
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2013-05-31 00:20:11",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "May 31, 2013",
+      "url": "https://www.reddit.com/r/MachineLearning/comments/1fdfom/dlib_c_library_v182_released_lots_of/",
+      "positions": [
+        18
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/MachineLearning/comments/1fdfom/dlib_c_library_v182_released_lots_of/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/MachineLearni[...]/dlib_c_library_v182_released_lots_of/",
+      "score": 0.05555555555555555,
+      "title": "dlib C++ Library v18.2 released. Lots of state-of-the-art Machine Learning algorithms and other useful tools meant for use on real world problems."
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2015-07-30 10:38:40",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jul 30, 2015",
+      "url": "https://www.reddit.com/r/Python/comments/3f59b6/so_i_wrote_a_script_that_swaps_peoples_faces_in/",
+      "positions": [
+        19
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/Python/comments/3f59b6/so_i_wrote_a_script_that_swaps_peoples_faces_in/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/Python/commen[...]_a_script_that_swaps_peoples_faces_in/",
+      "score": 0.05263157894736842,
+      "title": "So I wrote a script that swaps people's faces in Python, using dlib, OpenCV and numpy. Here's how I did it. (Source code included.) [xpost r/programming]"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Digital Karnak: Experience Karnak - University of California ...",
+      "url": "http://dlib.etc.ucla.edu/projects/Karnak/experience",
+      "positions": [
+        20
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.etc.ucla.edu",
+        "/projects/Karnak/experience",
+        "",
+        "",
+        ""
+      ],
+      "content": "In this section you can learn about Karnak's role in ancient Egyptian history, religion, architecture, and archaeology. Each of the themes listed on the left includes one or more video clips and an accompanying written guide. Each video shows scenes from the Karnak virtual reality model, photographs",
+      "pretty_url": "http://dlib.etc.ucla.edu/projects/Karnak/experience",
+      "score": 0.05
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2014-09-08 17:16:34",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Sep 8, 2014",
+      "url": "https://www.reddit.com/r/cpp/comments/2ftnms/realtime_face_pose_estimation_with_dlib_v1810/",
+      "positions": [
+        20
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/cpp/comments/2ftnms/realtime_face_pose_estimation_with_dlib_v1810/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/cpp/comments/[...]_face_pose_estimation_with_dlib_v1810/",
+      "score": 0.05,
+      "title": "Real-Time Face Pose Estimation with Dlib v18.10"
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2015-02-04 11:59:44",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Feb 4, 2015",
+      "url": "https://www.reddit.com/r/datagangsta/comments/2uqwnv/blog_software_dlib_c_library_python_stuff_and/",
+      "positions": [
+        21
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/datagangsta/comments/2uqwnv/blog_software_dlib_c_library_python_stuff_and/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/datagangsta/c[...]tware_dlib_c_library_python_stuff_and/",
+      "score": 0.047619047619047616,
+      "title": "[Blog] [Software] dlib C++ Library: Python Stuff and Real-Time Video Object Tracking by Davis King | 2015 Feb 3"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Dlib (Data Access Library) - Home",
+      "url": "https://dlib.codeplex.com/",
+      "positions": [
+        22
+      ],
+      "parsed_url": [
+        "https",
+        "dlib.codeplex.com",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Dlib is a lite C# .NET data access helper class library. This library enables developing the data access layer of a project easily, quickly and efficiently.",
+      "pretty_url": "https://dlib.codeplex.com/",
+      "score": 0.045454545454545456
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2016-06-26 12:50:16",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Jun 26, 2016",
+      "url": "https://www.reddit.com/r/cpp/comments/4pxmgs/dlib_19_released/",
+      "positions": [
+        22
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/cpp/comments/4pxmgs/dlib_19_released/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/cpp/comments/4pxmgs/dlib_19_released/",
+      "score": 0.045454545454545456,
+      "title": "dlib 19 released"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "dlib.pnu.ac.ir - صفحه اصلی",
+      "url": "http://dlib.pnu.ac.ir/",
+      "positions": [
+        23
+      ],
+      "parsed_url": [
+        "http",
+        "dlib.pnu.ac.ir",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "تمام حقوق استفاده از این سامانه متعلق به دانشگاه پیام نور می باشد. | تهیه شده در دفتر آمار و فناوری اطلاعات",
+      "pretty_url": "http://dlib.pnu.ac.ir/",
+      "score": 0.043478260869565216
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2017-05-04 20:41:10",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "May 4, 2017",
+      "url": "https://www.reddit.com/r/Unity3d_help/comments/69a745/dlib_and_opencv_help/",
+      "positions": [
+        23
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/Unity3d_help/comments/69a745/dlib_and_opencv_help/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Fairly new to Unity and C# but my day job is coding so not too bad so far haha. I was trying to make a very simple face mask using DLib and OpenCV as an example at work for a project. I was trying to use the WebCamTextureExample and just change the rectangle that goes around the face into an image but this seems harder then I thought it would be. I dont want it to mash around the face like a lot of the examples out there but sit flat on the face like a cut out (yea like snap chat) Any hints, ...",
+      "pretty_url": "https://www.reddit.com/r/Unity3d_help/[...]/comments/69a745/dlib_and_opencv_help/",
+      "score": 0.043478260869565216,
+      "title": "DLib and OpenCV Help"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Mr. DLib - Recommendations-as-a-Service for Academia",
+      "url": "http://mr-dlib.org/",
+      "positions": [
+        24
+      ],
+      "parsed_url": [
+        "http",
+        "mr-dlib.org",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Welcome to Mr. DLib. Mr. DLib is a non-profit open-source project to provide recommendations-as-a-service for research articles, call for papers, and academic news 1.",
+      "pretty_url": "http://mr-dlib.org/",
+      "score": 0.041666666666666664
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2017-09-24 09:05:32",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "Sep 24, 2017",
+      "url": "https://www.reddit.com/r/programming/comments/724321/fast_multiclass_object_detection_in_dlib_197/",
+      "positions": [
+        24
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/programming/comments/724321/fast_multiclass_object_detection_in_dlib_197/",
+        "",
+        "",
+        ""
+      ],
+      "content": "",
+      "pretty_url": "https://www.reddit.com/r/programming/c[...]lticlass_object_detection_in_dlib_197/",
+      "score": 0.041666666666666664,
+      "title": "Fast Multiclass Object Detection in Dlib 19.7"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "dlib 19.1.0 : Python Package Index",
+      "url": "https://pypi.python.org/pypi/dlib/19.1.0",
+      "positions": [
+        25
+      ],
+      "parsed_url": [
+        "https",
+        "pypi.python.org",
+        "/pypi/dlib/19.1.0",
+        "",
+        "",
+        ""
+      ],
+      "content": "A toolkit for making real world machine learning and data analysis applications. Latest Version: 19.7.0. dlib C++ library Dlib is a modern C++ toolkit containing machine learning algorithms and tools",
+      "pretty_url": "https://pypi.python.org/pypi/dlib/19.1.0",
+      "score": 0.04
+    },
+    {
+      "engine": "reddit",
+      "category": "general",
+      "pubdate": "2017-05-10 09:57:10",
+      "engines": [
+        "reddit"
+      ],
+      "publishedDate": "May 10, 2017",
+      "url": "https://www.reddit.com/r/computervision/comments/6abtz8/how_does_the_dlib_work_in_the_background_to/",
+      "positions": [
+        25
+      ],
+      "parsed_url": [
+        "https",
+        "www.reddit.com",
+        "/r/computervision/comments/6abtz8/how_does_the_dlib_work_in_the_background_to/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Hi, I would like to know how the Dlib library does the detecting and landmark detection in the background? Does it use haar features or HOG or LBP or something else entirely? On the GitHub page, it says \"A toolkit for making real world machine learning and data analysis applications in C++\". So maybe it's a machine learning solution. But It'd like to understand it in detail?",
+      "pretty_url": "https://www.reddit.com/r/computervisio[...]es_the_dlib_work_in_the_background_to/",
+      "score": 0.04,
+      "title": "How does the Dlib work in the background to detect face and facial landmark detection?"
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "Media Collections Online",
+      "url": "https://media.dlib.indiana.edu/",
+      "positions": [
+        26
+      ],
+      "parsed_url": [
+        "https",
+        "media.dlib.indiana.edu",
+        "/",
+        "",
+        "",
+        ""
+      ],
+      "content": "Media Collections Online houses audio and video collections. Use the search box, or browse using the terms on the left side to discover content.",
+      "pretty_url": "https://media.dlib.indiana.edu/",
+      "score": 0.038461538461538464
+    },
+    {
+      "engine": "duckduckgo",
+      "category": "general",
+      "engines": [
+        "duckduckgo"
+      ],
+      "title": "D-Lib Magazine Archive",
+      "url": "http://www.dlib.org/back.html",
+      "positions": [
+        27
+      ],
+      "parsed_url": [
+        "http",
+        "www.dlib.org",
+        "/back.html",
+        "",
+        "",
+        ""
+      ],
+      "content": "Send suggestions to dlib@dlib.org. To browse the contents pages and articles of back issues of D-Lib Magazine, select the appropriate item from the list below. You may also browse alphabetized lists of stories, editorials, and briefings by author or title.",
+      "pretty_url": "http://www.dlib.org/back.html",
+      "score": 0.037037037037037035
+    }
+  ],
+  "answers": [
+
+  ],
+  "unresponsive_engines": [
+
+  ]
+}

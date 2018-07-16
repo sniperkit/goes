@@ -1,12 +1,16 @@
 package comment
 
 import (
-	"github.com/goes/config"
-	"github.com/goes/controller/common"
-	"github.com/goes/model"
-	"github.com/kataras/iris"
 	"strings"
 	"unicode/utf8"
+
+	// internal
+	"github.com/sniperkit/goes/config"
+	"github.com/sniperkit/goes/controller/common"
+	"github.com/sniperkit/goes/model"
+
+	// external
+	"github.com/kataras/iris"
 )
 
 func commentValid(comment *model.Comment, ctx iris.Context) {
@@ -26,11 +30,11 @@ func commentValid(comment *model.Comment, ctx iris.Context) {
 		return
 	}
 
-	if comment.ParentID !=0 {
+	if comment.ParentID != 0 {
 		var parentComment model.Comment
 		if err := model.DB.First(&parentComment, comment.ParentID).Error; err != nil {
-		    common.SendErrorJSON("无效的评论id", ctx)
-		    return
+			common.SendErrorJSON("无效的评论id", ctx)
+			return
 		}
 	} else {
 		common.SendErrorJSON("非法评论id", ctx)

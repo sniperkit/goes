@@ -1,12 +1,16 @@
 package article
 
 import (
-	"github.com/goes/config"
-	"github.com/goes/controller/common"
-	"github.com/goes/model"
-	"github.com/kataras/iris"
 	"strconv"
 	"time"
+
+	// internal
+	"github.com/sniperkit/goes/config"
+	"github.com/sniperkit/goes/controller/common"
+	"github.com/sniperkit/goes/model"
+
+	// external
+	"github.com/kataras/iris"
 )
 
 func articleList(getAll bool, ctx iris.Context) {
@@ -138,8 +142,8 @@ func Create(ctx iris.Context) {
 		return
 	}
 	ctx.JSON(iris.Map{
-		"err": model.SUCCESS,
-		"msg": "success",
+		"err":  model.SUCCESS,
+		"msg":  "success",
 		"data": article,
 	})
 }
@@ -154,20 +158,20 @@ func Update(ctx iris.Context) {
 
 	var databaseArticle model.Article
 	if err := model.DB.First(&databaseArticle, article.ID).Error; err != nil {
-	    common.SendErrorJSON("无效的文章 ID", ctx)
-	    return
+		common.SendErrorJSON("无效的文章 ID", ctx)
+		return
 	}
 	article.BrowseCount = databaseArticle.BrowseCount
 	article.CreatedAt = databaseArticle.CreatedAt
 	article.Status = databaseArticle.Status
 	article.UpdatedAt = time.Now()
 	if err := model.DB.Save(&article).Error; err != nil {
-	    common.SendErrorJSON("更新文章失败", ctx)
-	    return
+		common.SendErrorJSON("更新文章失败", ctx)
+		return
 	}
 	ctx.JSON(iris.Map{
-		"err": model.SUCCESS,
-		"msg": "success",
+		"err":  model.SUCCESS,
+		"msg":  "success",
 		"data": article,
 	})
 }
@@ -187,8 +191,8 @@ func Read(ctx iris.Context) {
 	}
 	// 填充分类信息
 	if err := model.DB.Model(&article).Related(&article.Categories, "categories").Error; err != nil {
-	    common.SendErrorJSON("填充分类信息失败", ctx)
-	    return
+		common.SendErrorJSON("填充分类信息失败", ctx)
+		return
 	}
 
 	if err := model.DB.Model(&article).Related(&article.Comments, "comments").Error; err != nil {
@@ -197,8 +201,8 @@ func Read(ctx iris.Context) {
 	}
 
 	ctx.JSON(iris.Map{
-		"err": model.SUCCESS,
-		"msg": "success",
+		"err":  model.SUCCESS,
+		"msg":  "success",
 		"data": article,
 	})
 }

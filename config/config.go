@@ -1,85 +1,93 @@
 package config
 
 import (
-	"github.com/goes/logger"
-	"github.com/goes/utils"
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
-	"regexp"
+
+	// external
+	"github.com/jinzhu/configor"
+	"github.com/k0kubun/pp"
 )
 
-var jsonData map[string]interface{}
+var (
+	Global *Config
+)
 
-func initJSON() {
-	bytes, err := ioutil.ReadFile("./config.json")
-	if err != nil {
-		logger.Error("ReadFile: ", err.Error())
-		os.Exit(-1)
+func PrettyPrint(msg interface{}) {
+	pp.Println(msg)
+}
+
+func New(cfgFiles ...string) *Config {
+	cfg := &Config{}
+	configor.New(&configor.Config{ErrorOnUnmatchedKeys: false, Debug: false, Verbose: true, ENVPrefix: "SNK"}).Load(cfg, cfgFiles...)
+
+	if cfg == nil {
+		fmt.Println("error while loading configuration file")
+		os.Exit(1)
 	}
-	// 去除注释
-	configStr := string(bytes[:])
-	reg := regexp.MustCompile(`/\*.*\*/`)
 
-	configStr = reg.ReplaceAllString(configStr, "")
-	bytes = []byte(configStr)
-	if err := json.Unmarshal(bytes, &jsonData); err != nil {
-		logger.Log("json parse fail", err.Error())
-		os.Exit(-1)
+	var url string
+	switch cfg.Store.Dialect {
+	case "mysql", "postgres", "mssql":
+		url = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True&loc=Local",
+			cfg.Store.User,
+			cfg.Store.Password,
+			cfg.Store.Host,
+			cfg.Store.Port,
+			cfg.Store.Database,
+			cfg.Store.Charset)
+	case "sqlite", "sqlite3":
+		fallthrough
+	default:
+		cfg.Store.Dialect = "sqlite3"
+		url = fmt.Sprintf("%s/%s.db", cfg.App.Dir.Store, cfg.Store.Database)
 	}
+
+	if cfg.Store.DSN == "" {
+		cfg.Store.DSN = url
+	}
+
+	return cfg
 }
 
-type dbConfig struct {
-	Dialect      string
-	Database     string
-	User         string
-	Password     string
-	Charset      string
-	Host         string
-	Port         int
-	URL          string
-	MaxIdleConns int
-	MaxOpenConns int
+func (c *Config) WithDB(dbCfg *Database) *Config {
+
+	var url string
+	switch dbCfg.Dialect {
+	case "mysql", "postgres", "mssql":
+		url = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True&loc=Local",
+			dbCfg.User,
+			dbCfg.Password,
+			dbCfg.Host,
+			dbCfg.Port,
+			dbCfg.Database,
+			dbCfg.Charset)
+	case "sqlite", "sqlite3":
+		fallthrough
+	default:
+		dbCfg.Dialect = "sqlite3"
+		url = fmt.Sprintf("%s/%s.db", c.App.Dir.Store, dbCfg.Database)
+	}
+
+	if dbCfg.DSN == "" {
+		dbCfg.DSN = url
+	}
+
+	c.Store = *dbCfg
+	return c
 }
 
-var DBConfig dbConfig
-
-func initDB() {
-	utils.SetObjectByJSON(&DBConfig, jsonData["database"].(map[string]interface{}))
-	url := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s&parseTime=True&loc=Local",
-		DBConfig.User,
-		DBConfig.Password,
-		DBConfig.Host,
-		DBConfig.Port,
-		DBConfig.Database,
-		DBConfig.Charset)
-	DBConfig.URL = url
+func (c *Config) WithApi(apiCfg *Api) *Config {
+	c.Api = *apiCfg
+	return c
 }
 
-type serverConfig struct {
-	Env string
-	SessionID string
-	Port int
-	PageSize int
-	MaxPageSize int
-	MinPageSize int
-	MinOrder int
-	MaxOrder int
-	MaxNameLength int
-	MaxContentLength int
-	MaxArticleCateCount int
-	MaxCommentLength int
+func (c *Config) WithServer(srvCfg *Server) *Config {
+	c.Server = *srvCfg
+	return c
 }
 
-var ServerConfig serverConfig
-
-func initServer() {
-	utils.SetObjectByJSON(&ServerConfig, jsonData["server"].(map[string]interface{}))
-}
-
-func init() {
-	initJSON()
-	initDB()
-	initServer()
+func (c *Config) WithWebsocket(wsCfg *Websocket) *Config {
+	c.Websocket = *wsCfg
+	return c
 }

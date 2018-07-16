@@ -1,6 +1,8 @@
 package model
 
-import "time"
+import (
+	"time"
+)
 
 // 文章分类
 type Category struct {
@@ -8,10 +10,10 @@ type Category struct {
 	CreatedAt time.Time  `json:"createdAt"`
 	UpdatedAt time.Time  `json:"updatedAt"`
 	DeletedAt *time.Time `sql:"index" json:"deletedAt"`
-	Name      string `json:"name"`
-	Sequence  int `json:"sequence"`
-	ParentID  int `json:"parentId"`
-	Status    int `json:"status"`
+	Name      string     `json:"name"`
+	Sequence  int        `json:"sequence"`
+	ParentID  int        `json:"parentId"`
+	Status    int        `json:"status"`
 }
 
 // 开启

@@ -1,9 +1,11 @@
 package utils
 
 import (
-	"github.com/goes/logger"
 	"fmt"
 	"reflect"
+
+	// internal
+	"github.com/sniperkit/goes/logger"
 )
 
 // 设置结构体中的变量

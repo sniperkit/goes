@@ -1,13 +1,17 @@
 package article
 
 import (
-	"github.com/goes/config"
-	"github.com/goes/controller/common"
-	"github.com/goes/model"
-	"github.com/kataras/iris"
 	"strconv"
 	"strings"
 	"unicode/utf8"
+
+	// internal
+	"github.com/sniperkit/goes/config"
+	"github.com/sniperkit/goes/controller/common"
+	"github.com/sniperkit/goes/model"
+
+	// external
+	"github.com/kataras/iris"
 )
 
 func articleValid(article *model.Article, ctx iris.Context) {
@@ -16,7 +20,7 @@ func articleValid(article *model.Article, ctx iris.Context) {
 		return
 	}
 	if utf8.RuneCountInString(article.Name) > config.ServerConfig.MaxNameLength {
-		common.SendErrorJSON("文章名称长度超过最大长度 " + strconv.Itoa(config.ServerConfig.MaxNameLength), ctx)
+		common.SendErrorJSON("文章名称长度超过最大长度 "+strconv.Itoa(config.ServerConfig.MaxNameLength), ctx)
 		return
 	}
 	// 文章分类

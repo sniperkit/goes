@@ -1,12 +1,15 @@
 package route
 
 import (
+	// external
 	"github.com/kataras/iris"
-	"github.com/goes/controller/category"
-	"github.com/goes/controller/admin"
+
+	// internal
+	"github.com/sniperkit/goes/controller/admin"
+	"github.com/sniperkit/goes/controller/category"
 )
 
-const Prefix  = "goes"
+const Prefix = "goes"
 
 // Route 路由
 func Route(app *iris.Application) {
@@ -17,7 +20,7 @@ func Route(app *iris.Application) {
 		router.Get("/categories", nil)
 	}
 
-	adminRouter := app.Party(apiPrefix + "/admin", admin.Authentication)
+	adminRouter := app.Party(apiPrefix+"/admin", admin.Authentication)
 	{
 		adminRouter.Post("/category/create", category.Create)
 		adminRouter.Post("/category/update", category.Update)

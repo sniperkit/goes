@@ -1,0 +1,1892 @@
+{
+  "sha": "d3707a19d35bbd9f4d2e43d4cee063ffefed6721",
+  "url": "https://api.github.com/repos/bobinette/today/git/trees/d3707a19d35bbd9f4d2e43d4cee063ffefed6721",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "060005a771aeefcd2a43b2156d9fb4d2311a72f6",
+      "size": 378,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/060005a771aeefcd2a43b2156d9fb4d2311a72f6"
+    },
+    {
+      "path": ".travis.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6999e0f063797b5353c4a616dd73dbc6d3d8fb7b",
+      "size": 3210,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6999e0f063797b5353c4a616dd73dbc6d3d8fb7b"
+    },
+    {
+      "path": ".travis",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71afc98fbc51a02a74a701e20f4736699efa8c21",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/71afc98fbc51a02a74a701e20f4736699efa8c21"
+    },
+    {
+      "path": ".travis/docker.cnf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2a97b5f0b9e337a5deb15348d8cf90045108fe0",
+      "size": 68,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a2a97b5f0b9e337a5deb15348d8cf90045108fe0"
+    },
+    {
+      "path": ".travis/install_mysql.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d2b6b1206bda3091394170e2ee10fe47a8e06301",
+      "size": 427,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d2b6b1206bda3091394170e2ee10fe47a8e06301"
+    },
+    {
+      "path": ".travis/wait_mysql.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "abcf5f0ae1cd43b739526255974eb47ebf6a48c5",
+      "size": 100,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/abcf5f0ae1cd43b739526255974eb47ebf6a48c5"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce0c672a13d070a53b4ab095fc92c249cca07aee",
+      "size": 1071,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ce0c672a13d070a53b4ab095fc92c249cca07aee"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fab6d7c7e4796d9f3e43f8b9472c9d7ef6284e5e",
+      "size": 1781,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/fab6d7c7e4796d9f3e43f8b9472c9d7ef6284e5e"
+    },
+    {
+      "path": "app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99a4db173decff7a564bbef5d8353b3f60e22ecc",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/99a4db173decff7a564bbef5d8353b3f60e22ecc"
+    },
+    {
+      "path": "app/.babelrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11604a3ec7a79239f6e2cb387320666828ba530d",
+      "size": 387,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/11604a3ec7a79239f6e2cb387320666828ba530d"
+    },
+    {
+      "path": "app/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5e4de5c20de172a559fe7dd1e3afab0a1adb788",
+      "size": 31,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e5e4de5c20de172a559fe7dd1e3afab0a1adb788"
+    },
+    {
+      "path": "app/.eslintrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0e8870f0fa1a38fb21d362d28f7ff528a6d2d16",
+      "size": 719,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e0e8870f0fa1a38fb21d362d28f7ff528a6d2d16"
+    },
+    {
+      "path": "app/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7695faba37bbdce956f06a44575fac622ed2281",
+      "size": 220,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f7695faba37bbdce956f06a44575fac622ed2281"
+    },
+    {
+      "path": "app/.prettierignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b14d30ec4f549fc1a81105fd62bba5c88951c9c7",
+      "size": 7,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b14d30ec4f549fc1a81105fd62bba5c88951c9c7"
+    },
+    {
+      "path": "app/.stylelintrc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cff455922bfb67c93881f8171c1a850f17083c80",
+      "size": 37,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cff455922bfb67c93881f8171c1a850f17083c80"
+    },
+    {
+      "path": "app/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5fe9ffdffbd97e4a7e58cacec92ac2cdd5c0d226",
+      "size": 790,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5fe9ffdffbd97e4a7e58cacec92ac2cdd5c0d226"
+    },
+    {
+      "path": "app/__mocks__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "87fbae6c107cab2ea3aa2e219ff769f5c72e3ad2",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/87fbae6c107cab2ea3aa2e219ff769f5c72e3ad2"
+    },
+    {
+      "path": "app/__mocks__/styleMock.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d988e23b7397f73ea6eacfbfd8bef34aa0782bb3",
+      "size": 48,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d988e23b7397f73ea6eacfbfd8bef34aa0782bb3"
+    },
+    {
+      "path": "app/__mocks__/svgMock.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e1f042db719a08b7350eb53fb92f2409c048709",
+      "size": 46,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6e1f042db719a08b7350eb53fb92f2409c048709"
+    },
+    {
+      "path": "app/docker-nginx.conf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93cba3df8ab2f41f24f08ae381c72735d81061f4",
+      "size": 254,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/93cba3df8ab2f41f24f08ae381c72735d81061f4"
+    },
+    {
+      "path": "app/jest.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf8e0fe23cfb8d1b5786862845384b467db0b3f1",
+      "size": 373,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cf8e0fe23cfb8d1b5786862845384b467db0b3f1"
+    },
+    {
+      "path": "app/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a7a94595e65835879269c357b78535672421e2e",
+      "size": 825946,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9a7a94595e65835879269c357b78535672421e2e"
+    },
+    {
+      "path": "app/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0a114c687eb48db6cfea6f9d1773ea456c1a155",
+      "size": 3751,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e0a114c687eb48db6cfea6f9d1773ea456c1a155"
+    },
+    {
+      "path": "app/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb3cf2f3e8c788bf278c1fa48619d60d6ea505ca",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/eb3cf2f3e8c788bf278c1fa48619d60d6ea505ca"
+    },
+    {
+      "path": "app/src/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e7699f6bfc7d4962956da40b5da4a6284eb2722",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/0e7699f6bfc7d4962956da40b5da4a6284eb2722"
+    },
+    {
+      "path": "app/src/assets/leaf-inverse.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "366530f9e27d19396700efb6b0956008f75e6941",
+      "size": 15316,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/366530f9e27d19396700efb6b0956008f75e6941"
+    },
+    {
+      "path": "app/src/assets/leaf-inverse.psd",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c02f92ca59bbca5a4b55665ccb2c813735d18818",
+      "size": 62954,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/c02f92ca59bbca5a4b55665ccb2c813735d18818"
+    },
+    {
+      "path": "app/src/assets/leaf.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb72d0a342f72352b10e72ca48a3355039014dae",
+      "size": 15440,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cb72d0a342f72352b10e72ca48a3355039014dae"
+    },
+    {
+      "path": "app/src/assets/leaf.psd",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d817e0c79a22e39b54c7f06ca76df018f3e4644e",
+      "size": 73944,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d817e0c79a22e39b54c7f06ca76df018f3e4644e"
+    },
+    {
+      "path": "app/src/assets/logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb72d0a342f72352b10e72ca48a3355039014dae",
+      "size": 15440,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cb72d0a342f72352b10e72ca48a3355039014dae"
+    },
+    {
+      "path": "app/src/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "935bb1b293b878b39904faef6f0c3e562d289760",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/935bb1b293b878b39904faef6f0c3e562d289760"
+    },
+    {
+      "path": "app/src/components/markdown-input",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e02894986339a25ab6f4d315d58e6a6131c203c7",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/e02894986339a25ab6f4d315d58e6a6131c203c7"
+    },
+    {
+      "path": "app/src/components/markdown-input/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4ee2f4c9aff86a952aad088e7049b50f971c967",
+      "size": 3045,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f4ee2f4c9aff86a952aad088e7049b50f971c967"
+    },
+    {
+      "path": "app/src/components/markdown-input/markdown-input.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea4e83be08bd1aedec87c0d0187d15a26a08ef6c",
+      "size": 640,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ea4e83be08bd1aedec87c0d0187d15a26a08ef6c"
+    },
+    {
+      "path": "app/src/components/markdown-input/markdown-mark.svg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b501202e511eb6ef78adc886580b0091c0f0f82",
+      "size": 316,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/1b501202e511eb6ef78adc886580b0091c0f0f82"
+    },
+    {
+      "path": "app/src/components/markdown-input/utils.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59e3d3a43e2fad1cfaf5074d085b4c6acdf82a60",
+      "size": 71,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/59e3d3a43e2fad1cfaf5074d085b4c6acdf82a60"
+    },
+    {
+      "path": "app/src/components/markdown-input/utils.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5cc51cc6dba46ea4efb2787f4d54670d2caaf02",
+      "size": 268,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b5cc51cc6dba46ea4efb2787f4d54670d2caaf02"
+    },
+    {
+      "path": "app/src/components/markdown",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b5d1f87252ba7431103c8cd4c9a4aad06967619",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/2b5d1f87252ba7431103c8cd4c9a4aad06967619"
+    },
+    {
+      "path": "app/src/components/markdown/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "401d63b9e85fba8f7de6cad54df42db06675cb18",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/401d63b9e85fba8f7de6cad54df42db06675cb18"
+    },
+    {
+      "path": "app/src/components/markdown/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e36ca44b3053fc2918f41709238ddff65ac8c20",
+      "size": 4823,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3e36ca44b3053fc2918f41709238ddff65ac8c20"
+    },
+    {
+      "path": "app/src/components/markdown/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "70915bc754b15eda3f43745d0e0e809a3363f1dd",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/70915bc754b15eda3f43745d0e0e809a3363f1dd"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "301def9da2b4e466118b46863dab06700d5e4ddf",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/301def9da2b4e466118b46863dab06700d5e4ddf"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff9e478d6a7d387a52d08ecc41414355a75aff4c",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/ff9e478d6a7d387a52d08ecc41414355a75aff4c"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ad80fd7700dd9f385768efb18d8148950ac8b43",
+      "size": 29266,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9ad80fd7700dd9f385768efb18d8148950ac8b43"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b68eaead618420a86846baed0b55ac186e9642e8",
+      "size": 3672,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b68eaead618420a86846baed0b55ac186e9642e8"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c8b31b760a854dd561d9257bfe5699f8aadb404",
+      "size": 2460,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2c8b31b760a854dd561d9257bfe5699f8aadb404"
+    },
+    {
+      "path": "app/src/components/markdown/components/today-reference/today-reference.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b27e6b5e7f3f029b42e196e60b78c2e5e068e72",
+      "size": 345,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3b27e6b5e7f3f029b42e196e60b78c2e5e068e72"
+    },
+    {
+      "path": "app/src/components/markdown/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecf434ec372db735bb17b61e0a427fa0435a82f6",
+      "size": 2634,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ecf434ec372db735bb17b61e0a427fa0435a82f6"
+    },
+    {
+      "path": "app/src/components/markdown/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "910816e1e79c183112d2641db80588bb98588747",
+      "size": 288,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/910816e1e79c183112d2641db80588bb98588747"
+    },
+    {
+      "path": "app/src/components/markdown/markdown.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69a07fd64e25b24cec25fcecfd516484333e98a4",
+      "size": 341,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/69a07fd64e25b24cec25fcecfd516484333e98a4"
+    },
+    {
+      "path": "app/src/components/markdown/references.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67ffc01eddf7bdc1ff43754dd98372259e23ee4c",
+      "size": 1402,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/67ffc01eddf7bdc1ff43754dd98372259e23ee4c"
+    },
+    {
+      "path": "app/src/components/markdown/references.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc03d9fa79e30fdda6579b6ec64e025a74cee12b",
+      "size": 1085,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/fc03d9fa79e30fdda6579b6ec64e025a74cee12b"
+    },
+    {
+      "path": "app/src/components/markdown/tags.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b74241c1035d9ed0675951bc82580325b06de52a",
+      "size": 1226,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b74241c1035d9ed0675951bc82580325b06de52a"
+    },
+    {
+      "path": "app/src/components/navbar",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "66561b5d880d76404e8b85e13958722a4a84291e",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/66561b5d880d76404e8b85e13958722a4a84291e"
+    },
+    {
+      "path": "app/src/components/navbar/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2298994c438395a8affdb0c8dae4189a73888781",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/2298994c438395a8affdb0c8dae4189a73888781"
+    },
+    {
+      "path": "app/src/components/navbar/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f49a9c4deb2e0c038f86a89dfb25064b63db35d7",
+      "size": 12537,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f49a9c4deb2e0c038f86a89dfb25064b63db35d7"
+    },
+    {
+      "path": "app/src/components/navbar/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76a2ce4b3b934642ebdf13bb3a435f84add55912",
+      "size": 886,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/76a2ce4b3b934642ebdf13bb3a435f84add55912"
+    },
+    {
+      "path": "app/src/components/navbar/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05fd65e1eea50ff844ef0ec1545b282a566930b9",
+      "size": 227,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/05fd65e1eea50ff844ef0ec1545b282a566930b9"
+    },
+    {
+      "path": "app/src/components/navbar/navbar.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfee7c27efaed016418054d7edb6b607e94c5288",
+      "size": 386,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/bfee7c27efaed016418054d7edb6b607e94c5288"
+    },
+    {
+      "path": "app/src/components/searchbar",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "daa3b7410ab2002878faead8d3c3e70ff8b3b990",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/daa3b7410ab2002878faead8d3c3e70ff8b3b990"
+    },
+    {
+      "path": "app/src/components/searchbar/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "46b1c3be71a3735ee66d45d682957ce33b48319b",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/46b1c3be71a3735ee66d45d682957ce33b48319b"
+    },
+    {
+      "path": "app/src/components/searchbar/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8823d2906410ef7d2822523ff27427bff2d80d1",
+      "size": 2967,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d8823d2906410ef7d2822523ff27427bff2d80d1"
+    },
+    {
+      "path": "app/src/components/searchbar/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b329ba7d7c2b42a01f1bff0c691fc350f27d0f35",
+      "size": 658,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b329ba7d7c2b42a01f1bff0c691fc350f27d0f35"
+    },
+    {
+      "path": "app/src/components/searchbar/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d110d2b3f65a192bca638c2fc5fe1ea08549370",
+      "size": 570,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7d110d2b3f65a192bca638c2fc5fe1ea08549370"
+    },
+    {
+      "path": "app/src/components/searchbar/searchbar.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59e2736bc3d7e9e61292d668afd07ca4aa81b03c",
+      "size": 472,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/59e2736bc3d7e9e61292d668afd07ca4aa81b03c"
+    },
+    {
+      "path": "app/src/components/textarea",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3919933613d2f00120602cf127f7a14a2d1d984b",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/3919933613d2f00120602cf127f7a14a2d1d984b"
+    },
+    {
+      "path": "app/src/components/textarea/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a266b2ddb0ee310c1d52185bfe3a8816e50ddff7",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/a266b2ddb0ee310c1d52185bfe3a8816e50ddff7"
+    },
+    {
+      "path": "app/src/components/textarea/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ced78633875d699d6220b83bb81b68a5ef02d6b",
+      "size": 2494,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7ced78633875d699d6220b83bb81b68a5ef02d6b"
+    },
+    {
+      "path": "app/src/components/textarea/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a71fb7821d45348ea37e5940949e1853c6c3465a",
+      "size": 6522,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a71fb7821d45348ea37e5940949e1853c6c3465a"
+    },
+    {
+      "path": "app/src/components/textarea/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93d9a644555c13b1e91ec59d0043a16e4c6def96",
+      "size": 276,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/93d9a644555c13b1e91ec59d0043a16e4c6def96"
+    },
+    {
+      "path": "app/src/components/textarea/react-autosuggest.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "187a18771bc1dde659cb5a95f14146cc195c0c3e",
+      "size": 20925,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/187a18771bc1dde659cb5a95f14146cc195c0c3e"
+    },
+    {
+      "path": "app/src/components/textarea/textarea.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af40621a09b2bf8e895165167f4be14c469c6122",
+      "size": 644,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/af40621a09b2bf8e895165167f4be14c469c6122"
+    },
+    {
+      "path": "app/src/fontawesome.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e21151f504994409a41a0f52ca9153a0a77d31bb",
+      "size": 869,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e21151f504994409a41a0f52ca9153a0a77d31bb"
+    },
+    {
+      "path": "app/src/hocs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "658fbe1f67eb7d718b4a8265d65e8f62d9973081",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/658fbe1f67eb7d718b4a8265d65e8f62d9973081"
+    },
+    {
+      "path": "app/src/hocs/input-with-actions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "15b245d2bdfd2ec39fe2787a96ba1eb9e234d121",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/15b245d2bdfd2ec39fe2787a96ba1eb9e234d121"
+    },
+    {
+      "path": "app/src/hocs/input-with-actions/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3097e74e166048e7e57694e5dc79bed6d6ce43ee",
+      "size": 1821,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3097e74e166048e7e57694e5dc79bed6d6ce43ee"
+    },
+    {
+      "path": "app/src/index.html",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4abe34610dd0409c39234b71ce6dca520bdc701",
+      "size": 292,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f4abe34610dd0409c39234b71ce6dca520bdc701"
+    },
+    {
+      "path": "app/src/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ee8f21472687278f5132310fa8d35eb62e1f49d",
+      "size": 1734,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/8ee8f21472687278f5132310fa8d35eb62e1f49d"
+    },
+    {
+      "path": "app/src/modules",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1090419a08498f2a6b99f58c9ff49f4728d6ea5b",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/1090419a08498f2a6b99f58c9ff49f4728d6ea5b"
+    },
+    {
+      "path": "app/src/modules/comments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "33c2466ff5798d96cc4814cc52ccb9c2e6ba18e6",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/33c2466ff5798d96cc4814cc52ccb9c2e6ba18e6"
+    },
+    {
+      "path": "app/src/modules/comments/actions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a96a575ee67227959a66f6ee2a3343be1d57a9",
+      "size": 673,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f5a96a575ee67227959a66f6ee2a3343be1d57a9"
+    },
+    {
+      "path": "app/src/modules/comments/api.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10ee1144ea84ce96dc106475a6224945b8dbffc1",
+      "size": 680,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/10ee1144ea84ce96dc106475a6224945b8dbffc1"
+    },
+    {
+      "path": "app/src/modules/comments/comments.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "173fc37d7c3b3863baea4a0a9c50d741faa67021",
+      "size": 4403,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/173fc37d7c3b3863baea4a0a9c50d741faa67021"
+    },
+    {
+      "path": "app/src/modules/comments/comments.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6b7477f45579f4c7ffed3188a1f62627b9b774f",
+      "size": 43,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e6b7477f45579f4c7ffed3188a1f62627b9b774f"
+    },
+    {
+      "path": "app/src/modules/comments/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "569cd88c4409815d67b45ae7afccab056722b991",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/569cd88c4409815d67b45ae7afccab056722b991"
+    },
+    {
+      "path": "app/src/modules/comments/components/input",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f484c1f3b0956ba0a930e9ff3c10533f788ffde",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/8f484c1f3b0956ba0a930e9ff3c10533f788ffde"
+    },
+    {
+      "path": "app/src/modules/comments/components/input/actions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3dfd2956999239b0e83379f3f8e68443751269c1",
+      "size": 1093,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3dfd2956999239b0e83379f3f8e68443751269c1"
+    },
+    {
+      "path": "app/src/modules/comments/components/input/actions.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63031da83eb71d976249be8bdb891eb8747d0152",
+      "size": 51,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/63031da83eb71d976249be8bdb891eb8747d0152"
+    },
+    {
+      "path": "app/src/modules/comments/components/input/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5097272df289e672326810c2638604eea3941457",
+      "size": 196,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5097272df289e672326810c2638604eea3941457"
+    },
+    {
+      "path": "app/src/modules/comments/components/input/textarea.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12527c90cd10dbca398e8eac148426c47e327cde",
+      "size": 1108,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/12527c90cd10dbca398e8eac148426c47e327cde"
+    },
+    {
+      "path": "app/src/modules/comments/events.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f19f92446182e0aebaa3de45b5966391025bfbc",
+      "size": 350,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/1f19f92446182e0aebaa3de45b5966391025bfbc"
+    },
+    {
+      "path": "app/src/modules/comments/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c0e99e9e6151c0a8df413e072fb93f6fd389f58",
+      "size": 4430,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3c0e99e9e6151c0a8df413e072fb93f6fd389f58"
+    },
+    {
+      "path": "app/src/modules/comments/reducer.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "284b015e1ac064a3b17d0b483d836cb0e4e8960e",
+      "size": 960,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/284b015e1ac064a3b17d0b483d836cb0e4e8960e"
+    },
+    {
+      "path": "app/src/modules/comments/sagas.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20c46e64505b15a0f2b6ce4dad608dc261115735",
+      "size": 1436,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/20c46e64505b15a0f2b6ce4dad608dc261115735"
+    },
+    {
+      "path": "app/src/modules/comments/selectors.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a27a6fa52b3696fb452542c3242e2d4276839e",
+      "size": 202,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/16a27a6fa52b3696fb452542c3242e2d4276839e"
+    },
+    {
+      "path": "app/src/modules/log-list",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "219c13210f1a122f7ffe8a0dbb95120b8ad812fa",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/219c13210f1a122f7ffe8a0dbb95120b8ad812fa"
+    },
+    {
+      "path": "app/src/modules/log-list/__mocks__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7fdc5ba2fc08b94bc50bd9ba78db3bf47b3ca48e",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/7fdc5ba2fc08b94bc50bd9ba78db3bf47b3ca48e"
+    },
+    {
+      "path": "app/src/modules/log-list/__mocks__/api.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73a008277da66208e8026c643df90c0c638b0715",
+      "size": 43,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/73a008277da66208e8026c643df90c0c638b0715"
+    },
+    {
+      "path": "app/src/modules/log-list/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "253c1ddf24e9ad7c69672f44b901701bb30fb56d",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/253c1ddf24e9ad7c69672f44b901701bb30fb56d"
+    },
+    {
+      "path": "app/src/modules/log-list/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "005a8031debd9c55a5ba21eec5d2b0c8fc82099f",
+      "size": 22631,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/005a8031debd9c55a5ba21eec5d2b0c8fc82099f"
+    },
+    {
+      "path": "app/src/modules/log-list/actions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7075f9ab0fe29cac446a3d66e18a26ae9368e435",
+      "size": 589,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7075f9ab0fe29cac446a3d66e18a26ae9368e435"
+    },
+    {
+      "path": "app/src/modules/log-list/api.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0aec9634268e36245907c0886484f6788d0fa3e8",
+      "size": 933,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/0aec9634268e36245907c0886484f6788d0fa3e8"
+    },
+    {
+      "path": "app/src/modules/log-list/components",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "29c051fd929278e9b9cccddfece777ec126fe5de",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/29c051fd929278e9b9cccddfece777ec126fe5de"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0914ea065bda5ef0f9abed8e32720553d1b81892",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/0914ea065bda5ef0f9abed8e32720553d1b81892"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eea871d1957c3381f9a678992803ea07eb6bdd51",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/eea871d1957c3381f9a678992803ea07eb6bdd51"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e62f6597f0934249f79e583e11e4602a9cfdc3bc",
+      "size": 30983,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e62f6597f0934249f79e583e11e4602a9cfdc3bc"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0eaada02e21dfe14d2e765db0479686e67f6a9e",
+      "size": 2323,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a0eaada02e21dfe14d2e765db0479686e67f6a9e"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c8efb7d9036e4c5493afdd3dcc2619e0376032e",
+      "size": 712,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9c8efb7d9036e4c5493afdd3dcc2619e0376032e"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item-editing/log-item-editing.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0048b701c9f0bbffc7b60974684f1e11017fc24",
+      "size": 252,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a0048b701c9f0bbffc7b60974684f1e11017fc24"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb4e03f54d3c14b552194423b9126377ac9270aa",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/eb4e03f54d3c14b552194423b9126377ac9270aa"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "145f9ac6d1e9b45b16a48c92223c5c206a26854b",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/145f9ac6d1e9b45b16a48c92223c5c206a26854b"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "884df1c915b44b3878f3bdb3f1cf880adcf8ea06",
+      "size": 26077,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/884df1c915b44b3878f3bdb3f1cf880adcf8ea06"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8bf7aec374239d8796050069acf53abec77e368",
+      "size": 1947,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b8bf7aec374239d8796050069acf53abec77e368"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d23c2e281def9d08430086a6f3dea11eddfa02f1",
+      "size": 910,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d23c2e281def9d08430086a6f3dea11eddfa02f1"
+    },
+    {
+      "path": "app/src/modules/log-list/components/log-item/log-item.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cf34f5eb5abdc5ce4b58002cd47e5cb149b640b",
+      "size": 68,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7cf34f5eb5abdc5ce4b58002cd47e5cb149b640b"
+    },
+    {
+      "path": "app/src/modules/log-list/events.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae0144ca57c5756a3c0632c66ad8b8d992364a62",
+      "size": 535,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ae0144ca57c5756a3c0632c66ad8b8d992364a62"
+    },
+    {
+      "path": "app/src/modules/log-list/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5490f9e8d438cd8949751f169e1d35a5d7fb38ba",
+      "size": 2596,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5490f9e8d438cd8949751f169e1d35a5d7fb38ba"
+    },
+    {
+      "path": "app/src/modules/log-list/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b2bb05ad758425909c712eb190ba2965467f760",
+      "size": 1745,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/1b2bb05ad758425909c712eb190ba2965467f760"
+    },
+    {
+      "path": "app/src/modules/log-list/log-list.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba9400741b7aa26bf5734132acdf475d666625eb",
+      "size": 44,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ba9400741b7aa26bf5734132acdf475d666625eb"
+    },
+    {
+      "path": "app/src/modules/log-list/reducer.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7534f014ca030efd29d241ead31ecd43a15bb950",
+      "size": 2347,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7534f014ca030efd29d241ead31ecd43a15bb950"
+    },
+    {
+      "path": "app/src/modules/log-list/reducer.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1db72ac300c3d2cf1eddc56e4a309def007fe4e",
+      "size": 399,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b1db72ac300c3d2cf1eddc56e4a309def007fe4e"
+    },
+    {
+      "path": "app/src/modules/log-list/sagas.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "387ecee4f18ae492bb83efb12db2e4fdd9ae975a",
+      "size": 2221,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/387ecee4f18ae492bb83efb12db2e4fdd9ae975a"
+    },
+    {
+      "path": "app/src/modules/log-list/sagas.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fa3ba70d4db7c00e8606582b22543134729c789",
+      "size": 572,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7fa3ba70d4db7c00e8606582b22543134729c789"
+    },
+    {
+      "path": "app/src/modules/log-list/selectors.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "135ff825fdb4be0214e4589d40d79c015565daab",
+      "size": 260,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/135ff825fdb4be0214e4589d40d79c015565daab"
+    },
+    {
+      "path": "app/src/modules/new-log",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "857e94dfa2dae3deeed48d08c95e10d711e7797f",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/857e94dfa2dae3deeed48d08c95e10d711e7797f"
+    },
+    {
+      "path": "app/src/modules/new-log/__snapshots__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51db65d70867302782901f4c70c900e871341f6c",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/51db65d70867302782901f4c70c900e871341f6c"
+    },
+    {
+      "path": "app/src/modules/new-log/__snapshots__/index.test.js.snap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bd77178f2c11647de766cb586f9046215d54ba5",
+      "size": 7543,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/8bd77178f2c11647de766cb586f9046215d54ba5"
+    },
+    {
+      "path": "app/src/modules/new-log/actions.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53689b42090a3eecdc76f50bdcec7e75a52a91b9",
+      "size": 192,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/53689b42090a3eecdc76f50bdcec7e75a52a91b9"
+    },
+    {
+      "path": "app/src/modules/new-log/api.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d76a460eccf678eb3edff8193d27977b25b5681",
+      "size": 337,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5d76a460eccf678eb3edff8193d27977b25b5681"
+    },
+    {
+      "path": "app/src/modules/new-log/events.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7ff02b62127b179a01fab87b024b4815a947d64",
+      "size": 132,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/d7ff02b62127b179a01fab87b024b4815a947d64"
+    },
+    {
+      "path": "app/src/modules/new-log/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "583f7a9f21cd4b13291baa800c7104141008d36b",
+      "size": 1812,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/583f7a9f21cd4b13291baa800c7104141008d36b"
+    },
+    {
+      "path": "app/src/modules/new-log/index.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b4f37e6a88ca62687ac482ee2d2aa511e156972",
+      "size": 685,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/1b4f37e6a88ca62687ac482ee2d2aa511e156972"
+    },
+    {
+      "path": "app/src/modules/new-log/new-log.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1b718c8dac71ace8a54eb24a9f563535899fa54",
+      "size": 276,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/c1b718c8dac71ace8a54eb24a9f563535899fa54"
+    },
+    {
+      "path": "app/src/modules/new-log/reducer.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebbdb7286aba9f691ed6a931432810591e12a907",
+      "size": 357,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ebbdb7286aba9f691ed6a931432810591e12a907"
+    },
+    {
+      "path": "app/src/modules/new-log/sagas.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7fed6c58be7cf293e45eac155d9887d6e7bbcf93",
+      "size": 664,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7fed6c58be7cf293e45eac155d9887d6e7bbcf93"
+    },
+    {
+      "path": "app/src/modules/new-log/sagas.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a640e7fa50303c00f9d7ad05ce5cd2910dd1ea1",
+      "size": 562,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2a640e7fa50303c00f9d7ad05ce5cd2910dd1ea1"
+    },
+    {
+      "path": "app/src/modules/new-log/selectors.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ea0d601dd4faffb84eabd2ddaff1a0711b0dca2",
+      "size": 183,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7ea0d601dd4faffb84eabd2ddaff1a0711b0dca2"
+    },
+    {
+      "path": "app/src/router",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b1ca76305400ac9bc0823f526647262bb9672598",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/b1ca76305400ac9bc0823f526647262bb9672598"
+    },
+    {
+      "path": "app/src/router/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e81b09563fe2b4f005aea128c065bd0ca2eb469",
+      "size": 413,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/4e81b09563fe2b4f005aea128c065bd0ca2eb469"
+    },
+    {
+      "path": "app/src/sagas",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "427c2c8cad0e4749238dc7fe94fe96c975ee6676",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/427c2c8cad0e4749238dc7fe94fe96c975ee6676"
+    },
+    {
+      "path": "app/src/sagas/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "743b1c8a868b106defef5a6d02cc0a473f6bb496",
+      "size": 319,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/743b1c8a868b106defef5a6d02cc0a473f6bb496"
+    },
+    {
+      "path": "app/src/style",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "863d66872ae5dc6839894c22cc52da814dabd136",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/863d66872ae5dc6839894c22cc52da814dabd136"
+    },
+    {
+      "path": "app/src/style/_variables.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef9a048448f7566843ce16bb4c6f9a80fe080d2d",
+      "size": 222,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ef9a048448f7566843ce16bb4c6f9a80fe080d2d"
+    },
+    {
+      "path": "app/src/style/base.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a6d439327e59e51456daca56540178b40c81fdf",
+      "size": 1659,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/4a6d439327e59e51456daca56540178b40c81fdf"
+    },
+    {
+      "path": "app/src/style/toastr.scss",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bd7b4917e67ca8ee44d70644042f8cbeb78f35f",
+      "size": 646,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3bd7b4917e67ca8ee44d70644042f8cbeb78f35f"
+    },
+    {
+      "path": "app/src/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7f2b5ec34dc73cae866569d5e25515a50c6c0175",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/7f2b5ec34dc73cae866569d5e25515a50c6c0175"
+    },
+    {
+      "path": "app/src/utils/apiUrl.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bcba61ccc627554991fae957cd602b3b71d3b88",
+      "size": 220,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9bcba61ccc627554991fae957cd602b3b71d3b88"
+    },
+    {
+      "path": "app/src/utils/axios.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a227c6b5fffdf9f0f269997760309c43dc385d7",
+      "size": 229,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9a227c6b5fffdf9f0f269997760309c43dc385d7"
+    },
+    {
+      "path": "app/src/utils/redux.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9718e3b45e488865638df2417321f2a2f57acfcc",
+      "size": 137,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9718e3b45e488865638df2417321f2a2f57acfcc"
+    },
+    {
+      "path": "app/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea4720583f3b553621cd3f13d399ae60f8d9f0bd",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/ea4720583f3b553621cd3f13d399ae60f8d9f0bd"
+    },
+    {
+      "path": "app/tests/setup.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de28e1d3c1c674ebc86bddb25e7c12e31f88d0da",
+      "size": 177,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/de28e1d3c1c674ebc86bddb25e7c12e31f88d0da"
+    },
+    {
+      "path": "app/webpack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ce84ec091d7474d6420b3a998b27fa445ba2b485",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/ce84ec091d7474d6420b3a998b27fa445ba2b485"
+    },
+    {
+      "path": "app/webpack/webpack.common.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f98173ff1df9a1fa37c11b016ad9ccea8d0274e9",
+      "size": 3014,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/f98173ff1df9a1fa37c11b016ad9ccea8d0274e9"
+    },
+    {
+      "path": "app/webpack/webpack.dev.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfedbcf09ff6e3189f016a145bf1b589c92a6c44",
+      "size": 316,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/dfedbcf09ff6e3189f016a145bf1b589c92a6c44"
+    },
+    {
+      "path": "app/webpack/webpack.docker.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b244f38e207ed5f0540e067aa2234d1b5bd963b5",
+      "size": 234,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b244f38e207ed5f0540e067aa2234d1b5bd963b5"
+    },
+    {
+      "path": "app/webpack/webpack.prod.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2855cc9a795a79b2ff79b61b4568d5bea2047e17",
+      "size": 827,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2855cc9a795a79b2ff79b61b4568d5bea2047e17"
+    },
+    {
+      "path": "backend",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c96c4b8109ab63ee76836883e4e11383c3ebaf21",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/c96c4b8109ab63ee76836883e4e11383c3ebaf21"
+    },
+    {
+      "path": "backend/.dockerignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf30eb2f34785cd28b475492f04ccbff4280af67",
+      "size": 45,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cf30eb2f34785cd28b475492f04ccbff4280af67"
+    },
+    {
+      "path": "backend/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1a1229dda6bfb5186cbca2fa4d4bf320fdc6df4",
+      "size": 906,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a1a1229dda6bfb5186cbca2fa4d4bf320fdc6df4"
+    },
+    {
+      "path": "backend/Gopkg.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2285315b800c6e89698cdbf7894507f46c2f884f",
+      "size": 7374,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2285315b800c6e89698cdbf7894507f46c2f884f"
+    },
+    {
+      "path": "backend/Gopkg.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "291f5499c76ddc16d17dd201ea7bb618eb36cdcb",
+      "size": 2858,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/291f5499c76ddc16d17dd201ea7bb618eb36cdcb"
+    },
+    {
+      "path": "backend/comments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b851942b5675f15903e6e3a123871f396e8d9b23",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/b851942b5675f15903e6e3a123871f396e8d9b23"
+    },
+    {
+      "path": "backend/comments/handler.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89f60b8aa10d5d80c500278be9ae452ff9ce23cb",
+      "size": 831,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/89f60b8aa10d5d80c500278be9ae452ff9ce23cb"
+    },
+    {
+      "path": "backend/comments/model.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0c814fa3138c9d05417e73dfaa7f811e54ee556",
+      "size": 612,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/c0c814fa3138c9d05417e73dfaa7f811e54ee556"
+    },
+    {
+      "path": "backend/comments/service.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c367c2fe388627e88400d2e7c0c39a4c132c3ec",
+      "size": 732,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/4c367c2fe388627e88400d2e7c0c39a4c132c3ec"
+    },
+    {
+      "path": "backend/conf.test.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "312c8da1953487862cdabce76704d266b5ad7fce",
+      "size": 104,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/312c8da1953487862cdabce76704d266b5ad7fce"
+    },
+    {
+      "path": "backend/conf.toml.dist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32a3151a60f0309c95b1e65b0f285d17ac3c9bf0",
+      "size": 200,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/32a3151a60f0309c95b1e65b0f285d17ac3c9bf0"
+    },
+    {
+      "path": "backend/conf.travis.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "223b8ba2bf568ca6baf79f9b90a44f8b18bfdb77",
+      "size": 103,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/223b8ba2bf568ca6baf79f9b90a44f8b18bfdb77"
+    },
+    {
+      "path": "backend/eventsourcing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "64ef8168dbe28950f79a06d7934eec0e7a6ae435",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/64ef8168dbe28950f79a06d7934eec0e7a6ae435"
+    },
+    {
+      "path": "backend/eventsourcing/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0de2195d1d2c52ef31c29f607b4c80c8edfd6f87",
+      "size": 454,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/0de2195d1d2c52ef31c29f607b4c80c8edfd6f87"
+    },
+    {
+      "path": "backend/eventsourcing/comments",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "903ae86db898c43644c97d2deb6a09a97cb91033",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/903ae86db898c43644c97d2deb6a09a97cb91033"
+    },
+    {
+      "path": "backend/eventsourcing/comments/aggregate.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31a4ad1525881c03a45bd0cfae5ffb7f846821d5",
+      "size": 2023,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/31a4ad1525881c03a45bd0cfae5ffb7f846821d5"
+    },
+    {
+      "path": "backend/eventsourcing/comments/commands.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3f5366a7c7268b9ef9f8d7d5fffbe2c533bffbf",
+      "size": 1590,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a3f5366a7c7268b9ef9f8d7d5fffbe2c533bffbf"
+    },
+    {
+      "path": "backend/eventsourcing/comments/events.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53244c285c0520077cfda112c1b88c469f73f300",
+      "size": 606,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/53244c285c0520077cfda112c1b88c469f73f300"
+    },
+    {
+      "path": "backend/eventsourcing/comments/http.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84a0b4c94cf81cb839355ed82e6ed4de6e9ff1d5",
+      "size": 2621,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/84a0b4c94cf81cb839355ed82e6ed4de6e9ff1d5"
+    },
+    {
+      "path": "backend/eventsourcing/comments/model.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6302dee327884bd806d34ecdae585d5f8804446a",
+      "size": 513,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6302dee327884bd806d34ecdae585d5f8804446a"
+    },
+    {
+      "path": "backend/eventsourcing/comments/projector.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c399e7a3902dccd203d94d8c9698f3d4f87c784",
+      "size": 1745,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5c399e7a3902dccd203d94d8c9698f3d4f87c784"
+    },
+    {
+      "path": "backend/eventsourcing/comments/register.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "defcfc979fc3cd07998a97f2df23e66ea2e30b60",
+      "size": 1035,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/defcfc979fc3cd07998a97f2df23e66ea2e30b60"
+    },
+    {
+      "path": "backend/eventsourcing/comments/service.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ebf8bcd7cf8b0e11fe9099b31134fda0f5b9d2b",
+      "size": 1853,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/8ebf8bcd7cf8b0e11fe9099b31134fda0f5b9d2b"
+    },
+    {
+      "path": "backend/eventsourcing/logs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "298e87caa546402e6171eae7a3c9c3e6b43fd868",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/298e87caa546402e6171eae7a3c9c3e6b43fd868"
+    },
+    {
+      "path": "backend/eventsourcing/logs/aggregate.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77daefa41e8a681491f5cb28de898ad58e7f9e70",
+      "size": 1986,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/77daefa41e8a681491f5cb28de898ad58e7f9e70"
+    },
+    {
+      "path": "backend/eventsourcing/logs/aggregate_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e92b83dbd2c0ae016e2374894699fc204e5feff",
+      "size": 4531,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/4e92b83dbd2c0ae016e2374894699fc204e5feff"
+    },
+    {
+      "path": "backend/eventsourcing/logs/commands.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cafaef223a35f3f119cc39bd38c8b8c8e05713b",
+      "size": 1529,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2cafaef223a35f3f119cc39bd38c8b8c8e05713b"
+    },
+    {
+      "path": "backend/eventsourcing/logs/events.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ba36e1d15004ee14bfaa51a37345f5e70f40e0a",
+      "size": 553,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6ba36e1d15004ee14bfaa51a37345f5e70f40e0a"
+    },
+    {
+      "path": "backend/eventsourcing/logs/http.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7ed050e31f577fde7ebde2bcb4dbe122ba1ec83",
+      "size": 2269,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a7ed050e31f577fde7ebde2bcb4dbe122ba1ec83"
+    },
+    {
+      "path": "backend/eventsourcing/logs/model.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef02e5c915284aeadbe7c5675970dfb53fa98102",
+      "size": 755,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/ef02e5c915284aeadbe7c5675970dfb53fa98102"
+    },
+    {
+      "path": "backend/eventsourcing/logs/projector.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f6576e9bd7d3deb1ecfee8a2c703ff151b3b6fa",
+      "size": 1697,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/0f6576e9bd7d3deb1ecfee8a2c703ff151b3b6fa"
+    },
+    {
+      "path": "backend/eventsourcing/logs/projector_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6919de63b1fbf2ac181be49b7a76f2e336687090",
+      "size": 1833,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6919de63b1fbf2ac181be49b7a76f2e336687090"
+    },
+    {
+      "path": "backend/eventsourcing/logs/register.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3840654b373c67a60d651603474c26aae7cbbca9",
+      "size": 949,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/3840654b373c67a60d651603474c26aae7cbbca9"
+    },
+    {
+      "path": "backend/eventsourcing/logs/service.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd9a2eda08fc37af021b59f0fbae9ec2aef3e847",
+      "size": 1735,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/cd9a2eda08fc37af021b59f0fbae9ec2aef3e847"
+    },
+    {
+      "path": "backend/eventsourcing/setup.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5e4b8ee751054d6aaef9cdbf3054351a2b0a486",
+      "size": 1503,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b5e4b8ee751054d6aaef9cdbf3054351a2b0a486"
+    },
+    {
+      "path": "backend/logs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97a7ff63ac08986b3d18fc51877c5dc1980ed2f0",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/97a7ff63ac08986b3d18fc51877c5dc1980ed2f0"
+    },
+    {
+      "path": "backend/logs/bleve",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "68c71704d94ea58f8bd74cd4c27d3851fcff4e37",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/68c71704d94ea58f8bd74cd4c27d3851fcff4e37"
+    },
+    {
+      "path": "backend/logs/bleve/log.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a90acf62a7d77c05c638aaf0260f035d04175f9",
+      "size": 3533,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/8a90acf62a7d77c05c638aaf0260f035d04175f9"
+    },
+    {
+      "path": "backend/logs/bleve/log_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cf4115549eb44e20f9aea4259e129c873cc088a",
+      "size": 470,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/9cf4115549eb44e20f9aea4259e129c873cc088a"
+    },
+    {
+      "path": "backend/logs/bleve/mapping.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6bc00055d3bc21fa7fe6d2add4b9013cfd7e9e8f",
+      "size": 1646,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6bc00055d3bc21fa7fe6d2add4b9013cfd7e9e8f"
+    },
+    {
+      "path": "backend/logs/handler.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08da4b646340b8455ae4c53eb63abf393fcf01e1",
+      "size": 2215,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/08da4b646340b8455ae4c53eb63abf393fcf01e1"
+    },
+    {
+      "path": "backend/logs/model.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30866b3e8cd65fbbc00fcf86fce3b845d8272329",
+      "size": 1350,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/30866b3e8cd65fbbc00fcf86fce3b845d8272329"
+    },
+    {
+      "path": "backend/logs/service.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d8229fc3f7380b2f906fbfd957e8b2bd42a245d",
+      "size": 1709,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/4d8229fc3f7380b2f906fbfd957e8b2bd42a245d"
+    },
+    {
+      "path": "backend/logs/tags.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eca1c18eb3ef8777d68e3e6997f1c626e55b53de",
+      "size": 312,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/eca1c18eb3ef8777d68e3e6997f1c626e55b53de"
+    },
+    {
+      "path": "backend/logs/tags_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55747200a6bbca84b04249e387aee308fa3a8361",
+      "size": 531,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/55747200a6bbca84b04249e387aee308fa3a8361"
+    },
+    {
+      "path": "backend/logs/testutil",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4b415b8cba96910e4ce6cfc4188f2ac15d5108d",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/d4b415b8cba96910e4ce6cfc4188f2ac15d5108d"
+    },
+    {
+      "path": "backend/logs/testutil/index.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b43fe4144d5666131f29868f7e1ee6dbea42a6e3",
+      "size": 2807,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b43fe4144d5666131f29868f7e1ee6dbea42a6e3"
+    },
+    {
+      "path": "backend/logs/testutil/repo.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "879f62353c4f7a6f602372c27d0b2636522f8300",
+      "size": 1875,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/879f62353c4f7a6f602372c27d0b2636522f8300"
+    },
+    {
+      "path": "backend/main.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a3f330b1676fa5d929c7ce545802799250e7d61",
+      "size": 4496,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/7a3f330b1676fa5d929c7ce545802799250e7d61"
+    },
+    {
+      "path": "backend/mysql",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1849f2455c658408a153721bc9f1fff1f86905a0",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/1849f2455c658408a153721bc9f1fff1f86905a0"
+    },
+    {
+      "path": "backend/mysql/comment.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54d50594e7fd77d3143903e841317b7bd768d52e",
+      "size": 3483,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/54d50594e7fd77d3143903e841317b7bd768d52e"
+    },
+    {
+      "path": "backend/mysql/eventstore.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b977949bf7ea4f6cf627c29f7869839f28feb389",
+      "size": 3653,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b977949bf7ea4f6cf627c29f7869839f28feb389"
+    },
+    {
+      "path": "backend/mysql/eventstore_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8cbb63e86ba3dc60e6cf5ce8c7723b52ee9464b6",
+      "size": 1235,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/8cbb63e86ba3dc60e6cf5ce8c7723b52ee9464b6"
+    },
+    {
+      "path": "backend/mysql/log.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c7b63fdff0f3c9bfb0111c677d63b5a20ac514c",
+      "size": 6139,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/6c7b63fdff0f3c9bfb0111c677d63b5a20ac514c"
+    },
+    {
+      "path": "backend/mysql/log_test.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b71e3faa5ad21869bfbc492530eab9a6bc3dad",
+      "size": 1338,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/41b71e3faa5ad21869bfbc492530eab9a6bc3dad"
+    },
+    {
+      "path": "backend/mysql/migrations",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4104f3eaa72cb765b036961aafd82f97018bdfd3",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/4104f3eaa72cb765b036961aafd82f97018bdfd3"
+    },
+    {
+      "path": "backend/mysql/migrations/1517776541-create-log-table.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b79c93715e4a695e4d6af48918246ae096f952b",
+      "size": 437,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/0b79c93715e4a695e4d6af48918246ae096f952b"
+    },
+    {
+      "path": "backend/mysql/migrations/1518359784-create-events-table.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "93657b5bc592efc0242338e49a8313da3a28a757",
+      "size": 523,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/93657b5bc592efc0242338e49a8313da3a28a757"
+    },
+    {
+      "path": "backend/mysql/migrations/1521832957-drop-title.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a81d769a51658f35f178375ba43b94192f514f0b",
+      "size": 247,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a81d769a51658f35f178375ba43b94192f514f0b"
+    },
+    {
+      "path": "backend/mysql/migrations/1522775684-add-user.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296bd041de54afa938ce9649f1dcfc15e404efca",
+      "size": 291,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/296bd041de54afa938ce9649f1dcfc15e404efca"
+    },
+    {
+      "path": "backend/mysql/migrations/1524133623-add-deleted-column.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79d7b7c22c6e4dbd33050a096145b90ed8ef04e4",
+      "size": 311,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/79d7b7c22c6e4dbd33050a096145b90ed8ef04e4"
+    },
+    {
+      "path": "backend/mysql/migrations/1524507431-add-tag-table.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5799d16c7aa6b692ea5d9bb85096f74a32549517",
+      "size": 454,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5799d16c7aa6b692ea5d9bb85096f74a32549517"
+    },
+    {
+      "path": "backend/mysql/migrations/1530450303-add-comments-table.sql",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e47682f7be0ca4ae91869a2d3bc38bcd3cd126cd",
+      "size": 629,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/e47682f7be0ca4ae91869a2d3bc38bcd3cd126cd"
+    },
+    {
+      "path": "backend/mysql/utils.go",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5394e4dafe889bed9ff6f62651b019bc51e2741f",
+      "size": 716,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/5394e4dafe889bed9ff6f62651b019bc51e2741f"
+    },
+    {
+      "path": "ops",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2a07f1893c32c87735c0d5a226048f7386a930d",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/c2a07f1893c32c87735c0d5a226048f7386a930d"
+    },
+    {
+      "path": "ops/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "145df6f2425136585d4a3c895808629c52c2705a",
+      "size": 23,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/145df6f2425136585d4a3c895808629c52c2705a"
+    },
+    {
+      "path": "ops/roles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bfe288eaef57528bb23507f20c54f8a049450cbb",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/bfe288eaef57528bb23507f20c54f8a049450cbb"
+    },
+    {
+      "path": "ops/roles/today",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0be402f58331baf6dfd5f7a72aaf02533bacec87",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/0be402f58331baf6dfd5f7a72aaf02533bacec87"
+    },
+    {
+      "path": "ops/roles/today/files",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1dd52b24dd7b8da2df798db1b68e8a3786a0283a",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/1dd52b24dd7b8da2df798db1b68e8a3786a0283a"
+    },
+    {
+      "path": "ops/roles/today/files/nginx.conf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05ed699dd23e7aba24fc61eb853f7742eb4534c5",
+      "size": 1979,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/05ed699dd23e7aba24fc61eb853f7742eb4534c5"
+    },
+    {
+      "path": "ops/roles/today/files/shmig",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfa1d267201688811c2e04fcce2d8d156a1cbf79",
+      "size": 17360,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/bfa1d267201688811c2e04fcce2d8d156a1cbf79"
+    },
+    {
+      "path": "ops/roles/today/files/today.service",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2788d712d940e5b7043c4155bbf93111d8665ddc",
+      "size": 172,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2788d712d940e5b7043c4155bbf93111d8665ddc"
+    },
+    {
+      "path": "ops/roles/today/files/today_oauth2.service",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "726122c246efceba8f0d4fdfead88972648b21a9",
+      "size": 243,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/726122c246efceba8f0d4fdfead88972648b21a9"
+    },
+    {
+      "path": "ops/roles/today/tasks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5c1f2170ad0889b513bba379a9e27a3072142e56",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/5c1f2170ad0889b513bba379a9e27a3072142e56"
+    },
+    {
+      "path": "ops/roles/today/tasks/main.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa5fb373446680657e98322e3dd66bc44836bf98",
+      "size": 3907,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/aa5fb373446680657e98322e3dd66bc44836bf98"
+    },
+    {
+      "path": "ops/roles/today/templates",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "825bff13e2426168d191f4b3a39f5f1fd1e87fd4",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/825bff13e2426168d191f4b3a39f5f1fd1e87fd4"
+    },
+    {
+      "path": "ops/roles/today/templates/conf.toml.j2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "069c59416b1ccd2f5a57ce6a11a87480225bfdfd",
+      "size": 274,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/069c59416b1ccd2f5a57ce6a11a87480225bfdfd"
+    },
+    {
+      "path": "ops/roles/today/templates/get_release.sh.j2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23b2ee07a0c3109cc8574e9fe212bda17396e0a5",
+      "size": 1271,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/23b2ee07a0c3109cc8574e9fe212bda17396e0a5"
+    },
+    {
+      "path": "ops/roles/today/templates/oauth2_proxy.j2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b45cc7ca10c335bfd3e69c824e6cb8980f733f68",
+      "size": 3039,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/b45cc7ca10c335bfd3e69c824e6cb8980f733f68"
+    },
+    {
+      "path": "ops/roles/today/templates/shmig.conf.j2",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "751103bf5959a984d35d62178b1f01cd1ba1866e",
+      "size": 1655,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/751103bf5959a984d35d62178b1f01cd1ba1866e"
+    },
+    {
+      "path": "ops/scaleway",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d4e355610999e6cef4696f339725a2ee9519830",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/3d4e355610999e6cef4696f339725a2ee9519830"
+    },
+    {
+      "path": "ops/scaleway/group_vars",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b692dd432cfa0a98994c9ea584a820e7c9eef7d5",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/b692dd432cfa0a98994c9ea584a820e7c9eef7d5"
+    },
+    {
+      "path": "ops/scaleway/group_vars/today",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7ae2c5ef7023c4e0b649e906080c73385dbb308e",
+      "url": "https://api.github.com/repos/bobinette/today/git/trees/7ae2c5ef7023c4e0b649e906080c73385dbb308e"
+    },
+    {
+      "path": "ops/scaleway/group_vars/today/vars",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a102405a0c25d854adec3e883912459aeb21bf52",
+      "size": 476,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/a102405a0c25d854adec3e883912459aeb21bf52"
+    },
+    {
+      "path": "ops/scaleway/group_vars/today/vault",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cda403bbe49f6dc620e39d37cef36a814cb353b",
+      "size": 2493,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/2cda403bbe49f6dc620e39d37cef36a814cb353b"
+    },
+    {
+      "path": "ops/scaleway/inventory",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "090dd8ed92fbd190ea82c994571c564f218c8de2",
+      "size": 57,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/090dd8ed92fbd190ea82c994571c564f218c8de2"
+    },
+    {
+      "path": "ops/today.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fe886a465e2ec5e1473a4a9b80fd537970b8647",
+      "size": 36,
+      "url": "https://api.github.com/repos/bobinette/today/git/blobs/0fe886a465e2ec5e1473a4a9b80fd537970b8647"
+    }
+  ],
+  "truncated": false
+}

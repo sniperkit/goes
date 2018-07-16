@@ -1,14 +1,17 @@
 package common
 
 import (
+	// external
 	"github.com/kataras/iris"
-	"github.com/goes/model"
+
+	// internal
+	"github.com/sniperkit/goes/model"
 )
 
-func SendErrorJSON(message string, ctx iris.Context)  {
+func SendErrorJSON(message string, ctx iris.Context) {
 	ctx.JSON(iris.Map{
 		"errCode": model.ERROR,
 		"message": message,
-		"data": iris.Map{},
+		"data":    iris.Map{},
 	})
 }

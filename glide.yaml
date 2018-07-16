@@ -1,0 +1,35 @@
+package: github.com/sniperkit/goes
+import:
+- package: golang.org/x/crypto
+  version: master
+  subpackages:
+  - acme/autocert
+- package: github.com/jinzhu/configor
+  version: master
+- package: github.com/fsnotify/fsnotify
+- package: github.com/go-sql-driver/mysql
+- package: github.com/googollee/go-socket.io
+- package: github.com/jinzhu/gorm
+  subpackages:
+  - dialects/mssql
+  - dialects/mysql
+  - dialects/postgres
+  - dialects/sqlite
+- package: github.com/k0kubun/pp
+- package: github.com/kataras/iris
+  subpackages:
+  - middleware/logger
+  - middleware/recover
+  - websocket
+- package: github.com/mattes/migrate
+  subpackages:
+  - database/mysql
+  - source/file
+- package: github.com/roscopecoltran/configor
+- package: github.com/sniperkit/janus
+  subpackages:
+  - config
+  - server
+- package: golang.org/x/net
+  subpackages:
+  - websocket
