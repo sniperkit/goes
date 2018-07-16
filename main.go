@@ -11,10 +11,10 @@ import (
 	"time"
 
 	// internal
-	"github.com/sniperkit/goes/config"
-	. "github.com/sniperkit/goes/logger"
-	"github.com/sniperkit/goes/model"
-	"github.com/sniperkit/goes/route"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
+	. "github.com/sniperkit/snk.golang.vuejs-multi-backend/logger"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/route"
 
 	// external
 	"github.com/k0kubun/pp"

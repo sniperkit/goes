@@ -5,8 +5,8 @@ import (
 	"github.com/kataras/iris"
 
 	// internal
-	"github.com/sniperkit/goes/controller/admin"
-	"github.com/sniperkit/goes/controller/category"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/controller/admin"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/controller/category"
 )
 
 const Prefix = "goes"

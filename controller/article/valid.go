@@ -6,9 +6,9 @@ import (
 	"unicode/utf8"
 
 	// internal
-	"github.com/sniperkit/goes/config"
-	"github.com/sniperkit/goes/controller/common"
-	"github.com/sniperkit/goes/model"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/controller/common"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
 
 	// external
 	"github.com/kataras/iris"

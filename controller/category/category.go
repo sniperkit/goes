@@ -9,9 +9,9 @@ import (
 	"github.com/kataras/iris"
 
 	// internal
-	"github.com/sniperkit/goes/config"
-	"github.com/sniperkit/goes/controller/common"
-	"github.com/sniperkit/goes/model"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/controller/common"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
 )
 
 func Save(ctx iris.Context, edit bool) {

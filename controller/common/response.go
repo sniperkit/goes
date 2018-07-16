@@ -5,7 +5,7 @@ import (
 	"github.com/kataras/iris"
 
 	// internal
-	"github.com/sniperkit/goes/model"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
 )
 
 func SendErrorJSON(message string, ctx iris.Context) {

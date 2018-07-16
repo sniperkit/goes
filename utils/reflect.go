@@ -5,7 +5,7 @@ import (
 	"reflect"
 
 	// internal
-	"github.com/sniperkit/goes/logger"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/logger"
 )
 
 // 设置结构体中的变量

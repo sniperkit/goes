@@ -1,5 +1,5 @@
-hash: a56e5b53bbc6675706f3e286187991c35471c010ff058b708ac6859ead861c7c
-updated: 2018-07-16T18:27:48.594047681+02:00
+hash: 152b9fc2d7a3a50c29355b7bca59e195bb8631df1f41226f93b436432c644de3
+updated: 2018-07-16T18:47:40.091541895+02:00
 imports:
 - name: cloud.google.com/go
   version: 24ff62bdf36b8c3c10021d8ffb46ef6f2d82da9c
@@ -145,8 +145,6 @@ imports:
   version: bacd9c7ef1dd9b15be4a9909b8ac7a4e313eec94
 - name: github.com/modern-go/reflect2
   version: 4b7aa43c6742a2c18fdef89dd197aaae7dac7ccd
-- name: github.com/roscopecoltran/configor
-  version: 580d257b7d0c3f16e6478ee598f1d9a0ea1667b5
 - name: github.com/ryanuber/columnize
   version: abc90934186a77966e2beeac62ed966aac0561d5
 - name: github.com/shurcooL/sanitized_anchor_name
@@ -182,6 +180,4 @@ imports:
   - cloudsql
 - name: gopkg.in/russross/blackfriday.v2
   version: cadec560ec52d93835bf2f15bd794700d3a2473b
-- name: gopkg.in/yaml.v2
-  version: e4d366fc3c7938e2958e662b4258c7a89e1f0e3e
 testImports: []
