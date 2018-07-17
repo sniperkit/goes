@@ -3,7 +3,8 @@
 run: bindata
 	@go run -race ./cmd/snk-goes/*.go \
 		--config-dir=./shared/conf \
-		--config-file=config.yaml \
+		--config-file=config.yml \
+		--config-file=endpoints.yml \
 		--resource-dir=./shared/data
 
 build: assets
@@ -12,7 +13,8 @@ build: assets
 build-run:
 	@./bin/snk-goes \
 		--config-dir=./shared/conf \
-		--config-file=config.yaml \
+		--config-file=config.yml \
+		--config-file=endpoints.yml \
 		--resource-dir=./shared/data
 
 install:

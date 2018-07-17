@@ -2,7 +2,7 @@ package common
 
 import (
 	// external
-	"github.com/kataras/iris"
+	"github.com/sniperkit/iris"
 
 	// internal
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"

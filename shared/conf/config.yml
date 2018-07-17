@@ -14,14 +14,20 @@ app:
     javascript_path: /javascripts
     image_path: /images
     css_path: /styles
+  limits:
+    page_size: 20
+    max_page_size: 200
+    min_page_size: 10
+    min_order: 0
+    max_order: 10000
+    max_name_length: 100
+    max_content_length: 10000
+    max_article_cate_count: 6
+    max_comment_length: 5000
   use_proxy: false
   proxy_uri: http://127.0.0.1:8881
   port: 8020
   static_port: 8021
-
-rest:
-  port: 8023
-  enable_log: true
 
 websocket:
   port: 8025
@@ -42,14 +48,18 @@ database:
 
 server:
   env: dev
-  sessionID: goesid
+  session_id: goesid
   port: 8080
-  page_size: 20
-  max_page_size: 200
-  min_page_size: 10
-  min_order: 0
-  max_order: 10000
-  max_name_length: 100
-  max_content_length: 10000
-  max_article_cate_count: 6
-  max_comment_length: 5000
+  engine: iris
+  settings:
+    iris:
+      disable_startup_log: true
+      disable_interrupt_handler: false
+      disable_path_correction: true
+      enable_path_escape: true
+      fire_method_not_allowed: false
+      disable_body_consumption_on_unmarshal: false
+      disable_auto_fire_status_code: false
+      time_format: Mon, 02 Jan 2006 15:04:05 GMT
+      charset: UTF-8
+    gin: null

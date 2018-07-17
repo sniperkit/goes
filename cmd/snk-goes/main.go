@@ -28,25 +28,42 @@ import (
 	// _ "github.com/jinzhu/gorm/dialects/mssql"
 	// _ "github.com/jinzhu/gorm/dialects/postgres"
 
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/logger"
-	"github.com/kataras/iris/middleware/recover"
-	"github.com/kataras/iris/websocket"
-	// "github.com/kataras/iris/context"
-	// "github.com/kataras/iris/mvc"
-	// "github.com/kataras/iris/sessions"
+	"github.com/sniperkit/iris"
+	"github.com/sniperkit/iris/middleware/logger"
+	"github.com/sniperkit/iris/middleware/recover"
+	"github.com/sniperkit/iris/websocket"
+	// "github.com/sniperkit/iris/context"
+	// "github.com/sniperkit/iris/mvc"
+	// "github.com/sniperkit/iris/sessions"
+
+	"github.com/dgrijalva/jwt-go"
+	jwtmiddleware "github.com/sniperkit/iris-contrib-middleware/jwt"
 )
 
-const VERSION = "1.3.0"
+const (
+	appName         = "bindata"
+	appVersionMajor = 1
+	appVersionMinor = 3
+	VERSION         = "1.3.0" // update later, incrmeent version with Makefile, pass value with -ldflags
+)
 
 var (
+	//
+	// AppVersionRev part of the program version.
+	//
+	// This will be set automatically at build time like so:
+	//
+	//     go build -ldflags "-X main.AppVersionRev `date -u +%s`" (go version < 1.5)
+	//     go build -ldflags "-X main.AppVersionRev=`date -u +%s`" (go version >= 1.5)
+	appVersionRev     string
 	currentWorkDir, _ = os.Getwd()
 	testServers       = flag.Bool("test-servers", false, "Test servers")
 
 	configPrefixPath = flag.String("config-dir", currentWorkDir, "Config prefix path")
-	configFilename   = flag.String("config-file", "config.yaml", "Config filename")
-	resDefaultDir    = filepath.Join(currentWorkDir, "data")
-	resPrefixPath    = flag.String("resource-dir", resDefaultDir, "Resources prefix path")
+	configFiles      = []string{"config.yml"}
+	// configFilename   = flag.String("config-file", "config.yaml", "Config filename")
+	resDefaultDir = filepath.Join(currentWorkDir, "data")
+	resPrefixPath = flag.String("resource-dir", resDefaultDir, "Resources prefix path")
 )
 
 var (
@@ -92,7 +109,7 @@ func CloseWebSocket() error {
 
 // SendtBytes broadcast a message to server
 func SendtBytes(serverID, to, method string, message []byte) error {
-	// look https://github.com/kataras/iris/blob/master/websocket/message.go , client.go and client.js
+	// look https://github.com/sniperkit/iris/blob/master/websocket/message.go , client.go and client.js
 	// to understand the buffer line:
 	buffer := []byte(fmt.Sprintf("iris-websocket-message:%v;0;%v;%v;", method, serverID, to))
 	buffer = append(buffer, message...)
@@ -184,17 +201,25 @@ func handleConnection(c websocket.Connection) {
 func main() {
 
 	fmt.Printf("SNK-API - fake rest api server (%s) \n", VERSION)
+
+	flag.Var((*AppendSliceValue)(&configFiles), "config-file", "Regex pattern to ignore")
 	flag.Parse()
 
 	Log(*configPrefixPath)
-	Log(*configFilename)
+	Log(configFiles)
 
-	configFile := fmt.Sprintf("%s/%s", *configPrefixPath, *configFilename)
-	Log(configFile)
+	var configPrefixedFiles []string
+	for _, v := range configFiles {
+		// todo: check if only filename, either prefix with default prefix path...
+		configPrefixedFiles = append(configPrefixedFiles, fmt.Sprintf("%s/%s", *configPrefixPath, v))
+	}
 
-	config.Global = config.New(configFile)
+	Log(configPrefixedFiles)
+	config.Global = config.New(configPrefixedFiles...)
 
 	initDB()
+
+	pp.Println("config: ", config.Global)
 
 	ws := websocket.New(websocket.Config{
 		ReadBufferSize:    1024,
@@ -215,9 +240,33 @@ func main() {
 
 	app = iris.New()
 
-	app.Configure(iris.WithConfiguration(iris.Configuration{
-		Charset: "UTF-8",
-	}))
+	if strings.ToLower(config.Global.Server.Engine) == "iris" && config.Global.Server.Settings.Iris != nil {
+		app.Configure(iris.WithConfiguration(
+			iris.Configuration{
+				DisableStartupLog:                 config.Global.Server.Settings.Iris.DisableStartupLog,
+				DisableInterruptHandler:           config.Global.Server.Settings.Iris.DisableInterruptHandler,
+				DisablePathCorrection:             config.Global.Server.Settings.Iris.DisablePathCorrection,
+				EnablePathEscape:                  config.Global.Server.Settings.Iris.EnablePathEscape,
+				FireMethodNotAllowed:              config.Global.Server.Settings.Iris.FireMethodNotAllowed,
+				DisableBodyConsumptionOnUnmarshal: config.Global.Server.Settings.Iris.DisableBodyConsumptionOnUnmarshal,
+				DisableAutoFireStatusCode:         config.Global.Server.Settings.Iris.DisableAutoFireStatusCode,
+				TimeFormat:                        config.Global.Server.Settings.Iris.TimeFormat,
+				Charset:                           config.Global.Server.Settings.Iris.Charset,
+			}),
+		)
+	}
+
+	jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
+		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
+			return []byte("My Secret"), nil
+		},
+		// When set, the middleware verifies that tokens are signed with the specific signing algorithm
+		// If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
+		// Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
+		SigningMethod: jwt.SigningMethodHS256,
+	})
+
+	app.Use(jwtHandler.Serve)
 
 	app.Use(logger.New())
 	// use this recover(y) middleware
@@ -286,7 +335,7 @@ func main() {
 	// no need for any server-side template here,
 	// actually if you're going to use vue without any
 	// back-end services, you can just stop after this line and start the server.
-	// app.StaticWeb("/admin", "./shared/dist/web/")
+	app.StaticWeb("/admin", "./shared/dist/web/")
 	// app.StaticWeb("/admin/js", "./shared/dist/web/js")
 
 	// $ go get -u github.com/jteeuwen/go-bindata/...
@@ -297,7 +346,33 @@ func main() {
 	// $ go get -u github.com/kataras/bindata/cmd/bindata
 	// bindata -pkg embedded -o ./embedded/bindata-gz.go ./shared/dist/web/...
 	// bindata -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
-	app.StaticEmbeddedGzip("/admin", "shared/dist/web", GzipAsset, GzipAssetNames)
+
+	/*
+		Strange behavior of app.StaticEmbeddedGzip. It cannot detech and render index page automatically
+		http://localhost:8080/index.html works
+		but
+		http://localhost:8080/ not found
+	*/
+
+	/*
+		I propose another bad trick to write content of index.html when request is /
+		Chrome, FireFox render correctly but Safari does not work at all
+	*/
+	/*
+		app.Get("/", func (ctx iris.Context) {
+			if data, err := GzipAsset("assets/index.html"); err != nil {
+				ctx.StatusCode(http.StatusInternalServerError)
+				ctx.WriteString("index.html is not found")
+				return
+			} else {
+				ctx.StatusCode(http.StatusOK)
+				ctx.Header("Content-Encoding", "gzip")
+				ctx.ContentType("text/html")
+				ctx.WriteGzip(data)
+			}
+		})
+	*/
+	// app.StaticEmbeddedGzip("/admin", "shared/dist/web", GzipAsset, GzipAssetNames)
 
 	/*
 		app.Get("/admin/{p:path}", func(ctx iris.Context) {

@@ -10,7 +10,7 @@ import (
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
 
 	// external
-	"github.com/kataras/iris"
+	"github.com/sniperkit/iris"
 )
 
 func commentValid(comment *model.Comment, ctx iris.Context) {

@@ -1,7 +1,7 @@
 package admin
 
 import (
-	"github.com/kataras/iris"
+	"github.com/sniperkit/iris"
 )
 
 func Authentication(ctx iris.Context) {

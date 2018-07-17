@@ -6,7 +6,7 @@ import (
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
 
 	// external
-	"github.com/kataras/iris"
+	"github.com/sniperkit/iris"
 )
 
 func Create(ctx iris.Context) {

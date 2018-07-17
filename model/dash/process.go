@@ -12,8 +12,8 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/kataras/iris"
 	"github.com/markbates/grift/cmd"
+	"github.com/sniperkit/iris"
 )
 
 // // Process

@@ -27,7 +27,7 @@ func New(cfgFiles ...string) *Config {
 	}).Load(cfg, cfgFiles...)
 
 	if cfg == nil {
-		fmt.Println("error while loading configuration file")
+		fmt.Println("error while loading configuration file(s): ", cfgFiles)
 		os.Exit(1)
 	}
 

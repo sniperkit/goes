@@ -6,7 +6,7 @@ import (
 	"unicode/utf8"
 
 	// external
-	"github.com/kataras/iris"
+	"github.com/sniperkit/iris"
 
 	// internal
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
@@ -16,8 +16,8 @@ import (
 
 func Save(ctx iris.Context, edit bool) {
 
-	minOrder := config.Global.Server.MinOrder
-	maxOrder := config.Global.Server.MaxOrder
+	minOrder := config.Global.App.Limits.MinOrder
+	maxOrder := config.Global.App.Limits.MaxOrder
 
 	var category model.Category
 
@@ -39,8 +39,8 @@ func Save(ctx iris.Context, edit bool) {
 		return
 	}
 
-	if utf8.RuneCountInString(category.Name) > config.Global.Server.MaxNameLength {
-		msg := "分类名称不能超过" + strconv.Itoa(config.Global.Server.MaxNameLength) + "个字符"
+	if utf8.RuneCountInString(category.Name) > config.Global.App.Limits.MaxNameLength {
+		msg := "分类名称不能超过" + strconv.Itoa(config.Global.App.Limits.MaxNameLength) + "个字符"
 		common.SendErrorJSON(msg, ctx)
 		return
 	}
@@ -154,8 +154,8 @@ func FetchAllCategory(ctx iris.Context) {
 		orderString += " desc"
 	}
 
-	offset := (pageNum - 1) * config.Global.Server.PageSize
-	if err := model.DB.Offset(offset).Limit(config.Global.Server.PageSize).Order(orderString).Find(&categories).Error; err != nil {
+	offset := (pageNum - 1) * config.Global.App.Limits.PageSize
+	if err := model.DB.Offset(offset).Limit(config.Global.App.Limits.PageSize).Order(orderString).Find(&categories).Error; err != nil {
 		common.SendErrorJSON("查询失败", ctx)
 		return
 	}

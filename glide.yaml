@@ -2,7 +2,14 @@ package: github.com/sniperkit/snk.golang.vuejs-multi-backend
 ignore:
 - gopkg.in/yaml.v2
 - github.com/sniperkit/janus
+- github.com/sniperkit/iris
+- github.com/sniperkit/Dashpanel
 import:
+- package: github.com/golang/crypto
+  version: master
+  subpackages:
+  - acme/autocert
+- package: github.com/iris-contrib/go.uuid
 - package: github.com/fatih/color
 - package: github.com/go-sql-driver/mysql
 - package: github.com/googollee/go-socket.io
@@ -14,25 +21,6 @@ import:
   - dialects/postgres
   - dialects/sqlite
 - package: github.com/k0kubun/pp
-- package: github.com/kataras/iris
-  version: v10.6.6
-  subpackages:
-  - middleware/logger
-  - middleware/recover
-  - mvc
-  - sessions
-  - websocket
-  - context
-  - recaptcha
-  - recover
-  - i18n
-  - basicauth
-  - pprof
-  - logger
-  - cache
-  - hero
-  - typescript
-  - view
 - package: github.com/markbates/grift
   subpackages:
   - cmd
@@ -43,6 +31,13 @@ import:
 - package: github.com/sniperkit/Dashpanel
   subpackages:
   - src/model/dash
+- package: github.com/sniperkit/iris
+  subpackages:
+  - middleware/logger
+  - middleware/recover
+  - mvc
+  - sessions
+  - websocket
 - package: golang.org/x/net
   subpackages:
   - websocket
