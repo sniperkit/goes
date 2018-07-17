@@ -2,6 +2,7 @@
 // its manipulations.
 package config
 
+/*
 import (
 	"fmt"
 	"io"
@@ -10,15 +11,9 @@ import (
 	"path/filepath"
 
 	"github.com/gorilla/mux"
+	// "github.com/sniperkit/iris"
+	// "github.com/gorilla/mux"
 )
-
-/*
-// Resource respresent a single resource in rest api.
-type Resource struct {
-    Name    string            `json:"name"`
-    Headers map[string]string `json:"headers,omitempty"`
-}
-*/
 
 // GetEndPoints returns all the endpoints for this resource
 // if the specified folder is not present it will send an error
@@ -99,3 +94,4 @@ func fileExist(path string) bool {
 
 	return true
 }
+*/

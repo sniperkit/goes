@@ -6,7 +6,7 @@ server:
   engine: iris
   settings:
     iris:
-      disable_startup_log: true
+      disable_startup_log: false
       disable_interrupt_handler: false
       disable_path_correction: true
       enable_path_escape: true

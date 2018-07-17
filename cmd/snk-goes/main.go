@@ -13,7 +13,7 @@ import (
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
 	. "github.com/sniperkit/snk.golang.vuejs-multi-backend/logger"
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
-	"github.com/sniperkit/snk.golang.vuejs-multi-backend/route"
+	// "github.com/sniperkit/snk.golang.vuejs-multi-backend/route"
 
 	// external
 	"github.com/sniperkit/iris"
@@ -27,6 +27,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	jwtmiddleware "github.com/sniperkit/iris-contrib-middleware/jwt"
 
+	// debug
 	"github.com/k0kubun/pp"
 )
 
@@ -44,6 +45,8 @@ var (
 	//     go build -ldflags "-X main.AppVersionRev=`date -u +%s`" (go version >= 1.5)
 	appVersionRev     string
 	currentWorkDir, _ = os.Getwd()
+	jwtMode           = flag.Bool("with-jwt", false, "JWT Authenticate mode")
+	debugMode         = flag.Bool("debug", false, "Debug mode")
 	testServers       = flag.Bool("test-servers", false, "Test servers")
 	configPrefixPath  = flag.String("config-dir", currentWorkDir, "Config prefix path")
 	configFiles       = []string{"application.yml", "api.yml", "server.yml", "websocket.yml", "database.yml"}
@@ -59,6 +62,7 @@ var (
 func main() {
 
 	fmt.Printf("SNK-API - fake rest api server (%s) \n", VERSION)
+	fmt.Printf("SNK-API - currentWorkDir: %s\n", currentWorkDir)
 
 	flag.Var((*AppendSliceValue)(&configFiles), "config-file", "Regex pattern to ignore")
 	flag.Parse()
@@ -77,11 +81,13 @@ func main() {
 
 	initDB()
 
-	pp.Println("config.App", config.Global.App)
-	pp.Println("config.Api", config.Global.Api)
-	pp.Println("config.Websocket", config.Global.Websocket)
-	pp.Println("config.Store", config.Global.Store)
-	pp.Println("config.Server", config.Global.Server)
+	if *debugMode {
+		pp.Println("config.App", config.Global.App)
+		pp.Println("config.Api", config.Global.Api)
+		pp.Println("config.Websocket", config.Global.Websocket)
+		pp.Println("config.Store", config.Global.Store)
+		pp.Println("config.Server", config.Global.Server)
+	}
 
 	var wsCfg websocket.Config
 	if config.Global.Websocket != nil {
@@ -100,7 +106,6 @@ func main() {
 	}
 
 	ws := websocket.New(wsCfg)
-
 	ws.OnConnection(handleConnection)
 
 	app = iris.New()
@@ -121,35 +126,45 @@ func main() {
 		)
 	}
 
-	jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
-		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
-			return []byte("My Secret"), nil
-		},
-		// When set, the middleware verifies that tokens are signed with the specific signing algorithm
-		// If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
-		// Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
-		SigningMethod: jwt.SigningMethodHS256,
-	})
-
-	app.Use(jwtHandler.Serve)
+	if *jwtMode {
+		jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
+			ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
+				return []byte("My Secret"), nil
+			},
+			// When set, the middleware verifies that tokens are signed with the specific signing algorithm
+			// If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
+			// Important to avoid security issues described here: https://auth0.com/blog/2015/03/31/critical-vulnerabilities-in-json-web-token-libraries/
+			SigningMethod: jwt.SigningMethodHS256,
+		})
+		app.Use(jwtHandler.Serve)
+	}
 
 	app.Use(logger.New())
-	// use this recover(y) middleware
 	app.Use(recover.New())
 
-	route.Route(app)
+	// irisMiddleware := iris.FromStd(nativeTestMiddleware)
+	// app.Use(irisMiddleware)
+
+	// route.Route(app)
+
+	if errs := generateRoutes(app); len(errs) != 0 {
+		fmt.Printf("%d Error(s) in config: \n", len(errs))
+		for i, err := range errs {
+			fmt.Printf(" %d: %s\n", i+1, err.Error())
+		}
+		os.Exit(1)
+	}
 
 	/*
-	   router := newRouter(c)
-	   routes, errs := router.generateRoutes()
-	   if len(errs) != 0 {
-	       fmt.Printf("%d Error(s) in config: \n", len(errs))
-	       for i, err := range errs {
-	           fmt.Printf(" %d: %s\n", i+1, err.Error())
-	       }
-	       return
-	   }
-	   server := &app{h: routes}
+		var errs []error
+		app, errs = generateRoutes(app)
+		if len(errs) != 0 {
+			fmt.Printf("%d Error(s) in config: \n", len(errs))
+			for i, err := range errs {
+				fmt.Printf(" %d: %s\n", i+1, err.Error())
+			}
+			os.Exit(1)
+		}
 	*/
 
 	// 测试模式

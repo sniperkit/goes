@@ -8,7 +8,7 @@ run: bindata
 		--config-file=server.yml \
 		--config-file=websocket.yml \
 		--config-file=database.yml \
-		--resource-dir=./shared/data
+		--resource-dir=$(CURDIR)/shared
 
 build: assets
 	@go build -o ./bin/snk-goes ./cmd/snk-goes/*.go
@@ -21,7 +21,7 @@ build-run:
 		--config-file=server.yml \
 		--config-file=websocket.yml \
 		--config-file=database.yml \
-		--resource-dir=./shared/data
+		--resource-dir=$(CURDIR)/shared
 
 install:
 	@go install cmd/snk-goes

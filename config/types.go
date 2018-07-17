@@ -1,10 +1,11 @@
 package config
 
 import (
-	"net/http"
+	// "net/http"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
+	"github.com/sniperkit/iris"
 )
 
 type Config struct {
@@ -100,18 +101,19 @@ type JWTData struct {
 
 // Endpoint defines a single rest endpoint(route) in the server
 type Endpoint struct {
-	URL     string       `json:"url" yaml:"url" toml:"url"`
-	Method  string       `json:"method" yaml:"method" toml:"method"`
-	Handler http.Handler `json:"-" yaml:"-" toml:"-"`
+	URL     string                 `json:"url" yaml:"url" toml:"url"`
+	Method  string                 `json:"method" yaml:"method" toml:"method"`
+	Handler func(ctx iris.Context) `json:"-" yaml:"-" toml:"-"`
 }
 
 type URL struct {
-	URL         string            `json:"url" yaml:"url" toml:"url"`
-	Method      string            `json:"method,omitempty" yaml:"method,omitempty" toml:"method,omitempty"`
-	ContentType string            `json:"content_type,omitempty" yaml:"content_type,omitempty" toml:"content_type,omitempty"`
-	File        string            `json:"file,omitempty" yaml:"file,omitempty" toml:"file,omitempty"`
-	StatusCode  int               `json:"status,omitempty" yaml:"status,omitempty" toml:"status,omitempty"`
-	Headers     map[string]string `json:"headers,omitempty" yaml:"headers,omitempty" toml:"headers,omitempty"`
+	URL         string `json:"url" yaml:"url" toml:"url"`
+	Method      string `json:"method,omitempty" yaml:"method,omitempty" toml:"method,omitempty"`
+	ContentType string `json:"content_type,omitempty" yaml:"content_type,omitempty" toml:"content_type,omitempty"`
+	File        string `json:"file,omitempty" yaml:"file,omitempty" toml:"file,omitempty"`
+	// PrefixPath  string            `json:"file,omitempty" yaml:"file,omitempty" toml:"file,omitempty"`
+	StatusCode int               `json:"status,omitempty" yaml:"status,omitempty" toml:"status,omitempty"`
+	Headers    map[string]string `json:"headers,omitempty" yaml:"headers,omitempty" toml:"headers,omitempty"`
 }
 
 type Static struct {

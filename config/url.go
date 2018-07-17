@@ -2,11 +2,13 @@ package config
 
 import (
 	"fmt"
-	"io"
-	"net/http"
+	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
+	// external
+	"github.com/sniperkit/iris"
 )
 
 /*
@@ -59,13 +61,62 @@ func (u *URL) GetEndPoint(rootPath string) (*Endpoint, error) {
 	if err := u.sanitize(rootPath); err != nil {
 		return nil, err
 	}
-
 	return &Endpoint{URL: u.URL, Method: u.Method, Handler: u.getHandle(rootPath)}, nil
 }
 
+func (u *URL) getHandle(root string) func(ctx iris.Context) {
+	if u.File == "" {
+		return func(ctx iris.Context) {
+			ctx.ContentType(u.ContentType)
+			for key, value := range u.Headers {
+				if key == "Content-type" {
+					continue
+				}
+				ctx.Header(key, value)
+			}
+			ctx.StatusCode(u.StatusCode)
+			ctx.Write([]byte(""))
+		}
+	}
+	return func(ctx iris.Context) {
+		data, err := os.Open(filepath.Join(root, u.File))
+		if err != nil {
+			ctx.NotFound()
+			return
+		}
+		defer data.Close()
+
+		ctx.ContentType(u.ContentType)
+		for key, value := range u.Headers {
+			if key == "Content-type" {
+				continue
+			}
+			ctx.Header(key, value)
+		}
+		ctx.StatusCode(u.StatusCode)
+
+		/*
+		   fileInfo, err := data.Stat()
+		   if err != nil {
+		       fmt.Println(err)
+		   }
+		*/
+		dataBytes, err := ioutil.ReadAll(data)
+		if err != nil {
+			fmt.Println(err)
+		}
+		// fmt.Println("SIZE1:", fileInfo.Size())
+		// fmt.Println("SIZE2:", len(dataBytes))
+		// io.Copy(w, data)
+		ctx.Write(dataBytes)
+	}
+}
+
+/*
 // getHandle generate a static handle for the URL.
 func (u *URL) getHandle(root string) http.Handler {
 	if u.File == "" {
+		// func(w http.ResponseWriter, r *http.Request, router http.HandlerFunc) {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Content-type", u.ContentType)
 			for key, value := range u.Headers {
@@ -98,3 +149,4 @@ func (u *URL) getHandle(root string) http.Handler {
 		io.Copy(w, data)
 	})
 }
+*/
