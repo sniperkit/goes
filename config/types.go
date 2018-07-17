@@ -147,15 +147,20 @@ type Iris struct {
 }
 
 type Websocket struct {
-	Port  int  `json:"port" yaml:"port" toml:"port"`
-	Delay int  `json:"delay" yaml:"delay" toml:"delay"`
-	Auth  Auth `json:"auth" yaml:"auth" toml:"auth"`
-	// JWT       *rest.JWTData   `json:"jwt" yaml:"jwt" toml:"jwt"`
-	// Static    *rest.Static    `json:"static" yaml:"static" toml:"static"`
-	Path string `json:"-" yaml:"-" toml:"-"`
-	// Resources []rest.Resource `json:"resources" yaml:"resources" toml:"resources"`
-	// URLs      []rest.URL      `json:"urls" yaml:"urls" toml:"urls"`
-	EnableLog bool `json:"enable_log" yaml:"enable_log" toml:"enable_log"`
+	Port              int            `json:"port" yaml:"port" toml:"port"`
+	EnableLog         bool           `json:"enable_log" yaml:"enable_log" toml:"enable_log"`
+	Delay             int            `json:"delay" yaml:"delay" toml:"delay"`
+	Auth              Auth           `json:"auth" yaml:"auth" toml:"auth"`
+	Path              string         `json:"-" yaml:"-" toml:"-"`
+	ReadBufferSize    uint           `default:"1024" json:"read_buffer_size,omitempty" yaml:"read_buffer_size,omitempty" toml:"read_buffer_size,omitempty"`
+	WriteBufferSize   uint           `default:"1024" json:"write_buffer_size,omitempty" yaml:"write_buffer_size,omitempty" toml:"write_buffer_size,omitempty"`
+	BinaryMessages    bool           `default:"false" json:"allow_binary_messages,omitempty" yaml:"allow_binary_messages,omitempty" toml:"allow_binary_messages,omitempty"`
+	EnableCompression bool           `default:"false" json:"enable_compression,omitempty" yaml:"enable_compression,omitempty" toml:"enable_compression,omitempty"`
+	Subprotocols      []Subprotocols `json:"sub_protocols,omitempty" yaml:"sub_protocols,omitempty" toml:"sub_protocols,omitempty"`
+}
+
+type Subprotocols struct {
+	Name string `json:"name" yaml:"name" toml:"name"`
 }
 
 type Auth struct {

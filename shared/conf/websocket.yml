@@ -1,6 +1,14 @@
 websocket:
   port: 9001
+  enable_log: true
+  delay: 500
   auth:
     username: snk
     password: snk
-  enable_log: true
+  read_buffer_size: 1024
+  write_buffer_size: 1024
+  allow_binary_messages: false
+  enable_compression: false
+  sub_protocols:
+  - name: http
+  - name: https
