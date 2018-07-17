@@ -3,6 +3,7 @@ api:
   port: 8080
   enable_log: true
   delay: 500
+  path: /api/v1
   resources:
   - name: accounts
     headers:

@@ -78,21 +78,21 @@ func (c *Config) WithDB(dbCfg *Database) *Config {
 		dbCfg.DSN = url
 	}
 
-	c.Store = *dbCfg
+	c.Store = dbCfg
 	return c
 }
 
 func (c *Config) WithApi(apiCfg *Api) *Config {
-	c.Api = *apiCfg
+	c.Api = apiCfg
 	return c
 }
 
 func (c *Config) WithServer(srvCfg *Server) *Config {
-	c.Server = *srvCfg
+	c.Server = srvCfg
 	return c
 }
 
 func (c *Config) WithWebsocket(wsCfg *Websocket) *Config {
-	c.Websocket = *wsCfg
+	c.Websocket = wsCfg
 	return c
 }

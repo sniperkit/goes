@@ -46,7 +46,7 @@ var (
 	currentWorkDir, _ = os.Getwd()
 	testServers       = flag.Bool("test-servers", false, "Test servers")
 	configPrefixPath  = flag.String("config-dir", currentWorkDir, "Config prefix path")
-	configFiles       = []string{"config.yml"}
+	configFiles       = []string{"application.yml", "api.yml", "server.yml", "websocket.yml", "database.yml"}
 	resDefaultDir     = filepath.Join(currentWorkDir, "data")
 	resPrefixPath     = flag.String("resource-dir", resDefaultDir, "Resources prefix path")
 )
@@ -83,20 +83,23 @@ func main() {
 	pp.Println("config.Store", config.Global.Store)
 	pp.Println("config.Server", config.Global.Server)
 
-	ws := websocket.New(websocket.Config{
-		ReadBufferSize:    1024,
-		WriteBufferSize:   1024,
-		BinaryMessages:    false,
-		EnableCompression: false,
-		Subprotocols:      []string{},
-		// IDGenerator: "",
-		// CheckOrigin: "",
-		// HandshakeTimeout:        time.Duration(),
-		// WriteTimeout:        time.Duration(),
-		// ReadTimeout:        time.Duration(),
-		// PongTimeout:        time.Duration(),
-		// PingPeriod:        time.Duration(),
-	})
+	var wsCfg websocket.Config
+	if config.Global.Websocket != nil {
+		wsCfg = websocket.Config{
+			ReadBufferSize:    config.Global.Websocket.ReadBufferSize,
+			WriteBufferSize:   config.Global.Websocket.WriteBufferSize,
+			BinaryMessages:    config.Global.Websocket.BinaryMessages,
+			EnableCompression: config.Global.Websocket.EnableCompression,
+			// Subprotocols:      config.Global.Websocket.Subprotocols,
+			HandshakeTimeout: config.Global.Websocket.HandshakeTimeout,
+			WriteTimeout:     config.Global.Websocket.WriteTimeout,
+			ReadTimeout:      config.Global.Websocket.ReadTimeout,
+			PongTimeout:      config.Global.Websocket.PongTimeout,
+			PingPeriod:       config.Global.Websocket.PingPeriod,
+		}
+	}
+
+	ws := websocket.New(wsCfg)
 
 	ws.OnConnection(handleConnection)
 
@@ -135,6 +138,19 @@ func main() {
 	app.Use(recover.New())
 
 	route.Route(app)
+
+	/*
+	   router := newRouter(c)
+	   routes, errs := router.generateRoutes()
+	   if len(errs) != 0 {
+	       fmt.Printf("%d Error(s) in config: \n", len(errs))
+	       for i, err := range errs {
+	           fmt.Printf(" %d: %s\n", i+1, err.Error())
+	       }
+	       return
+	   }
+	   server := &app{h: routes}
+	*/
 
 	// 测试模式
 	//if config.Global.Server.Env == model.DevelopmentMode {

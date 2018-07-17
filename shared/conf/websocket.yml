@@ -12,3 +12,9 @@ websocket:
   sub_protocols:
   - name: http
   - name: https
+  handshake_timeout: 3s
+  write_timeout: 30s
+  read_timeout: 5s
+  write_timeout: 5s
+  pong_period: 15s
+  ping_period: 15s

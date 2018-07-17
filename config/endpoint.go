@@ -1,16 +1,17 @@
-package main
+package config
 
 import (
-	"net/http"
 	"strings"
 )
 
+/*
 // Endpoint defines a single rest endpoint(route) in the server
 type Endpoint struct {
 	URL     string
 	Method  string
 	Handler http.Handler
 }
+*/
 
 // Endpoints represents an Endpoint slice.
 type Endpoints []*Endpoint

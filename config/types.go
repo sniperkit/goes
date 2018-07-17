@@ -2,16 +2,17 @@ package config
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/dgrijalva/jwt-go"
 )
 
 type Config struct {
-	App       App       `json:"application" yaml:"application" toml:"application"`
-	Api       Api       `json:"api" yaml:"api" toml:"api"`
-	Websocket Websocket `json:"websocket" yaml:"websocket" toml:"websocket"`
-	Store     Database  `json:"database" yaml:"database" toml:"database"`
-	Server    Server    `json:"server" yaml:"server" toml:"server"`
+	App       *App       `json:"application" yaml:"application" toml:"application"`
+	Api       *Api       `json:"api" yaml:"api" toml:"api"`
+	Websocket *Websocket `json:"websocket" yaml:"websocket" toml:"websocket"`
+	Store     *Database  `json:"database" yaml:"database" toml:"database"`
+	Server    *Server    `json:"server" yaml:"server" toml:"server"`
 }
 
 type App struct {
@@ -72,15 +73,15 @@ type Database struct {
 
 // Config type represent configuration json.
 type Api struct {
-	Port      int        `json:"port" yaml:"port" toml:"port"`
-	Delay     int        `json:"delay" yaml:"delay" toml:"delay"`
-	Auth      *Auth      `json:"auth" yaml:"auth" toml:"auth"`
-	JWT       *JWTData   `json:"jwt" yaml:"jwt" toml:"jwt"`
-	Static    *Static    `json:"static" yaml:"static" toml:"static"`
-	Resources []Resource `json:"resources" yaml:"resources" toml:"resources"`
-	URLs      []URL      `json:"urls" yaml:"urls" toml:"urls"`
-	EnableLog bool       `json:"enable_log" yaml:"enable_log" toml:"enable_log"`
-	Path      string     `json:"-" yaml:"-" toml:"-"`
+	Port      int        `json:"port,omitempty" yaml:"port,omitempty" toml:"port,omitempty"`
+	Path      string     `default:"/" json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
+	Static    *Static    `json:"static,omitempty" yaml:"static,omitempty" toml:"static,omitempty"`
+	Resources []Resource `json:"resources,omitempty" yaml:"resources,omitempty" toml:"resources,omitempty"`
+	URLs      []URL      `json:"urls,omitempty" yaml:"urls,omitempty" toml:"urls,omitempty"`
+	Delay     int        `json:"delay,omitempty" yaml:"delay,omitempty" toml:"delay,omitempty"`
+	Auth      *Auth      `json:"auth,omitempty" yaml:"auth,omitempty" toml:"auth,omitempty"`
+	JWT       *JWTData   `json:"jwt,omitempty" yaml:"jwt,omitempty" toml:"jwt,omitempty"`
+	EnableLog bool       `json:"enable_log,omitempty" yaml:"enable_log,omitempty" toml:"enable_log,omitempty"`
 }
 
 // Resource respresent a single resource in rest api.
@@ -147,16 +148,21 @@ type Iris struct {
 }
 
 type Websocket struct {
-	Port              int            `json:"port" yaml:"port" toml:"port"`
-	EnableLog         bool           `json:"enable_log" yaml:"enable_log" toml:"enable_log"`
-	Delay             int            `json:"delay" yaml:"delay" toml:"delay"`
-	Auth              Auth           `json:"auth" yaml:"auth" toml:"auth"`
-	Path              string         `json:"-" yaml:"-" toml:"-"`
-	ReadBufferSize    uint           `default:"1024" json:"read_buffer_size,omitempty" yaml:"read_buffer_size,omitempty" toml:"read_buffer_size,omitempty"`
-	WriteBufferSize   uint           `default:"1024" json:"write_buffer_size,omitempty" yaml:"write_buffer_size,omitempty" toml:"write_buffer_size,omitempty"`
+	Port              int            `default:"9001" json:"port" yaml:"port" toml:"port"`
+	EnableLog         bool           `json:"enable_log,omitempty" yaml:"enable_log,omitempty" toml:"enable_log,omitempty"`
+	Delay             int            `json:"delay,omitempty" yaml:"delay,omitempty" toml:"delay,omitempty"`
+	Auth              Auth           `json:"auth,omitempty" yaml:"auth,omitempty" toml:"auth,omitempty"`
+	Path              string         `default:"/ws" json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
+	ReadBufferSize    int            `default:"1024" json:"read_buffer_size,omitempty" yaml:"read_buffer_size,omitempty" toml:"read_buffer_size,omitempty"`
+	WriteBufferSize   int            `default:"1024" json:"write_buffer_size,omitempty" yaml:"write_buffer_size,omitempty" toml:"write_buffer_size,omitempty"`
 	BinaryMessages    bool           `default:"false" json:"allow_binary_messages,omitempty" yaml:"allow_binary_messages,omitempty" toml:"allow_binary_messages,omitempty"`
 	EnableCompression bool           `default:"false" json:"enable_compression,omitempty" yaml:"enable_compression,omitempty" toml:"enable_compression,omitempty"`
 	Subprotocols      []Subprotocols `json:"sub_protocols,omitempty" yaml:"sub_protocols,omitempty" toml:"sub_protocols,omitempty"`
+	HandshakeTimeout  time.Duration  `default:"10" json:"handshake_timeout,omitempty" yaml:"handshake_timeout,omitempty" toml:"handshake_timeout,omitempty"`
+	WriteTimeout      time.Duration  `default:"10" json:"write_timeout,omitempty" yaml:"write_timeout,omitempty" toml:"write_timeout,omitempty"`
+	ReadTimeout       time.Duration  `default:"10" json:"read_timeout,omitempty" yaml:"read_timeout,omitempty" toml:"read_timeout,omitempty"`
+	PongTimeout       time.Duration  `default:"10" json:"pong_period,omitempty" yaml:"pong_period,omitempty" toml:"pong_period,omitempty"`
+	PingPeriod        time.Duration  `default:"10" json:"ping_period,omitempty" yaml:"ping_period,omitempty" toml:"ping_period,omitempty"`
 }
 
 type Subprotocols struct {
