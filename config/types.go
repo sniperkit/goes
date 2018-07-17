@@ -7,8 +7,8 @@ import (
 )
 
 type Config struct {
-	App       App       `json:"app" yaml:"app" toml:"app"`
-	Api       Api       `json:"api" yaml:"rest" toml:"rest"`
+	App       App       `json:"application" yaml:"application" toml:"application"`
+	Api       Api       `json:"api" yaml:"api" toml:"api"`
 	Websocket Websocket `json:"websocket" yaml:"websocket" toml:"websocket"`
 	Store     Database  `json:"database" yaml:"database" toml:"database"`
 	Server    Server    `json:"server" yaml:"server" toml:"server"`

@@ -1,0 +1,6 @@
+websocket:
+  port: 9001
+  auth:
+    username: snk
+    password: snk
+  enable_log: true

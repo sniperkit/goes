@@ -1,0 +1,18 @@
+---
+server:
+  env: dev
+  session_id: goesid
+  port: 8080
+  engine: iris
+  settings:
+    iris:
+      disable_startup_log: true
+      disable_interrupt_handler: false
+      disable_path_correction: true
+      enable_path_escape: true
+      fire_method_not_allowed: false
+      disable_body_consumption_on_unmarshal: false
+      disable_auto_fire_status_code: false
+      time_format: Mon, 02 Jan 2006 15:04:05 GMT
+      charset: UTF-8
+    gin: null

@@ -1,0 +1,33 @@
+---
+application:
+  name: "Snk Server"
+  verbose: true
+  enable_log: false
+  use_proxy: false
+  proxy_uri: http://127.0.0.1:8881
+  port: 8020
+  static_port: 8021
+
+  data:
+    storage: ./shared/data/storage
+    cache: ./shared/data/cache
+    export: ./shared/export
+
+  web:
+    static:
+      prefix_path: ./shared/dist/web
+    title: SNK
+    javascript_path: /javascripts
+    image_path: /images
+    css_path: /styles
+
+  limits:
+    page_size: 20
+    max_page_size: 200
+    min_page_size: 10
+    min_order: 0
+    max_order: 10000
+    max_name_length: 100
+    max_content_length: 10000
+    max_article_cate_count: 6
+    max_comment_length: 5000

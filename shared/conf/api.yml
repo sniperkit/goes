@@ -1,5 +1,5 @@
 ---
-rest:
+api:
   port: 8080
   enable_log: true
   delay: 500
