@@ -1,5 +1,5 @@
 websocket:
-  port: 9001
+  port: 8080
   enable_log: true
   delay: 500
   auth:

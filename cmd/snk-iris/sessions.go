@@ -9,6 +9,10 @@ import (
 	"github.com/sniperkit/iris/sessions/sessiondb/badger"
 )
 
+var (
+	sess *sessions.Sessions
+)
+
 func startWithBadgerSessions(dataDir string) {
 	db, err := badger.New(dataDir)
 	if err != nil {

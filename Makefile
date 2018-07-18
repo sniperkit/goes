@@ -1,7 +1,10 @@
 .PHONY: run build install deps core-deps local-deps nodejs-deps assets bindata staticfiles go-bindata
 
+# shorthands:
+# - go run -race ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared
+# - go run ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared
 run: bindata
-	@go run -race ./cmd/snk-goes/*.go \
+	@go run -race ./cmd/snk-iris/*.go \
 		--config-dir=./shared/conf \
 		--config-file=application.yml \
 		--config-file=api.yml \
@@ -11,10 +14,10 @@ run: bindata
 		--resource-dir=$(CURDIR)/shared
 
 build: assets
-	@go build -o ./bin/snk-goes ./cmd/snk-goes/*.go
+	@go build -o ./bin/snk-iris ./cmd/snk-iris/*.go
 
 build-run:
-	@./bin/snk-goes \
+	@./bin/snk-iris \
 		--config-dir=./shared/conf \
 		--config-file=application.yml \
 		--config-file=api.yml \
@@ -24,15 +27,15 @@ build-run:
 		--resource-dir=$(CURDIR)/shared
 
 install:
-	@go install cmd/snk-goes
+	@go install cmd/snk-iris
 
 assets: gz-bindata # go-bindata
 
 gz-bindata:
-	@bindata -ignore=\\.DS_Store -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
+	@bindata -ignore=\\.DS_Store -pkg main -o ./cmd/snk-iris/bindata.go ./shared/dist/web/...
 
 go-bindata:
-	@go-bindata -ignore=\\.DS_Store -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
+	@go-bindata -ignore=\\.DS_Store -pkg main -o ./cmd/snk-iris/bindata.go ./shared/dist/web/...
 
 web: web-deps
 

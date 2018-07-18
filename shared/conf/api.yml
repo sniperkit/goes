@@ -5,12 +5,12 @@ api:
   delay: 500
   path: "/api/v1"
   docs:
-    enable: true
+    enable: false
     urls:
       production: ""
       staging: ""
     title: SNK Api Documentation
-    path: /doc
+    path: ./shared/docs
     filename: apidoc.html
   cors:
     allowed_origins:

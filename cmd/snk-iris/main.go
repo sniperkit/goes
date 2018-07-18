@@ -25,8 +25,6 @@ import (
 	"github.com/sniperkit/iris/middleware/recover"
 	"github.com/sniperkit/iris/sessions"
 	"github.com/sniperkit/iris/sessions/sessiondb/badger"
-	"github.com/sniperkit/iris/websocket"
-	// "github.com/sniperkit/iris/mvc"
 
 	// iris - middleware
 	corsmiddleware "github.com/sniperkit/iris-contrib-middleware/cors"
@@ -71,8 +69,6 @@ var (
 	cfg *config.Config
 	app *iris.Application
 	crs context.Handler
-	ws  *websocket.Server
-	wsc websocket.Config
 	ral *limiter.Limiter
 )
 
@@ -89,7 +85,6 @@ func main() {
 
 	var configPrefixedFiles []string
 	for _, v := range configFiles {
-		// todo: check if only filename, either prefix with default prefix path...
 		configPrefixedFiles = append(configPrefixedFiles, fmt.Sprintf("%s/%s", *configPrefixPath, v))
 	}
 
@@ -106,23 +101,6 @@ func main() {
 		pp.Println("config.Server", config.Global.Server)
 	}
 
-	if config.Global.Websocket != nil {
-		wsc = websocket.Config{
-			ReadBufferSize:    config.Global.Websocket.ReadBufferSize,
-			WriteBufferSize:   config.Global.Websocket.WriteBufferSize,
-			BinaryMessages:    config.Global.Websocket.BinaryMessages,
-			EnableCompression: config.Global.Websocket.EnableCompression,
-			// Subprotocols:      config.Global.Websocket.Subprotocols,
-			HandshakeTimeout: config.Global.Websocket.HandshakeTimeout,
-			WriteTimeout:     config.Global.Websocket.WriteTimeout,
-			ReadTimeout:      config.Global.Websocket.ReadTimeout,
-			PongTimeout:      config.Global.Websocket.PongTimeout,
-			PingPeriod:       config.Global.Websocket.PingPeriod,
-		}
-		ws = websocket.New(wsc)
-		ws.OnConnection(handleConnection)
-	}
-
 	if config.Global.Server.Session != nil {
 
 		db, err := badger.New(config.Global.Server.Session.DataDir)
@@ -137,7 +115,7 @@ func main() {
 
 		defer db.Close() // close and unlock the database if application errored.
 
-		sess := sessions.New(sessions.Config{
+		sess = sessions.New(sessions.Config{
 			Cookie:       config.Global.Server.Session.ID,
 			Expires:      config.Global.Server.Session.Expires, // <=0 means unlimited life. Defaults to 0.
 			AllowReclaim: config.Global.Server.Session.AllowReclaim,
@@ -150,14 +128,7 @@ func main() {
 
 	app = iris.New()
 
-	ral = tollbooth.NewLimiter(5, &limiter.ExpirableOptions{
-		DefaultExpirationTTL: time.Hour,
-	})
-
-	app.Get("/rate/limiter", ratemiddleware.LimitHandler(ral), func(ctx iris.Context) {
-		ctx.HTML("<b>Hello, rate limiter!</b>")
-	})
-
+	// init Server Application
 	if strings.ToLower(config.Global.Server.Engine) == "iris" && config.Global.Server.Settings.Iris != nil {
 		app.Configure(iris.WithConfiguration(
 			iris.Configuration{
@@ -174,6 +145,7 @@ func main() {
 		)
 	}
 
+	// init CORS middleware
 	if config.Global.Api.Cors != nil {
 		// set in server.yml file
 		crs = corsmiddleware.New(corsmiddleware.Options{
@@ -216,23 +188,9 @@ func main() {
 		})
 	}
 
-	if config.Global.Api.Docs != nil {
+	pp.Println("CORS: ", config.Global.Api.Cors)
 
-		docBaseUrls := make(map[string]string, len(config.Global.Api.Docs.BaseUrls))
-		for k, v := range config.Global.Api.Docs.BaseUrls {
-			docBaseUrls[k] = v
-		}
-
-		yaag.Init(&yaag.Config{ // <- IMPORTANT, init the middleware.
-			On:       config.Global.Api.Docs.Enabled,
-			DocTitle: config.Global.Api.Docs.DocTitle,
-			DocPath:  filepath.Join(config.Global.Api.Docs.DocPath, config.Global.Api.Docs.DocFile),
-			BaseUrls: docBaseUrls,
-		})
-		app.Use(irisyaag.New()) // <- IMPORTANT, register the middleware.
-
-	}
-
+	// init JWT middleware
 	if *jwtMode {
 		jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
 			ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
@@ -246,16 +204,51 @@ func main() {
 		app.Use(jwtHandler.Serve)
 	}
 
+	// init logger
 	app.Use(logger.New())
-	app.Use(recover.New())
-
 	if *debugMode {
+		// set logger debug level
 		app.Logger().SetLevel("debug")
 	}
+	// init recover middleware
+	app.Use(recover.New())
 
 	// irisMiddleware := iris.FromStd(nativeTestMiddleware)
 	// app.Use(irisMiddleware)
 
+	// generate api documentation
+	// note: do not use in production
+	if config.Global.Api.Docs != nil {
+		if config.Global.Api.Docs.Enabled {
+			/*
+				docBaseUrls := make(map[string]string, len(config.Global.Api.Docs.BaseUrls))
+				for k, v := range config.Global.Api.Docs.BaseUrls {
+					docBaseUrls[k] = v
+				}
+			*/
+			yaag.Init(&yaag.Config{ // <- IMPORTANT, init the middleware.
+				On:       config.Global.Api.Docs.Enabled,
+				DocTitle: config.Global.Api.Docs.DocTitle,
+				DocPath:  "./shared/docs/apidoc.html",
+				// DocPath:  filepath.Join(config.Global.Api.Path, config.Global.Api.Docs.DocPath, config.Global.Api.Docs.DocFile),
+				BaseUrls: map[string]string{"Production": "", "Staging": ""}, // docBaseUrls,
+			})
+
+			app.Use(irisyaag.New()) // <- IMPORTANT, register the middleware.
+		}
+	}
+
+	// init rate limiter (contrib)
+	ral = tollbooth.NewLimiter(5, &limiter.ExpirableOptions{
+		DefaultExpirationTTL: time.Hour,
+	})
+
+	app.Get("/rate/limiter", ratemiddleware.LimitHandler(ral), func(ctx iris.Context) {
+		ctx.HTML("<b>Hello, rate limiter!</b>")
+	})
+
+	// setup routes defined in api.yml
+	// note: extend with fake-api, mock-generator, data aggregator features...
 	v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodOptions, iris.MethodPost, iris.MethodGet) // .AllowAll() // .AllowMethods(iris.MethodOptions) // <- important for the preflight.
 	{
 		// fake-api experimental stuff
@@ -267,136 +260,37 @@ func main() {
 		}
 
 		// cms related experimental stuff
+		// ref: github.com/liunian1004/goes
 		v1.Get("/categories", nil)
 		v1.Post("/category/create", category.Create)
 		v1.Post("/category/update", category.Update)
+
+		// ref: github.com/MuchChaca/Dashpanel
+		// !!! to check !!!
+
+		// ref: github.com/minhlucvan/gotodo
+		// !!! to check !!!
 	}
 
-	/*
-		v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodGet) // <- important for the preflight.
-		{
-			if errs := generateRoutesParty(v1, iris.MethodGet); len(errs) != 0 {
-				fmt.Printf("%d Error(s) in config: \n", len(errs))
-				for i, err := range errs {
-					fmt.Printf(" %d: %s\n", i+1, err.Error())
-				}
-				os.Exit(1)
-			}
-		}
+	// setup websocket/todo app routes (mvc)
+	setupWsMvcTodo(app)
 
-		v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodPost) // <- important for the preflight.
-		{
-			if errs := generateRoutesParty(v1, iris.MethodPost); len(errs) != 0 {
-				fmt.Printf("%d Error(s) in config: \n", len(errs))
-				for i, err := range errs {
-					fmt.Printf(" %d: %s\n", i+1, err.Error())
-				}
-				os.Exit(1)
-			}
-		}
-	*/
+	// setup default websocket routes
+	setupWebsocket(app)
 
-	routes := app.GetRoutes()
-	for _, r := range routes {
-		pp.Println(r.Name)
-	}
+	// setup socket.io routes
+	setupSocketIO(app)
 
-	// register the server on an endpoint.
-	// see the inline javascript code in the websockets.html, this endpoint is used to connect to the server.
-	app.Get("/ws", ws.Handler())
+	// setup fake room via websocket
+	setupFakeWebsocket(app)
 
-	// serve the javascript built'n client-side library,
-	// see websockets.html script tags, this path is used.
-	app.Any("/iris-ws.js", func(ctx iris.Context) {
-		ctx.Write(websocket.ClientSource)
-	})
-
-	// http://localhost:8080/todos/iris-ws.js
-	// serve the javascript client library to communicate with
-	// the iris high level websocket event system.
-	// app.Any("/iris-ws.js", websocket.ClientHandler())
-
-	serverSocketIO, err := newSocketIO(nil)
-	if err != nil {
-		Error("create socket.io error.")
-		os.Exit(-1)
-	}
-
-	// serve the socket.io endpoint.
-	app.Any("/socket.io/{p:path}", iris.FromStd(serverSocketIO))
-
-	// serve the index.html and the javascript libraries at
-	// http://localhost:8080
-	// app.StaticWeb("/", "./public")
-
-	app.OnErrorCode(iris.StatusNotFound, func(ctx iris.Context) {
-		ctx.JSON(iris.Map{
-			"err":  model.NotFound,
-			"msg":  "Not Found",
-			"data": iris.Map{},
-		})
-	})
-
-	app.OnErrorCode(iris.StatusInternalServerError, func(ctx iris.Context) {
-		ctx.JSON(iris.Map{
-			"err":     model.ERROR,
-			"message": "error",
-			"data":    iris.Map{},
-		})
-	})
-
-	// serve our app in public, public folder
-	// contains the client-side vue.js application,
-	// no need for any server-side template here,
-	// actually if you're going to use vue without any
-	// back-end services, you can just stop after this line and start the server.
+	// create routes for static vue-element-admin
 	app.StaticWeb("/admin", "./shared/dist/web/")
-	// app.StaticWeb("/admin/js", "./shared/dist/web/js")
 
-	// $ go get -u github.com/jteeuwen/go-bindata/...
-	// go-bindata -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
-	// app.StaticWeb("/admin", "./static")
-	// app.StaticEmbedded("/admin", "./shared/dist/web/", Asset, AssetNames)
-
-	// $ go get -u github.com/kataras/bindata/cmd/bindata
-	// bindata -pkg embedded -o ./embedded/bindata-gz.go ./shared/dist/web/...
-	// bindata -pkg main -o ./cmd/snk-goes/bindata.go ./shared/dist/web/...
-
-	/*
-		Strange behavior of app.StaticEmbeddedGzip. It cannot detech and render index page automatically
-		http://localhost:8080/index.html works
-		but
-		http://localhost:8080/ not found
-	*/
-
-	/*
-		I propose another bad trick to write content of index.html when request is /
-		Chrome, FireFox render correctly but Safari does not work at all
-	*/
-	/*
-		app.Get("/", func (ctx iris.Context) {
-			if data, err := GzipAsset("assets/index.html"); err != nil {
-				ctx.StatusCode(http.StatusInternalServerError)
-				ctx.WriteString("index.html is not found")
-				return
-			} else {
-				ctx.StatusCode(http.StatusOK)
-				ctx.Header("Content-Encoding", "gzip")
-				ctx.ContentType("text/html")
-				ctx.WriteGzip(data)
-			}
-		})
-	*/
+	// note: not working, do not redirect index.html to /admin but /admin/index.html works
 	// app.StaticEmbeddedGzip("/admin", "shared/dist/web", GzipAsset, GzipAssetNames)
 
-	/*
-		app.Get("/admin/{p:path}", func(ctx iris.Context) {
-			context.AddGzipHeaders(ctx.ResponseWriter())
-			ctx.ContentType("text/html")
-			ctx.Write(_gzipBindataWebindexhtml)
-		})
-	*/
-
+	// start test servers
 	if *testServers {
 		// start a secondary server listening on localhost:9090.
 		// use "go" keyword for Listen functions if you need to use more than one server at the same app.
@@ -416,8 +310,14 @@ func main() {
 		println("Start a server listening on http://localhost:5050")
 	}
 
-	address := iris.Addr(":" + strconv.Itoa(config.Global.Server.Port))
+	// print created endpoints
+	routes := app.GetRoutes()
+	for _, r := range routes {
+		pp.Println(r.Name)
+	}
 
+	// init web-service
+	address := iris.Addr(":" + strconv.Itoa(config.Global.Server.Port))
 	if config.Global.Server.Env == model.DevelopmentMode {
 		app.Run(address)
 	} else {
@@ -425,59 +325,3 @@ func main() {
 		app.Run(address, iris.WithoutVersionChecker)
 	}
 }
-
-// app.StaticWeb("/admin", "./shared/dist/web/")
-// app.StaticWeb("/admin/js", "./shared/dist/web/js")
-
-// $ go get -u github.com/shuLhan/go-bindata/...
-// $ go-bindata ./templates/...
-// $ go build
-// $ ./embedding-templates-into-app
-// html files are not used, you can delete the folder and run the example.
-// tmpl.Binary(views.Asset, views.AssetNames) // <-- IMPORTANT
-
-// app.RegisterView(tmpl)
-
-/*
-	// // DASH
-	// create a sub router an register the client-side library for the iris websockets,
-	// you could skip it but iris websockets supports socket.io-like API.
-	dashRouter := app.Party("/dash")
-	// http://localhost:8080/todos/iris-ws.js
-	// serve the javascript client library to communicate with
-	// the iris high level websocket event system.
-	dashRouter.Any("/iris-ws.js", websocket.ClientHandler())
-
-	//create our mvc app targeted to /dash relative sub path.
-	dashApp := mvc.New(dashRouter)
-
-	// any dependencies bindings here . . .
-	dashApp.Register(
-		// dash.NewMemoryService(),
-		// sess.Start,
-		ws.Upgrade,
-	)
-
-	// controllers registration here
-	dashApp.Handle(new(controller.ProcessController))
-
-	// app.Party("/process", )
-
-	// PartyFunc is working ! Yay !
-	app.PartyFunc("/process", func(process iris.Party) {
-		// users.Use(myAuthMiddlewareHandler)
-
-		// http://localhost:8080/users/42/profile
-		process.Put("/start/{name:string}", controller.StartProcess)
-		// http://localhost:8080/users/messages/1
-		// users.Get("/inbox/{id:int}", userMessageHandler)
-	})
-
-	// process := app.Party("/process")
-	// app.PartyFunc("/process", func (process iris.Party)) {
-	//	process.Put("/start/{name:string}", controller.ProcessController.StartProcess())
-	// })
-*/
-
-// create our mvc app targeted to /dash relative sub path.
-// snkApp := mvc.New(dashRouter)
