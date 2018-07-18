@@ -82,13 +82,33 @@ type Api struct {
 	Delay     int        `json:"delay,omitempty" yaml:"delay,omitempty" toml:"delay,omitempty"`
 	Auth      *Auth      `json:"auth,omitempty" yaml:"auth,omitempty" toml:"auth,omitempty"`
 	JWT       *JWTData   `json:"jwt,omitempty" yaml:"jwt,omitempty" toml:"jwt,omitempty"`
+	Cors      *Cors      `json:"cors,omitempty" yaml:"cors,omitempty" toml:"cors,omitempty"`
+	Docs      *Docs      `json:"docs,omitempty" yaml:"docs,omitempty" toml:"docs,omitempty"`
 	EnableLog bool       `json:"enable_log,omitempty" yaml:"enable_log,omitempty" toml:"enable_log,omitempty"`
+}
+
+type Docs struct {
+	Enabled  bool              `json:"enable,omitempty" yaml:"enable,omitempty" toml:"enable,omitempty"`
+	BaseUrls map[string]string `json:"urls,omitempty" yaml:"urls,omitempty" toml:"urls,omitempty"`
+	DocTitle string            `default:"Api Documentation" json:"title,omitempty" yaml:"title,omitempty" toml:"title,omitempty"`
+	DocPath  string            `default:"/docs" json:"path,omitempty" yaml:"path,omitempty" toml:"path,omitempty"`
+	DocFile  string            `default:"apidoc.html" json:"filename,omitempty" yaml:"filename,omitempty" toml:"filename,omitempty"`
 }
 
 // Resource respresent a single resource in rest api.
 type Resource struct {
 	Name    string            `json:"name" yaml:"name" toml:"name"`
 	Headers map[string]string `json:"headers,omitempty" yaml:"headers,omitempty" toml:"headers,omitempty"`
+}
+
+type Cors struct {
+	AllowedOrigins     []string `json:"allowed_origins,omitempty" yaml:"allowed_origins,omitempty" toml:"allowed_origins,omitempty"`
+	AllowedMethods     []string `json:"allowed_methods,omitempty" yaml:"allowed_methods,omitempty" toml:"allowed_methods,omitempty"`
+	AllowedHeaders     []string `json:"allowed_headers,omitempty" yaml:"allowed_headers,omitempty" toml:"allowed_headers,omitempty"`
+	AllowCredentials   bool     `default:"false" json:"allow_credentials,omitempty" yaml:"allow_credentials,omitempty" toml:"allow_credentials,omitempty"`
+	OptionsPassthrough bool     `default:"false" json:"options_pass_through,omitempty" yaml:"options_pass_through,omitempty" toml:"options_pass_through,omitempty"`
+	Debug              bool     `default:"false" json:"debug,omitempty" yaml:"debug,omitempty" toml:"debug,omitempty"`
+	MaxAge             int      `default:"3600" json:"max_age,omitempty" yaml:"max_age,omitempty" toml:"max_age,omitempty"`
 }
 
 // JWTData represents jwt token details.
@@ -123,17 +143,40 @@ type Static struct {
 }
 
 type Server struct {
-	Env       string `default:"dev" json:"env" yaml:"env" toml:"env"`
-	SessionID string `default:"snk" json:"session_id" yaml:"session_id" toml:"session_id"`
-	Port      int    `default:"8080" json:"port" yaml:"port" toml:"port"`
-	Engine    string `default:"iris" json:"engine" yaml:"engine" toml:"engine"`
+	Env       string   `default:"dev" json:"env" yaml:"env" toml:"env"`
+	SessionID string   `default:"snk" json:"session_id" yaml:"session_id" toml:"session_id"`
+	Port      int      `default:"8080" json:"port" yaml:"port" toml:"port"`
+	Engine    string   `default:"iris" json:"engine" yaml:"engine" toml:"engine"`
+	Session   *Session `json:"session,omitempty" yaml:"session,omitempty" toml:"session,omitempty"`
 	Settings  struct {
-		Iris *Iris `json:"iris,omitempty" yaml:"iris,omitempty" toml:"iris,omitempty"`
-		Gin  *Gin  `json:"gin,omitempty" yaml:"gin,omitempty" toml:"gin,omitempty"`
+		Gin     *Gin     `json:"gin,omitempty" yaml:"gin,omitempty" toml:"gin,omitempty"`
+		Iris    *Iris    `json:"iris,omitempty" yaml:"iris,omitempty" toml:"iris,omitempty"`
+		Echo    *Echo    `json:"echo,omitempty" yaml:"echo,omitempty" toml:"echo,omitempty"`
+		Gorilla *Gorilla `json:"gorilla,omitempty" yaml:"gorilla,omitempty" toml:"gorilla,omitempty"`
 	} `json:"settings,omitempty" yaml:"settings,omitempty" toml:"settings,omitempty"`
+	Debug bool `default:"debug" json:"debug" yaml:"debug" toml:"debug"`
+}
+
+type Session struct {
+	ID                          string        `default:"snk" json:"id,omitempty" yaml:"id,omitempty" toml:"id,omitempty"`
+	Expires                     time.Duration `default:"3600" json:"expires,omitempty" yaml:"expires,omitempty" toml:"expires,omitempty"` // <=0 means unlimited life. Defaults to 0.
+	AllowReclaim                bool          `default:"false" json:"allow_reclaim,omitempty" yaml:"allow_reclaim,omitempty" toml:"allow_reclaim,omitempty"`
+	CookieSecureTLS             bool          `default:"false" json:"cookie_secure_tls,omitempty" yaml:"cookie_secure_tls,omitempty" toml:"cookie_secure_tls,omitempty"`
+	DisableSubdomainPersistence bool          `default:"false" json:"disable_subdomain_persistence,omitempty" yaml:"disable_subdomain_persistence,omitempty" toml:"disable_subdomain_persistence,omitempty"`
+	DataDir                     string        `default:"./shared/data/sessions" json:"data_dir,omitempty" yaml:"data_dir,omitempty" toml:"data_dir,omitempty"`
 }
 
 type Gin struct {
+	TimeFormat string `default:"Mon, 02 Jan 2006 15:04:05 GMT" json:"time_format,omitempty" yaml:"time_format,omitempty" toml:"time_format,omitempty"`
+	Charset    string `default:"UTF-8" json:"charset,omitempty" yaml:"charset,omitempty" toml:"charset,omitempty"`
+}
+
+type Echo struct {
+	TimeFormat string `default:"Mon, 02 Jan 2006 15:04:05 GMT" json:"time_format,omitempty" yaml:"time_format,omitempty" toml:"time_format,omitempty"`
+	Charset    string `default:"UTF-8" json:"charset,omitempty" yaml:"charset,omitempty" toml:"charset,omitempty"`
+}
+
+type Gorilla struct {
 	TimeFormat string `default:"Mon, 02 Jan 2006 15:04:05 GMT" json:"time_format,omitempty" yaml:"time_format,omitempty" toml:"time_format,omitempty"`
 	Charset    string `default:"UTF-8" json:"charset,omitempty" yaml:"charset,omitempty" toml:"charset,omitempty"`
 }

@@ -3,7 +3,35 @@ api:
   port: 8080
   enable_log: true
   delay: 500
-  path: "/"
+  path: "/api/v1"
+  docs:
+    enable: true
+    urls:
+      production: ""
+      staging: ""
+    title: SNK Api Documentation
+    path: /doc
+    filename: apidoc.html
+  cors:
+    allowed_origins:
+    - http://localhost:9200
+    - http://localhost:7474
+    - http://localhost:8080
+    - http://localhost:3000
+    - http://localhost:9528
+    allowed_methods:
+    - POST
+    - GET
+    - HEAD
+    - OPTIONS
+    allowed_headers:
+    - Access-Control-Allow-Origin
+    - X-Auth-Token
+    - X-Token
+    allow_credentials: true
+    options_pass_through: false
+    max_age: 3600
+    debug: true
   resources:
   - name: accounts
     headers:

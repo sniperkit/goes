@@ -1,11 +1,22 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 
 	// external
 	"github.com/k0kubun/pp"
+	wd "github.com/xyproto/workingdir"
 )
+
+func workDir(path string) {
+	dir, err := wd.New(path)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("There are %d entries in %s\n", len(dir.List()), dir.Path())
+	fmt.Printf("Current date: %s\n", dir.TrimRun("date --iso-8601"))
+}
 
 func prettyPrint(msg interface{}) {
 	pp.Println(msg)

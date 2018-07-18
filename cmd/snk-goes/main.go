@@ -8,27 +8,39 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 
 	// internal
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
+	"github.com/sniperkit/snk.golang.vuejs-multi-backend/controller/category"
 	. "github.com/sniperkit/snk.golang.vuejs-multi-backend/logger"
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/model"
-	// "github.com/sniperkit/snk.golang.vuejs-multi-backend/route"
 
 	// external
+
+	// iris - core
 	"github.com/sniperkit/iris"
+	"github.com/sniperkit/iris/context"
 	"github.com/sniperkit/iris/middleware/logger"
 	"github.com/sniperkit/iris/middleware/recover"
+	"github.com/sniperkit/iris/sessions"
+	"github.com/sniperkit/iris/sessions/sessiondb/badger"
 	"github.com/sniperkit/iris/websocket"
-	// "github.com/sniperkit/iris/context"
 	// "github.com/sniperkit/iris/mvc"
-	// "github.com/sniperkit/iris/sessions"
 
-	"github.com/dgrijalva/jwt-go"
+	// iris - middleware
 	corsmiddleware "github.com/sniperkit/iris-contrib-middleware/cors"
 	jwtmiddleware "github.com/sniperkit/iris-contrib-middleware/jwt"
+	ratemiddleware "github.com/sniperkit/iris-contrib-middleware/tollboothic"
 
-	// debug
+	// external - 3rdparty
+	"github.com/sniperkit/yaag/irisyaag"
+	"github.com/sniperkit/yaag/yaag"
+
+	"github.com/didip/tollbooth"
+	"github.com/didip/tollbooth/limiter"
+
+	"github.com/dgrijalva/jwt-go"
 	"github.com/k0kubun/pp"
 )
 
@@ -56,8 +68,12 @@ var (
 )
 
 var (
-	app *iris.Application
 	cfg *config.Config
+	app *iris.Application
+	crs context.Handler
+	ws  *websocket.Server
+	wsc websocket.Config
+	ral *limiter.Limiter
 )
 
 func main() {
@@ -90,9 +106,8 @@ func main() {
 		pp.Println("config.Server", config.Global.Server)
 	}
 
-	var wsCfg websocket.Config
 	if config.Global.Websocket != nil {
-		wsCfg = websocket.Config{
+		wsc = websocket.Config{
 			ReadBufferSize:    config.Global.Websocket.ReadBufferSize,
 			WriteBufferSize:   config.Global.Websocket.WriteBufferSize,
 			BinaryMessages:    config.Global.Websocket.BinaryMessages,
@@ -104,12 +119,44 @@ func main() {
 			PongTimeout:      config.Global.Websocket.PongTimeout,
 			PingPeriod:       config.Global.Websocket.PingPeriod,
 		}
+		ws = websocket.New(wsc)
+		ws.OnConnection(handleConnection)
 	}
 
-	ws := websocket.New(wsCfg)
-	ws.OnConnection(handleConnection)
+	if config.Global.Server.Session != nil {
+
+		db, err := badger.New(config.Global.Server.Session.DataDir)
+		if err != nil {
+			panic(err)
+		}
+
+		// close and unlock the database when control+C/cmd+C pressed
+		iris.RegisterOnInterrupt(func() {
+			db.Close()
+		})
+
+		defer db.Close() // close and unlock the database if application errored.
+
+		sess := sessions.New(sessions.Config{
+			Cookie:       config.Global.Server.Session.ID,
+			Expires:      config.Global.Server.Session.Expires, // <=0 means unlimited life. Defaults to 0.
+			AllowReclaim: config.Global.Server.Session.AllowReclaim,
+		})
+
+		// IMPORTANT:
+		sess.UseDatabase(db)
+
+	}
 
 	app = iris.New()
+
+	ral = tollbooth.NewLimiter(5, &limiter.ExpirableOptions{
+		DefaultExpirationTTL: time.Hour,
+	})
+
+	app.Get("/rate/limiter", ratemiddleware.LimitHandler(ral), func(ctx iris.Context) {
+		ctx.HTML("<b>Hello, rate limiter!</b>")
+	})
 
 	if strings.ToLower(config.Global.Server.Engine) == "iris" && config.Global.Server.Settings.Iris != nil {
 		app.Configure(iris.WithConfiguration(
@@ -127,53 +174,64 @@ func main() {
 		)
 	}
 
-	// set in server.yml file
-	crs := corsmiddleware.New(corsmiddleware.Options{
-		// AllowedOrigins is a list of origins a cross-domain request can be executed from.
-		// If the special "*" value is present in the list, all origins will be allowed.
-		// An origin may contain a wildcard (*) to replace 0 or more characters
-		// (i.e.: http://*.domain.com). Usage of wildcards implies a small performance penalty.
-		// Only one wildcard can be used per origin.
-		// Default value is ["*"]
-		AllowedOrigins: []string{
-			"http://localhost:9200",
-			"http://localhost:7474",
-			"http://localhost:8080",
-			"http://localhost:3000",
-			"http://localhost:9528",
-		}, // allows everything, use that to change the hosts.
+	if config.Global.Api.Cors != nil {
+		// set in server.yml file
+		crs = corsmiddleware.New(corsmiddleware.Options{
+			// AllowedOrigins is a list of origins a cross-domain request can be executed from.
+			// If the special "*" value is present in the list, all origins will be allowed.
+			// An origin may contain a wildcard (*) to replace 0 or more characters
+			// (i.e.: http://*.domain.com). Usage of wildcards implies a small performance penalty.
+			// Only one wildcard can be used per origin.
+			// Default value is ["*"]
+			AllowedOrigins: config.Global.Api.Cors.AllowedOrigins,
 
-		// AllowedMethods is a list of methods the client is allowed to use with
-		// cross-domain requests. Default value is simple methods (HEAD, GET and POST).
-		AllowedMethods: []string{"HEAD", "GET", "POST", "OPTIONS"},
+			// AllowedMethods is a list of methods the client is allowed to use with
+			// cross-domain requests. Default value is simple methods (HEAD, GET and POST).
+			AllowedMethods: config.Global.Api.Cors.AllowedMethods,
 
-		// AllowedHeaders is list of non simple headers the client is allowed to use with
-		// cross-domain requests.
-		// If the special "*" value is present in the list, all headers will be allowed.
-		// Default value is [] but "Origin" is always appended to the list.
-		AllowedHeaders: []string{"Access-Control-Allow-Origin", "X-Auth-Token", "X-Token"},
+			// AllowedHeaders is list of non simple headers the client is allowed to use with
+			// cross-domain requests.
+			// If the special "*" value is present in the list, all headers will be allowed.
+			// Default value is [] but "Origin" is always appended to the list.
+			AllowedHeaders: config.Global.Api.Cors.AllowedHeaders,
 
-		// ExposedHeaders indicates which headers are safe to expose to the API of a CORS
-		// API specification
-		// ExposedHeaders []string{},
+			// ExposedHeaders indicates which headers are safe to expose to the API of a CORS
+			// API specification
+			// ExposedHeaders []string{},
 
-		// MaxAge indicates how long (in seconds) the results of a preflight request
-		// can be cached
-		MaxAge: 3600,
+			// MaxAge indicates how long (in seconds) the results of a preflight request
+			// can be cached
+			MaxAge: config.Global.Api.Cors.MaxAge,
 
-		// AllowCredentials indicates whether the request can include user credentials like
-		// cookies, HTTP authentication or client side SSL certificates.
-		AllowCredentials: true,
+			// AllowCredentials indicates whether the request can include user credentials like
+			// cookies, HTTP authentication or client side SSL certificates.
+			AllowCredentials: config.Global.Api.Cors.AllowCredentials,
 
-		// OptionsPassthrough instructs preflight to let other potential next handlers to
-		// process the OPTIONS method. Turn this on if your application handles OPTIONS.
-		OptionsPassthrough: false,
+			// OptionsPassthrough instructs preflight to let other potential next handlers to
+			// process the OPTIONS method. Turn this on if your application handles OPTIONS.
+			OptionsPassthrough: config.Global.Api.Cors.OptionsPassthrough,
 
-		// Debugging flag adds additional output to debug server side CORS issues
-		Debug: true,
-	})
+			// Debugging flag adds additional output to debug server side CORS issues
+			Debug: config.Global.Api.Cors.Debug,
+		})
+	}
 
-	// pp.Println("cors: ", crs)
+	if config.Global.Api.Docs != nil {
+
+		docBaseUrls := make(map[string]string, len(config.Global.Api.Docs.BaseUrls))
+		for k, v := range config.Global.Api.Docs.BaseUrls {
+			docBaseUrls[k] = v
+		}
+
+		yaag.Init(&yaag.Config{ // <- IMPORTANT, init the middleware.
+			On:       config.Global.Api.Docs.Enabled,
+			DocTitle: config.Global.Api.Docs.DocTitle,
+			DocPath:  filepath.Join(config.Global.Api.Docs.DocPath, config.Global.Api.Docs.DocFile),
+			BaseUrls: docBaseUrls,
+		})
+		app.Use(irisyaag.New()) // <- IMPORTANT, register the middleware.
+
+	}
 
 	if *jwtMode {
 		jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
@@ -191,20 +249,27 @@ func main() {
 	app.Use(logger.New())
 	app.Use(recover.New())
 
+	if *debugMode {
+		app.Logger().SetLevel("debug")
+	}
+
 	// irisMiddleware := iris.FromStd(nativeTestMiddleware)
 	// app.Use(irisMiddleware)
 
-	// route.Route(app)
-
 	v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodOptions, iris.MethodPost, iris.MethodGet) // .AllowAll() // .AllowMethods(iris.MethodOptions) // <- important for the preflight.
 	{
-		if errs := generateRoutesParty(v1, iris.MethodOptions); len(errs) != 0 {
+		// fake-api experimental stuff
+		if errs := generateRoutesParty(v1); len(errs) != 0 {
 			fmt.Printf("%d Error(s) in config: \n", len(errs))
 			for i, err := range errs {
 				fmt.Printf(" %d: %s\n", i+1, err.Error())
 			}
-			os.Exit(1)
 		}
+
+		// cms related experimental stuff
+		v1.Get("/categories", nil)
+		v1.Post("/category/create", category.Create)
+		v1.Post("/category/update", category.Update)
 	}
 
 	/*
@@ -235,30 +300,6 @@ func main() {
 	for _, r := range routes {
 		pp.Println(r.Name)
 	}
-
-	/*
-		var errs []error
-		app, errs = generateRoutes(app)
-		if len(errs) != 0 {
-			fmt.Printf("%d Error(s) in config: \n", len(errs))
-			for i, err := range errs {
-				fmt.Printf(" %d: %s\n", i+1, err.Error())
-			}
-			os.Exit(1)
-		}
-	*/
-
-	// 测试模式
-	//if config.Global.Server.Env == model.DevelopmentMode {
-	//	app.Adapt(iris.DevLogger())
-	//}
-
-	//app.Adapt(sessions.New(sessions.Config{
-	//	Cookie: config.Global.Server.SessionID,
-	//	Expires: time.Minute * 20,
-	//}))
-
-	//app.Adapt(httprouter.New())
 
 	// register the server on an endpoint.
 	// see the inline javascript code in the websockets.html, this endpoint is used to connect to the server.
@@ -380,6 +421,7 @@ func main() {
 	if config.Global.Server.Env == model.DevelopmentMode {
 		app.Run(address)
 	} else {
+		// app.Run(iris.Addr(":8080"), iris.WithoutServerError(iris.ErrServerClosed))
 		app.Run(address, iris.WithoutVersionChecker)
 	}
 }

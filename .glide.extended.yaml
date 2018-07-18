@@ -1,0 +1,1412 @@
+---
+package: github.com/sniperkit/snk.golang.vuejs-multi-backend
+ignore:
+- github.com/jeffail/tunny
+- github.com/roscopecoltran/sniperkit-limo/model/generate
+- github.com/roscopecoltran/sniperkit-limo/plugin
+- github.com/roscopecoltran/sniperkit-limo/plugins/docker
+- gob
+- gopkg.in/libgit2/git2go.v26
+- enterprise.getqor.com
+- enterprise.getqor.com/microsite
+- github.com/qor/qor-example
+- github.com/docker/distribution
+- golang.org/x/crypto/ssh/knownhosts
+- github.com/docker/docker
+- github.com/Sirupsen/logrus
+import:
+- package: github.com/adjust/rmq
+- package: github.com/peterbourgon/diskv
+- package: github.com/gregjones/httpcache
+  subpackages:
+  - diskcache
+  - leveldbcache
+  - memcache
+  - redis
+- package: github.com/qor/audited
+- package: github.com/onsi/ginkgo
+- package: github.com/smartystreets/goconvey
+  subpackages:
+  - convey
+- package: github.com/agrison/go-tablib
+- package: gopkg.in/gin-contrib/cors.v1
+- package: github.com/geekypanda/httpcache
+- package: github.com/prometheus/client_golang
+  subpackages:
+  - prometheus
+- package: github.com/zbindenren/negroni-prometheus
+- package: github.com/gorilla/pat
+- package: github.com/aerokite/go-github-watcher
+  subpackages:
+  - pkg/transport
+  - pkg/watcher
+  - pkg/github
+- package: github.com/src-d/rovers
+  subpackages:
+  - commands
+  - core
+  - providers
+  - utils
+- package: github.com/aviddiviner/gin-limit
+- package: github.com/generaltso/git4go
+- package: github.com/nhurel/dim
+  subpackages:
+  - cli
+- package: gopkg.in/unrolled/secure.v1
+- package: github.com/gin-gonic/contrib
+  subpackages:
+  - cache
+  - jwt
+  - sse
+- package: github.com/src-d/berserker
+  subpackages:
+  - extractor
+- package: gopkg.in/d4l3k/messagediff.v1
+- package: github.com/andybalholm/cascadia
+  subpackages:
+  - fuzz
+- package: github.com/Code-Hex/exit
+- package: github.com/src-d/borges
+- package: gopkg.in/src-d/enry.v1
+  subpackages:
+  - internal/tokenizer
+  - internal/code-generator
+  - shared
+  - data
+- package: github.com/PuerkitoBio/goquery
+- package: github.com/anschelsc/finder
+- package: github.com/tobyhede/go-underscore
+- package: github.com/motemen/ghq
+  subpackages:
+  - utils
+- package: github.com/fzzy/radix
+  subpackages:
+  - redis
+  - extra/pubsub
+- package: github.com/disintegration/mqmq
+- package: github.com/tobyhede/go-underscore
+- package: github.com/siesta/neo4j
+- package: gopkg.in/libgit2/git2go.v26
+- package: github.com/sotetsuk/gobibtex
+- package: github.com/sotetsuk/goscholar
+- package: github.com/advancedlogic/GoOse
+- package: github.com/ChimeraCoder/anaconda
+- package: github.com/alexedwards/scs
+- package: github.com/dgrijalva/jwt-go
+- package: gopkg.in/gcfg.v1
+  version: v1.2.0
+- package: github.com/nicksnyder/go-i18n
+  version: v1.8.1
+- package: github.com/nfnt/resize
+  version: master
+- package: gopkg.in/natefinch/lumberjack.v2
+  version: v2.1
+  vcs: git
+  repo: https://github.com/natefinch/lumberjack.git
+- package: github.com/urandom/readeef
+  version: v2.0
+  vcs: git
+  repo: https://github.com/urandom/readeef.git
+  subpackages:
+  - parser
+  - content
+  - content/base
+  - content/repo
+  - content/data
+  - content/sql
+  - locale
+  - popularity
+  - web
+  - api
+  - internal/legacy
+  - log
+  - pool
+- package: github.com/DevMine/srctool
+  subpackages:
+  - tool
+- package: github.com/dpb587/metalink
+  subpackages:
+  - verification
+  - transfer
+  - storage
+  - repository
+  - file
+- package: github.com/vsrc/qdb
+- package: github.com/sas1024/gorm-jsonb
+  subpackages:
+  - jsonb
+- package: github.com/plopezm/goedb
+  subpackages:
+  - config
+  - metadata
+  - manager
+- package: github.com/hwfy/expression
+- package: github.com/chronitonapp/gormseries
+- package: github.com/etcinit/ohmygorm
+  subpackages:
+  - config
+- package: github.com/lvzhihao/gormigrate
+  subpackages:
+  - libs
+  - cmd
+- package: github.com/wenzhenxi/phalgo
+  subpackages:
+  - validation
+  - httplib
+  - errors
+- package: github.com/o1egl/gormrus
+- package: github.com/go-gormigrate/gormigrate
+- package: github.com/qor/transition
+- package: github.com/kalafut/imohash
+- package: github.com/gonyi/yIndex
+- package: github.com/danward79/csvtool
+- package: github.com/waluigi27/gocsv
+- package: github.com/rubinovitz/faviconfetch
+- package: github.com/sabhiram/go-gitignore
+- package: github.com/Rompei/arxiv
+- package: github.com/spf13/cobra
+#  version: master
+#- package: github.com/caltechlibrary/datatools
+#  subpackages:
+#  - timefmt
+#  - reldate
+#- package: github.com/caltechlibrary/cli
+# - package: github.com/khezen/hunt
+# - package: github.com/mingrammer/commonregex
+- package: github.com/jmcvetta/napping
+- package: github.com/alixaxel/pagerank
+- package: github.com/jinzhu/copier
+# - package: github.com/go-xorm/xorm
+- package: github.com/graphql-go/graphql
+  subpackages:
+  - gqlerrors
+  - language/ast
+  - language/kinds
+  - language/lexer
+  - language/location
+  - language/printer
+  - language/source
+  - language/typeinfo
+  - language/visitor
+- package: github.com/blevesearch/blevex
+  subpackages:
+  - batcher
+  - cznicb
+  - detectlang
+  - icu
+  - lang/en
+  - lang/fr
+  - lang/ja
+  - lang/es
+  - leveldb
+  - preload
+  - rocksdb
+  - stemmer
+- package: github.com/danieldk/go2vec
+- package: gopkg.in/mgo.v2
+  version: v2-unstable
+  repo: https://github.com/go-mgo/mgo.git
+  vcs: git
+  subpackages:
+  - bson
+  - txn
+  - internal/scram
+  - internal/sasl
+  - internal/json
+- package: github.com/bbalet/stopwords
+- package: github.com/bradfitz/gomemcache
+  subpackages:
+  - memcache
+- package: github.com/barthr/newsapi
+- package: github.com/plutov/bigfloat
+- package: github.com/yunge/sphinx
+- package: github.com/slvmnd/gosphinx
+- package: github.com/kpacha/bloomis
+- package: github.com/kpacha/gin-jwks
+  subpackages:
+  - gin
+- package: github.com/kpacha/gin-auth0-profile
+- package: github.com/phamhongviet/godsv
+- package: github.com/laher/nilcheck
+- package: github.com/olivere/nullable
+- package: github.com/olivere/validation
+- package: github.com/kamildrazkiewicz/go-flow
+- package: github.com/fabulousduck/Librarian
+- package: github.com/MixedMessages/taskrunner
+- package: github.com/unchartedsoftware/deluge
+  subpackages:
+  - document
+  - elastic/v2
+  - elastic/v5
+  - equalizer
+  - hdfs
+  - input/elastic
+  - input/file
+  - input/hdfs
+  - pool
+  - progress
+  - threshold
+  - util
+- package: github.com/dixonwille/skywalker
+- package: github.com/dc0d/workerpool
+- package: github.com/orcaman/concurrent-map
+- package: github.com/AlexSteele/deref
+- package: github.com/gofan1776/safe_panic
+- package: github.com/cjrd/allocate
+- package: github.com/rikonor/go-mapstruct
+- package: github.com/rafaeldias/async
+- package: github.com/bluele/gcache
+- package: github.com/bluele/go-flow
+  subpackages:
+  - flow
+# mentions
+- package: github.com/knakk/mormor
+  subpackages:
+  - entity
+- package: github.com/gtfierro/hod
+  subpackages:
+  - db
+  - goraptor
+  - query
+  - server
+  - buildings
+  - clients/go
+- package: github.com/koding/multiconfig
+- package: github.com/bigdrum/godataloader
+- package: github.com/foolin/gocsv
+# - package: github.com/gogather/safemap
+# task flow
+- package: github.com/richardwilkes/taskqueue
+- package: github.com/drrzmr/taskqueue-go
+- package: github.com/oleksandr/fbp
+- package: github.com/xgfone/go-taskflow
+- package: github.com/xh3b4sd/taskq
+- package: github.com/dogtools/dog
+  subpackages:
+  - extras
+  - run
+# garbage collector
+- package: github.com/atdiar/sac
+- package: github.com/apex/log
+- package: github.com/goeuro/myke
+  subpackages:
+  - core
+  - cmd
+- package: github.com/ngorm/ngorm
+- package: github.com/gernest/nutz
+# promises
+- package: github.com/jochasinga/go-promise
+# requests
+- package: github.com/jochasinga/requests
+# rx
+- package: github.com/jochasinga/rxgo-lite
+  subpackages:
+  - interfaces
+  - types
+# data processing
+- package: github.com/Jeffail/gabs
+# MQ
+- package: github.com/jeffail/tunny
+  vcs: git
+  repo: https://github.com/jeffail/tunny.git
+- package: github.com/nickalie/go-queue
+- package: github.com/donutloop/taskqueue
+- package: github.com/bubble501/taskQueue
+- package: github.com/phf/go-queue
+  subpackages:
+  - queue
+- package: github.com/unikorp/workmq
+- package: github.com/Damnever/goqueue
+- package: github.com/jeffail/benthos
+  version: master
+  vcs: git
+  repo: https://github.com/jeffail/benthos.git
+  subpackages:
+  - lib/broker
+  - lib/buffer
+  - lib/buffer/impl
+  - lib/input
+  - lib/output
+  - lib/types
+  - lib/util
+# goroutines
+- package: github.com/jochasinga/tooth
+- package: github.com/sbogacz/go-pipeline
+- package: github.com/fortytw2/leaktest
+- package: github.com/ivpusic/grpool
+- package: github.com/Code-Hex/golet
+  subpackages:
+  - internal/port
+- package: github.com/Code-Hex/retrygroup
+- package: github.com/silentred/gid
+- package: github.com/workanator/go-floc
+  subpackages:
+  - guard
+  - pred
+  - run
+# uuid
+- package: github.com/pborman/uuid
+- package: golang.org/x/text
+  repo: https://github.com/golang/text.git
+  vcs: git
+  version: v0.2.0-unicode10.0.0
+  subpackages:
+  - secure
+  - secure/bidirule
+  - secure/precis
+  - unicode
+  - transform
+  - unicode
+  - unicode/bidi
+  - unicode/cldr
+  - unicode/norm
+  - unicode/rangetable
+  - unicode/runenames
+  - search
+  - runes
+  - message
+  - message/catalog
+  - language
+  - feature/plural
+  - encoding/unicode
+  - encoding/unicode/utf32
+  - encoding
+  - collate
+  - cases
+  - number
+- package: github.com/xtgo/set
+  subpackages:
+  - internal
+- package: github.com/pkg/errors
+- package: github.com/awalterschulze/gographviz
+  subpackages:
+  - ast
+  - internal
+# - package: github.com/sideb0ard/AIGOR
+- package: github.com/peter3125/goparser
+- package: github.com/Financial-Times/concept-search-api
+  subpackages:
+  - helm/concept-search-api
+  - api
+  - service
+  - resources
+- package: github.com/Financial-Times/public-brands-api
+  subpackages:
+  - helm/public-brands-api
+  - brands
+- package: github.com/Financial-Times/email-news-api
+  subpackages:
+  - newsapi
+  - config
+  - test_helpers
+- package: github.com/roscopecoltran/elasticfeed-plugins
+  subpackages:
+  - indexer
+  - pipeline
+  - scenario
+  - scripts
+  - sensor
+  - plugins
+- package: github.com/roscopecoltran/feedify
+  subpackages:
+  - config
+  - context
+  - graph
+  - memcache
+  - neo4j
+  - redis
+  - stream
+  - service
+- package: github.com/roscopecoltran/elasticfeed
+  subpackages:
+  - conf
+  - elasticfeed
+  - event
+  - plugin
+  - population
+  - resource
+  - service
+  - workflow
+- package: github.com/danieldk/toponn
+  subpackages:
+  - label
+- package: github.com/unixpickle/gym-socket-api
+  subpackages:
+  - binding-go
+- package: github.com/unixpickle/treeagent
+- package: github.com/unixpickle/anydiff
+  subpackages:
+  - anyfwd
+  - anyseq
+- package: github.com/fako1024/topo
+  subpackages:
+  - graph
+- package: github.com/unixpickle/hmm
+- package: github.com/unixpickle/wordembed
+  subpackages:
+  - glove
+  - word2vec
+- package: github.com/unixpickle/lazyseq
+- package: github.com/unixpickle/rip
+- package: github.com/unixpickle/rip
+- package: github.com/unixpickle/anynet
+  subpackages:
+  - anyrnn
+  - anyconv
+  - anyctc
+  - anyff
+  - anymisc
+  - anys2s
+  - anys2v
+  - anysgd
+- package: github.com/unixpickle/anyvec
+  subpackages:
+  - anyvec32
+  - anyvec64
+  - anyvecsave
+- package: github.com/unixpickle/anyrl
+  subpackages:
+  - anya3c
+  - anyes
+  - anypg
+- package: github.com/jinyeom/neat
+- package: github.com/thoj/go-galib
+- package: github.com/Lazin/go-ngram
+- package: github.com/kljensen/snowball
+- package: github.com/asticode/go-astilectron
+- package: github.com/james-bowman/nlp
+- package: github.com/chewxy/lingo
+  subpackages:
+  - corpus
+  - dep
+  - lexer
+  - pos
+  - treebank
+- package: github.com/chewxy/gorgonia
+  subpackages:
+  - blase
+  - media
+  - tensor
+- package: github.com/adampresley/minitextindexer
+  subpackages:
+  - tree
+  - document
+  - listener
+  - config
+  - middleware
+  - controllers
+  - catalog
+- package: github.com/hippoai/raappd
+  subpackages:
+  - action
+  - constants
+  - responses
+  - resource
+- package: github.com/hippoai/goutil
+- package: github.com/oklog/ulid
+- package: github.com/flier/gohs
+  subpackages:
+  - hyperscan
+- package: github.com/mvdan/sh
+  subpackages:
+  - fileutil
+  - interp
+  - syntax
+- package: gopkg.in/go-playground/webhooks.v3
+  subpackages:
+  - github
+  - gitlab
+  - bitbucket
+- package: github.com/sadlil/go-trigger
+- package: github.com/ulule/deepcopier
+- package: github.com/go-playground/locales
+  subpackages:
+  - currency
+  - en_US
+  - fr_FR
+- package: github.com/txgruppi/command
+- package: github.com/Medium/medium-sdk-go
+- package: github.com/dghubble/go-twitter
+  subpackages:
+  - twitter
+- package: github.com/alecthomas/chroma
+  subpackages:
+  - lexers
+  - formatters
+  - quick
+  - styles
+- package: github.com/dlclark/regexp2
+  subpackages:
+  - syntax
+  -
+- package: github.com/likexian/whois-parser-go
+- package: github.com/amller/goRex
+- package: github.com/amller/time-relative
+- package: github.com/andygrunwald/go-trending
+- package: github.com/PaulRosset/go-hacknews
+- package: github.com/huandu/xstrings
+- package: github.com/shurcooL/githubql
+- package: github.com/huandu/facebook
+- package: github.com/Clarifai/clarifai-go
+- package: github.com/codemodus/parth
+- package: github.com/mvdan/xurls
+# - package: github.com/ross-spencer/nerlinks
+- package: github.com/hiteshjoshi/go-mitie-ner
+- package: github.com/sbl/ner
+- package: github.com/hippoai/getsort
+- package: github.com/hippoai/graphgo
+- package: github.com/hippoai/gonto
+- package: github.com/AlasdairF/NormalizeText
+- package: github.com/AlasdairF/Keywords
+- package: github.com/AlasdairF/Post
+- package: github.com/AlasdairF/Custom
+- package: github.com/AlasdairF/Conv
+- package: github.com/AlasdairF/Execute
+- package: github.com/AlasdairF/Titlecase
+- package: github.com/AlasdairF/BinSearch
+- package: github.com/AlasdairF/Classifier
+- package: github.com/AlasdairF/Tokenize
+- package: github.com/sethgrid/giraffe
+- package: github.com/hashicorp/go-getter
+  subpackages:
+  - helper/url
+- package: github.com/josharian/impl
+- package: golang.org/x/sys
+  subpackages:
+  - plan9
+  - unix
+  - windows
+  - windows/registry
+  - windows/svc
+  - windows/svc/mgr
+  - windows/svc/eventlog
+  - windows/svc/debug
+- package: github.com/ziutek/blas
+- package: github.com/Hello-Frankey/wordvector-rpc-server
+  subpackages:
+  - wordvector
+  - client
+- package: github.com/d4l3k/messagediff
+- package: github.com/d4l3k/go-internetarchive
+- package: github.com/degdb/degdb
+  subpackages:
+  - core
+  - crypto
+  - bitcoin
+  - network
+  - network/customhttp
+  - network/ip
+  - protocol
+  - query
+  - triplestore
+- package: github.com/d4l3k/etcdummy
+- package: github.com/d4l3k/go-highlight
+  subpackages:
+  - languages
+  - registry
+  - trie
+- package: github.com/rai-project/dlframework
+- package: github.com/rai-project/go-mxnet-predictor
+- package: github.com/rai-project/caffe
+- package: github.com/rai-project/caffe2
+- package: github.com/rai-project/go-caffe2
+- package: github.com/rai-project/carml
+- package: github.com/rai-project/mxnet
+- package: github.com/rai-project/tensorflow
+- package: github.com/docker/libkv
+  subpackages:
+  - store/boltdb
+  - store/consul
+  - store/etcd
+  - store/mock
+  - store/zookeeper
+- package: github.com/rai-project/inle
+- package: github.com/rai-project/raid
+- package: github.com/rai-project/rai
+- package: github.com/rai-project/dldataset
+  subpackages:
+  - vision
+- package: github.com/rai-project/rai-srcmanager
+  subpackages:
+  - pkg
+- package: github.com/dchest/cache
+- package: github.com/foobarcloud/emerald
+- package: github.com/patrickmn/go-cache
+- package: github.com/huandu/skiplist
+- package: github.com/ryszard/goskiplist
+  subpackages:
+  - skiplist
+- package: github.com/ryszard/tfutils
+  subpackages:
+  - go/tfrecord
+  - go/example
+- package: github.com/luk-ai/lukai
+  subpackages:
+  - bindable
+  - debounce
+  - metrics
+  - net
+  - protobuf/aggregatorpb
+  - protobuf/clientpb
+  - protobuf/managerpb
+  - protobuf/tensorflow
+  - tf
+# - package: github.com/linxGnu/gouv
+- package: github.com/sourcegraph/jsonrpc2
+  subpackages:
+  - websocket
+- package: github.com/beyang/go-astquery
+- package: github.com/go-playground/validator
+  subpackages:
+  - translations/en
+- package: github.com/asaskevich/govalidator
+- package: github.com/sourcegraph/go-vcs
+  subpackages:
+  - vcs/git
+  - vcs/gitcmd
+  - vcs/hg
+  - vcs/hgcmd
+  - vcs/internal
+  - vcs/ssh
+  - vcs/util
+- package: github.com/linxGnu/goseaweedfs
+  subpackages:
+  - model
+  - libs
+- package: github.com/mellistibco/DataPrep
+  subpackages:
+  - HumanActivity/PreProcessData
+- package: github.com/mellistibco/flogo-ml
+  subpackages:
+  - activities/inference
+  - framework
+  - framework/tf
+  - model
+  - tensorflow/core/framework
+  - tensorflow/core/protobuf
+  - tensorflow/core/example
+  - utils
+- package: github.com/jbowles/lexer
+- package: github.com/antzucaro/matchr
+- package: github.com/mynameisfiber/gohll
+- package: github.com/jbowles/wordvec
+- package: github.com/jbowles/nlpt-detect
+- package: github.com/jbowles/nlpt-ir
+- package: github.com/jbowles/wordlab
+- package: github.com/jbowles/nlpt-tkz
+- package: gopkg.in/cheggaaa/pb.v1
+- package: google.golang.org/api
+  subpackages:
+  - gmail/v1
+- package: github.com/sjwhitworth/golearn
+- package: github.com/cdipaolo/goml
+  subpackages:
+  - base
+  - perceptron
+  - linear
+  - text
+  - cluster
+- package: github.com/jbowles/topiclab
+- package: github.com/jbowles/nlpt-cld2
+- package: github.com/vseledkin/govector
+  subpackages:
+  - annoy
+  - govin
+  - index
+  - mmap
+- package: github.com/vseledkin/golda
+- package: github.com/vseledkin/gortex
+  subpackages:
+  - assembler
+  - utilities
+- package: github.com/vseledkin/goartm
+- package: github.com/alex023/eventbus
+- package: github.com/speps/go-hashids
+- package: github.com/wujiang/mglda
+- package: gopkg.in/gormigrate.v1
+- package: github.com/maruel/panicparse
+  subpackages:
+  - internal
+  - stack
+- package: github.com/jirfag/go-queryset
+  subpackages:
+  - queryset
+- package: github.com/jdkato/prose
+  subpackages:
+  - tokenize
+  - transform
+  - summarize
+  - tag
+  - internal/util
+  - internal/model
+  - chunk
+- package: github.com/shixzie/nlp
+- package: github.com/mholt/archiver
+- package: github.com/sybrexsys/RapidMQ
+  subpackages:
+  - queue
+- package: github.com/asaskevich/EventBus
+- package: github.com/muesli/beehive
+  subpackages:
+  - bees
+- package: github.com/muesli/regommend
+- package: github.com/yanpozka/allst
+- package: github.com/golang/protobuf
+  version: master
+  vcs: git
+  subpackages:
+  - proto
+  - protoc-gen-go/descriptor
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/empty
+  - ptypes/struct
+  - ptypes/timestamp
+  - ptypes/wrappers
+  - descriptor
+  - jsonpb
+  - proto
+- package: github.com/yanpozka/radixsort
+- package: github.com/yanpozka/trie
+- package: github.com/h2non/filetype
+- package: github.com/disintegration/pak
+- package: github.com/kelseyhightower/envconfig
+- package: github.com/blackjack/webcam
+  subpackages:
+  - ioctl
+- package: github.com/tebeka/selenium
+# - package: gopkg.in/redis.v3
+- package: gopkg.in/redis.v5
+- package: github.com/tensorflow/tensorflow
+  subpackages:
+  - tensorflow/go
+  - tensorflow/go/op
+- package: github.com/asimshankar/go-tensorflow
+  subpackages:
+  - variable
+  - word2vec
+- package: github.com/helinwang/tfsum
+  subpackages:
+  - tensorflow/core/util
+  - tensorflow/core/framework
+- package: github.com/danieldk/tensorflow
+  subpackages:
+  - config
+- package: github.com/galeone/tfgo
+- package: github.com/sauyon/go-chromemessage
+  subpackages:
+  - chrome
+- package: github.com/gocarina/gocsv
+- package: github.com/raff/godet
+- package: github.com/tchajed/wordenc
+  subpackages:
+  - shortdict
+- package: github.com/garyburd/redigo
+  subpackages:
+  - redis
+- package: golang.org/x/image
+  subpackages:
+  - bmp
+  - font
+  - math/fixed
+  - riff
+  - tiff
+  - tiff/lzw
+  - vp8
+  - vp8l
+  - webp
+- package: github.com/rainycape/unidecode
+- package: github.com/qor/oss
+  subpackages:
+  - filesystem
+  - s3
+- package: github.com/qor/oss
+- package: github.com/qor/middlewares
+- package: github.com/cayleygraph/cayley
+  subpackages:
+  - quad
+  - query
+  - schema
+  - writer
+  - voc
+  - voc/core
+  - voc/rdf
+  - voc/rdfs
+  - voc/schema
+  - graph
+  - graph/bolt
+  - graph/bolt2
+  - graph/kv
+  - graph/leveldb
+  - graph/memstore
+  - graph/mongo
+  - graph/path
+  - graph/sql
+- package: github.com/Smerity/govarint
+- package: github.com/Smerity/gopagerank
+- package: github.com/ynqa/word-embedding
+  subpackages:
+  - models
+  - models/word2vec
+  - similarity
+  - utils
+  - utils/fileio
+  - utils/set
+  - utils/vector
+- package: github.com/johnsto/go-highlight
+  subpackages:
+  - output
+  - output/term
+  - lexers
+- package: github.com/juju/errors
+- package: github.com/sourcegraph/syntaxhighlight
+- package: github.com/pksunkara/pygments
+- package: github.com/tensorflow/tensorflow
+  subpackages:
+  - tensorflow/go
+- package: github.com/jmcvetta/neoism
+- package: github.com/jmcvetta/randutil
+- package: golang.org/x/net
+  version: release-branch.go1.9
+  subpackages:
+  - context
+  - html
+  - html/atom
+  - webdav
+  - http2
+  - http2/hpack
+- package: github.com/microcosm-cc/bluemonday
+- package: github.com/parnurzeal/gorequest
+- package: github.com/DeanThompson/syncmap
+- package: github.com/ChimeraCoder/gojson
+- package: github.com/tuvistavie/structomap
+- package: github.com/mitchellh/mapstructure
+- package: github.com/kylelemons/godebug
+  subpackages:
+  - pretty
+  - diff
+- package: github.com/urandom/text-summary
+  version: master
+  subpackages:
+  - summarize
+- package: github.com/urandom/handler
+  version: 0.8.0
+  subpackages:
+  - lang
+- package: github.com/inconshreveable/log15
+  version: "^2.11.0"
+- package: github.com/jessevdk/go-flags
+  version: "^1.2.0"
+- package: github.com/rwcarlsen/goexif
+  version: go1
+- package: github.com/satori/go.uuid
+  version: "^1.1.0"
+- package: gopkg.in/src-d/go-billy.v3
+  version: d0dc16de10d86398cc9aba4513a2453b401eceb3
+  repo: https://github.com/src-d/go-billy.git
+- package: gopkg.in/src-d/go-billy-siva.v3
+  version: 763351934333e34370292b308c74bcb71035e22a
+  repo: https://github.com/src-d/go-billy-siva.git
+- package: gopkg.in/src-d/go-git.v4
+  version: 2dc59a6925f47e9d1bc99dd64d86e37b79b65d11
+  repo: https://github.com/src-d/go-git.git
+  subpackages:
+  - config
+  - plumbing
+  - plumbing/object
+  - plumbing/storer
+  - plumbing/transport
+  - plumbing/transport/client
+  - plumbing/transport/server
+  - storage/filesystem
+  - utils/ioutil
+- package: gopkg.in/src-d/go-kallax.v1
+  version: "^1.3.1"
+- package: gopkg.in/src-d/core-retrieval.v0
+  version: 7426f069e342b557b38853af1e372aa664a1678f
+  subpackages:
+  - model
+  - repository
+- package: gopkg.in/src-d/framework.v0
+  version: f1a98e57ed5f295ca8272ebd21280f87b753786f
+  subpackages:
+  - lock
+  - queue
+- package: github.com/sajari/docconv
+  subpackages:
+  - client
+  - iWork
+  - iWork/pb-schema
+  - snappy
+- package: github.com/allegro/bigcache
+- package: github.com/nsqio/go-nsq
+- package: github.com/sajari/fuzzy
+- package: github.com/sajari/storage
+- package: github.com/sajari/regression
+- package: github.com/sajari/fastentity
+- package: github.com/sajari/word2vec
+  subpackages:
+  - partition
+- package: github.com/mediocregopher/radix.v2
+- package: github.com/mediocregopher/radix.v3
+- package: github.com/Pallinder/go-randomdata
+- package: gopkg.in/src-d/go-errors.v0
+- package: golang.org/x/crypto
+  version: dd96d35c1b251a7ef77f057fc5c4f92ea2b285b4
+  subpackages:
+  - ssh
+  - ssh/knownhosts
+  - md4
+  - bcrypt
+  - openpgp
+  - openpgp/armor
+  - openpgp/clearsign
+- package: github.com/src-d/go-billy
+  subpackages:
+  - helper
+  - memfs
+  - osfs
+  - utill
+- package: gopkg.in/src-d/go-siva.v1
+- package: github.com/markbates/goth
+- package: github.com/volatiletech/authboss
+- package: github.com/kaneshin/pigeon
+- package: github.com/qor/qor-example
+  subpackages:
+  - config
+  - config/admin
+  - config/seo
+  - config/auth
+  - config/utils
+  - db
+  - db/migrations
+  - app/models
+  - app/controllers
+  - app/views
+- package: github.com/roscopecoltran/go-github
+  version: sniperkit
+  vcs: git
+- package: github.com/fsnotify/fsnotify
+- package: github.com/russross/blackfriday
+- package: github.com/mschoch/blackfriday-text
+- package: github.com/src-d/enry
+  subpackages:
+  - data
+- package: github.com/GeertJohan/go.rice
+- package: github.com/rai-project/linguist
+  subpackages:
+  - pkg
+- package: github.com/generaltso/linguist
+  subpackages:
+  - tokenizer
+  - data
+- package: github.com/timshannon/bolthold
+- package: github.com/asdine/storm
+- package: github.com/taskcluster/jsonschema2go
+- package: github.com/ChimeraCoder/gojson
+- package: github.com/deckarep/gosx-notifier
+- package: github.com/Workiva/go-datastructures
+  subpackages:
+  - augmentedtree
+  - batcher
+  - bitarray
+  - btree
+  - common
+  - cache
+  - futures
+  - fibheap
+  - hashmap/fastinteger
+  - list
+  - mock
+  - numerics
+  - queue
+  - rangetree
+  - rtree
+  - set
+  - slice
+  - sort
+  - threadsafe/err
+  - tree/avl
+  - trie
+- package: github.com/tylertreat/BoomFilters
+- package: github.com/google/btree
+- package: github.com/dgraph-io/badger
+- package: github.com/emirpasic/gods
+  subpackages:
+  - lists/arraylist
+  - lists/doublylinkedlist
+  - lists/singlylinkedlist
+  - maps/hashbidimap
+  - maps/hashmap
+  - maps/treebidimap
+  - maps/treemap
+  - stacks/linkedliststack
+  - stacks/arraystack
+  - trees/avltree
+  - trees/binaryheap
+  - trees/btree
+  - trees/redblacktree
+  - sets/hashset
+  - sets/treeset
+  - containers
+  - utils
+- package: gopkg.in/fatih/set.v0
+- package: github.com/motemen/go-colorine
+- package: github.com/onsi/gomega
+- package: github.com/hydrogen18/memlistener
+  version: master
+- package: github.com/segmentio/ksuid
+  version: master
+- package: github.com/kayteh/waifudb
+  subpackages:
+  - db
+  - datastore
+  - client
+  - util
+- package: github.com/ziahamza/blend
+  subpackages:
+  - server
+  - db
+  - api
+  - events
+- package: github.com/jsccast/tinygraph
+- package: github.com/swirsz/facebookcrawler
+- package: github.com/ericfode/SpiderDB
+- package: github.com/go-gremlin/gremlin
+- package: github.com/aaasen/kapok
+  subpackages:
+  - generate
+  - parse
+  - stats
+- package: github.com/nickswift/bacongraph
+  subpackages:
+  - graph
+  - wiki
+- package: github.com/ckaznocha/taggraph
+- package: github.com/zephyyrr/plugins
+  subpackages:
+  - structhandler
+- package: github.com/jsimnz/goplugin
+- package: github.com/rcrowley/go-metrics
+- package: github.com/gtank/cryptopasta
+- package: github.com/hashicorp/go-plugin
+- package: github.com/fatih/structs
+- package: github.com/imdario/mergo
+- package: github.com/golibri/list
+- package: github.com/coreos/etcd
+  version: v3.2.7
+  subpackages:
+  - alarm
+  - auth
+  - auth/authpb
+  - client
+  - clientv3
+  - compactor
+  - discovery
+  - embed
+  - error
+  - etcdserver
+  - etcdserver/api
+  - etcdserver/api/v2http
+  - etcdserver/api/v2http/httptypes
+  - etcdserver/api/v3rpc
+  - etcdserver/api/v3rpc/rpctypes
+  - etcdserver/auth
+  - etcdserver/etcdserverpb
+  - etcdserver/membership
+  - etcdserver/stats
+  - lease
+  - lease/leasehttp
+  - lease/leasepb
+  - mvcc
+  - mvcc/backend
+  - mvcc/mvccpb
+  - pkg/adt
+  - pkg/contention
+  - pkg/cors
+  - pkg/crc
+  - pkg/fileutil
+  - pkg/httputil
+  - pkg/idutil
+  - pkg/ioutil
+  - pkg/logutil
+  - pkg/netutil
+  - pkg/pathutil
+  - pkg/pbutil
+  - pkg/runtime
+  - pkg/schedule
+  - pkg/tlsutil
+  - pkg/transport
+  - pkg/types
+  - pkg/wait
+  - raft
+  - raft/raftpb
+  - rafthttp
+  - snap
+  - snap/snappb
+  - store
+  - version
+  - wal
+  - wal/walpb
+  - clientv3/concurrency
+- package: github.com/sergi/go-diff
+  subpackages:
+  - diffmatchpatch
+- package: github.com/spf13/viper
+  version: v1.0.0
+- package: gopkg.in/dgrijalva/jwt-go.v3
+- package: github.com/grpc-ecosystem/grpc-gateway
+  version: master
+  subpackages:
+  - runtime
+  - utilities
+- package: golang.org/x/sync
+  subpackages:
+  - syncmap
+- package: github.com/jinzhu/copier
+- package: github.com/spf13/cast
+  version: v1.1.0
+- package: google.golang.org/grpc
+  version: v1.5.x # v1.6.x
+  subpackages:
+  - codes
+  - grpclog
+  - status
+- package: github.com/go-kit/kit
+  version: "~0.5.0"
+  subpackages:
+  - log
+  - log/level
+  - log/term
+  - endpoint
+  - transport/http
+- package: github.com/UltimateSoftware/udocs
+  subpackages:
+  - cli/cmd
+  - cli/config
+  - cli/server
+  - cli/storage
+  - cli/udocs
+- package: github.com/k0kubun/pp
+- package: github.com/alaska/boltqueue
+- package: github.com/oliveagle/boltq
+- package: github.com/x-cray/logrus-prefixed-formatter
+- package: github.com/mgutz/ansi
+- package: github.com/BurntSushi/toml
+- package: github.com/mitchellh/go-homedir
+- package: github.com/blevesearch/bleve
+  version: v0.5.0
+  subpackages:
+  - analysis/analyzers/keyword_analyzer
+  - analysis/analyzers/simple_analyzer
+  - analysis/language/en
+- package: github.com/briandowns/spinner
+  version: v1.0.0
+- package: github.com/davecgh/go-spew
+  subpackages:
+  - spew
+- package: github.com/facebookgo/httpdown
+- package: github.com/dns-gh/tojson
+- package: gopkg.in/olivere/elastic.v5
+- package: github.com/adlio/trello
+- package: github.com/qor/l10n
+- package: github.com/qor/sorting
+- package: github.com/qor/publish
+- package: github.com/qor/responder
+- package: github.com/qor/roles
+- package: github.com/qor/serializable_meta
+- package: github.com/theplant/jsonhandlerfunc
+- package: github.com/theplant/gormutils
+- package: github.com/qor/session
+- package: github.com/qor/validations
+- package: github.com/qor/widget
+- package: github.com/qor/worker
+- package: github.com/qor/publish2
+- package: github.com/qor/seo
+- package: github.com/google/zoekt
+- package: github.com/github/hub
+- package: github.com/qor/media
+  subpackages:
+  - media_library
+  - oss
+- package: github.com/asaskevich/govalidator
+- package: go4.org
+  subpackages:
+  - sort
+- package: github.com/disintegration/imaging
+  version: v1.2.1
+- package: github.com/gosimple/slug
+  version: master
+- package: github.com/jinzhu/now
+- package: github.com/qor/assetfs
+  version: master
+  subpackages:
+  - filesystem
+- package: github.com/russellsimpkins/ensemble
+- package: github.com/tedsuo/ifrit
+- package: github.com/pivotal-golang/clock
+- package: github.com/pivotal-golang/lager
+- package: github.com/theothertomelliott/pooledioutil
+- package: github.com/toomore/lazyflickrgo
+  subpackages:
+  - utils
+  - flickr
+  - jsonstruct
+  - simplecache
+- package: github.com/AsynkronIT/goconsole
+- package: github.com/AsynkronIT/protoactor-go
+  subpackages:
+  - remote
+  - actor
+  - cluster
+  - mailbox
+  - persistence
+  - protobuf
+  - stream
+  - router
+- package: github.com/die-net/lrucache
+  subpackages:
+  - twotier
+- package: github.com/smoya/ghtop
+  subpackages:
+  - pkg/contributor
+  - pkg/e2e
+  - pkg/handler
+  - pkg/logx
+  - pkg/server
+  - pkg/httpx
+- package: github.com/neelance/graphql-go
+  subpackages:
+  - relay
+- package: github.com/shurcooL/githubql
+  subpackages:
+  - ident
+  - internal/jsonutil
+- package: github.com/shurcooL/events
+  subpackages:
+  - event
+  - fs
+  - githubapi
+- package: github.com/shurcooL/notifications
+  subpackages:
+  - fs
+  - githubapi
+- package: github.com/shurcooL/users
+- package: github.com/google/go-querystring
+  subpackages:
+  - query
+- package: github.com/qor/slug
+  version: master
+- package: github.com/go-redis/redis
+- package: github.com/bndr/gojenkins
+  version: master
+- package: github.com/cep21/xdgbasedir
+  version: master
+- package: github.com/bassam/stargazers
+  version: pr-fix-logging
+  repo: https://github.com/bassam/stargazers.git
+  vcs: git
+- package: github.com/sirupsen/logrus
+  version: master
+- package: github.com/json-iterator/go
+  version: master
+- package: github.com/golang/glog
+  version: master
+- package: github.com/michaelsauter/crane
+  version: master
+  subpackages:
+  - crane
+- package: github.com/dlemmond1/ArxBot
+- package: github.com/roscopecoltran/sniperkit-sift
+  version: pkg
+  subpackages:
+  - sift
+  - plugins/gitignore
+- package: github.com/gosimple/listdict
+- package: github.com/leonelquinteros/gotext
+- package: github.com/jteeuwen/go-pkg-xmlx
+- package: github.com/jteeuwen/go-pkg-rss
+- package: github.com/dustin/go-humanize
+- package: github.com/fatih/color
+  version: v1.5.0
+- package: github.com/google/go-github
+  version: master
+  subpackages:
+  - github
+- package: github.com/dwarvesf/glod
+- package: github.com/jinzhu/configor
+  version: master
+- package: github.com/boltdb/bolt
+  version: 144418e1475d8bf7abbdc48583500f1a20c62ea7
+- package: github.com/hoop33/entrevista
+  version: master
+- package: github.com/jinzhu/gorm
+  version: v1.0.0
+  subpackages:
+  - dialects/sqlite
+  - dialects/msyql
+  - dialects/postgres
+- package: github.com/golang/groupcache
+  subpackages:
+  - lru
+  - groupcachepb
+  - consistenthash
+  - singleflight
+- package: github.com/SlyMarbo/rss
+- package: github.com/qor/admin
+  version: master
+- package: github.com/qor/qor
+  version: master
+- package: github.com/skratchdot/open-golang
+  version: master
+  subpackages:
+  - open
+- package: github.com/rogpeppe/fastuuid
+- package: gopkg.in/errgo.v1
+- package: github.com/chewxy/hm
+- package: github.com/elazarl/go-bindata-assetfs
+- package: github.com/go-swagger/go-swagger
+- package: github.com/facebookgo/freeport
+- package: github.com/facebookgo/stack
+- package: github.com/go-openapi/errors
+- package: github.com/go-openapi/loads
+- package: github.com/go-openapi/runtime
+  subpackages:
+  - client
+  - flagext
+  - middleware
+  - security
+- package: github.com/go-openapi/spec
+- package: github.com/go-openapi/strfmt
+- package: github.com/go-openapi/swag
+- package: github.com/go-openapi/validate
+- package: github.com/gogo/protobuf
+  subpackages:
+  - gogoproto
+  - proto
+  - sortkeys
+- package: github.com/xanzy/go-gitlab
+  version: v0.5.1
+- package: google.golang.org/genproto
+  subpackages:
+  - googleapis/api/annotations
+  - googleapis/iam/v1
+  - googleapis/rpc/status
+- package: golang.org/x/oauth2
+  version: master
+  subpackages:
+  - facebook
+  - github
+  - google
+  - internal
+  - jws
+  - jwt
+- package: github.com/stretchr/testify
+  version: v1.1.4
+  subpackages:
+  - assert
+- package: gopkg.in/yaml.v2
+- package: github.com/theplant/cldr
+- package: github.com/devopsfaith/krakend
+- package: github.com/src-d/go-git-fixtures
+testImport:

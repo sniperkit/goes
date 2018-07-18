@@ -1,9 +1,19 @@
 ---
 server:
   env: dev
+  debug: true
   session_id: goesid
   port: 3000
   engine: iris
+  limit:
+    rate:
+  session:
+    id: snk
+    expires: 10m
+    backend: badger
+    data_dir: ./shared/data/server/snk-sessions
+    disable_subdomain_persistence: false
+    cookie_secure_tls: false
   settings:
     iris:
       disable_startup_log: false

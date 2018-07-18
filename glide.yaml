@@ -4,7 +4,74 @@ ignore:
 - github.com/sniperkit/janus
 - github.com/sniperkit/iris
 - github.com/sniperkit/Dashpanel
+- github.com/kataras/iris
+- github.com/sniperkit/yaag
 import:
+- package: github.com/iris-contrib/go.uuid
+  version: master
+- package: github.com/gogo/protobuf
+  subpackages:
+  - proto
+  - protoc-gen-combo/descriptor
+  - protoc-gen-gofast/descriptor
+  - protoc-gen-gogo/descriptor
+  - protoc-gen-go/descriptor
+  - protoc-gen-gogofaster/descriptor
+  - types
+  - jsonpb
+  - proto
+  - sortkeys
+  - version
+- package: github.com/golang/protobuf
+  version: v1.1.0
+  vcs: git
+  subpackages:
+  - proto
+  - protoc-gen-go
+  - protoc-gen-go/descriptor
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/empty
+  - ptypes/struct
+  - ptypes/timestamp
+  - ptypes/wrappers
+  - descriptor
+  - jsonpb
+  - proto
+- package: github.com/adjust/rmq
+- package: github.com/peterbourgon/diskv
+- package: github.com/gregjones/httpcache
+  subpackages:
+  - diskcache
+  - leveldbcache
+  - memcache
+  - redis
+- package: github.com/qor/audited
+- package: github.com/onsi/ginkgo
+- package: github.com/smartystreets/goconvey
+  subpackages:
+  - convey
+- package: github.com/agrison/go-tablib
+- package: gopkg.in/olivere/elastic.v2
+- package: gopkg.in/olivere/elastic.v3
+- package: gopkg.in/olivere/elastic.v5
+- package: gopkg.in/olivere/elastic.v6
+- package: github.com/xyproto/recwatch
+- package: github.com/xyproto/siteengines
+- package: github.com/xyproto/workingdir
+- package: github.com/xyproto/permissions2
+- package: github.com/xyproto/permissionbolt
+- package: github.com/didip/tollbooth
+  subpackages:
+  - limiter
+- package: github.com/betacraft/yaag
+  subpackages:
+  - gin
+  - irisyaag
+  - echo
+  - yaag
+  - middleware
+  - filters
 - package: github.com/golang/crypto
   version: master
   subpackages:
@@ -16,7 +83,6 @@ import:
 - package: github.com/blevesearch/bleve
   subpackages:
   - document
-- package: github.com/iris-contrib/go.uuid
 - package: github.com/dgrijalva/jwt-go
 - package: github.com/fatih/color
 - package: github.com/go-sql-driver/mysql
@@ -89,6 +155,17 @@ import:
 - package: github.com/sniperkit/iris-contrib-middleware
   subpackages:
   - jwt
+  - cors
+  - tollboothic
+  - newrelic
+  - permissionbolt
+  - prometheus
+  - secure
+  - go-i18n
+  - csrf
+  - casbin
+  - cloudwatch
+  - raven
 - package: golang.org/x/net
   subpackages:
   - websocket

@@ -14,33 +14,13 @@ import (
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
 )
 
-// const Prefix = "goes"
-
-/*
-// Route 路由
-func Route(app *iris.Application) {
-    apiPrefix := Prefix
-
-    router := app.Party(apiPrefix)
-    {
-        router.Get("/categories", nil)
-    }
-
-    adminRouter := app.Party(apiPrefix+"/admin", admin.Authentication)
-    {
-        adminRouter.Post("/category/create", category.Create)
-        adminRouter.Post("/category/update", category.Update)
-    }
-}
-*/
-
 func nativeTestMiddleware(w http.ResponseWriter, r *http.Request) {
 	println("Request path: " + r.URL.Path)
 }
 
-func generateRoutesParty(route irouter.Party, method string) []error {
+func generateRoutesParty(route irouter.Party) []error {
 	var errs []error
-	rootPath := config.Global.Api.Path
+	rootPath := "/" // config.Global.Api.Path
 
 	endpoints := make([]*config.Endpoint, 0, len(config.Global.Api.URLs)+(len(config.Global.Api.Resources)*7))
 
@@ -62,9 +42,7 @@ func generateRoutesParty(route irouter.Party, method string) []error {
 	sort.Sort(config.Endpoints(endpoints))
 
 	for _, en := range endpoints {
-		// if strings.ToUpper(en.Method) == method {
 		route.Handle(en.Method, en.URL, en.Handler)
-		// }
 	}
 
 	return errs

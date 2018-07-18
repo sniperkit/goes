@@ -1,10 +1,24 @@
-hash: 360f4e52495714c03d5a3030558daff7e90e4fb7331e7db991536a29a19c2ab9
-updated: 2018-07-18T11:34:20.119104069+02:00
+hash: 5568c17bf9897017d292fc3b5cc128e0d7363ccafe74914968684d8d32b80aaf
+updated: 2018-07-18T15:07:25.096801434+02:00
 imports:
 - name: cloud.google.com/go
-  version: 24ff62bdf36b8c3c10021d8ffb46ef6f2d82da9c
+  version: a55dfc0b29d5e9df654f451579bb012d9417b14b
   subpackages:
   - civil
+- name: github.com/adjust/rmq
+  version: c5c23ca7f39d108753d14c5995c454b3abde743f
+- name: github.com/agrison/go-tablib
+  version: 4930582c22eec7bfc0e5b47e0246d5048a78fe49
+- name: github.com/betacraft/yaag
+  version: 67962f4b77581a1ab1e3492ff26add2c20d29def
+  subpackages:
+  - echo
+  - filters
+  - gin
+  - irisyaag
+  - middleware
+  - yaag
+  - yaag/models
 - name: github.com/blevesearch/bleve
   version: ba906ce473b64d623be8624212e1199d56832591
   subpackages:
@@ -26,6 +40,7 @@ imports:
   - index/scorch/segment/zap
   - index/store
   - index/store/boltdb
+  - index/store/goleveldb
   - index/store/gtreap
   - index/upsidedown
   - mapping
@@ -54,6 +69,8 @@ imports:
   repo: https://github.com/boltdb/bolt
 - name: github.com/BurntSushi/toml
   version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
+- name: github.com/coreos/bbolt
+  version: af9db2027c98c61ecd8e17caa5bd265792b9b9a2
 - name: github.com/couchbase/vellum
   version: 77a271452dad6888851352f69597ddb214aa956e
   subpackages:
@@ -66,6 +83,12 @@ imports:
   - internal/cp
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/didip/tollbooth
+  version: b10a036da5f05864224ee09432e489b32a6b2d1d
+  subpackages:
+  - errors
+  - libstring
+  - limiter
 - name: github.com/edsrzf/mmap-go
   version: 0bce6a6887123b67a60366d2c9fe2dfb74289d2e
 - name: github.com/fatih/color
@@ -74,15 +97,40 @@ imports:
   version: 9f0cb55181dd3a0a4c168d3dbc72d4aca4853126
 - name: github.com/go-sql-driver/mysql
   version: 749ddf1598b47e3cd909414bda735fe790ef3d30
+- name: github.com/gogo/protobuf
+  version: 636bf0302bc95575d69441b25a2603156ffdddf1
+  subpackages:
+  - jsonpb
+  - proto
+  - proto
+  - protoc-gen-combo/descriptor
+  - protoc-gen-go/descriptor
+  - protoc-gen-gofast/descriptor
+  - protoc-gen-gogo/descriptor
+  - protoc-gen-gogofaster/descriptor
+  - sortkeys
+  - types
+  - version
 - name: github.com/golang/crypto
   version: a49355c7e3f8fe157a85be2f77e6e269a0f89602
   subpackages:
   - acme/autocert
 - name: github.com/golang/protobuf
-  version: 655cdfa588ea190e901bc5590e65d5621688847c
-  repo: https://github.com/golang/protobuf
+  version: b4deda0973fb4c70b50d226b1af49f3da59f5265
+  vcs: git
   subpackages:
+  - descriptor
+  - jsonpb
   - proto
+  - proto
+  - protoc-gen-go
+  - protoc-gen-go/descriptor
+  - ptypes/any
+  - ptypes/duration
+  - ptypes/empty
+  - ptypes/struct
+  - ptypes/timestamp
+  - ptypes/wrappers
 - name: github.com/golang/snappy
   version: cef980a12b316c5b7e5bb3a8e168eb43ae999a88
   repo: https://github.com/golang/snappy
@@ -104,8 +152,19 @@ imports:
   version: 78f3d318a8bf316cda921f25e96fd0b441c5173d
 - name: github.com/gorilla/websocket
   version: 5ed622c449da6d44c3c8329331ff47a9e5844f71
+- name: github.com/gregjones/httpcache
+  version: 9cad4c3443a7200dd6400aef47183728de563a38
+  subpackages:
+  - diskcache
+  - leveldbcache
+  - memcache
+  - redis
 - name: github.com/iris-contrib/go.uuid
   version: 36e9d2ebbde5e3f13ab2e25625fd453271d6522e
+- name: github.com/iris-contrib/middleware
+  version: 8b2080bf3bf80ce86666bdb629931b172f74544e
+  subpackages:
+  - permissionbolt
 - name: github.com/jinzhu/configor
   version: 4edaf76fe18865e36de734d887f4c01bd05707af
 - name: github.com/jinzhu/gorm
@@ -124,6 +183,12 @@ imports:
   subpackages:
   - hstore
   - oid
+- name: github.com/mailru/easyjson
+  version: efc7eb8984d6655c26b5c9d2e65c024e5767c37c
+  subpackages:
+  - buffer
+  - jlexer
+  - jwriter
 - name: github.com/markbates/goth
   version: 421eacf05d86de32a116c221ed6944d1364162e8
   subpackages:
@@ -176,33 +241,77 @@ imports:
   - source
   - source/file
 - name: github.com/mattn/go-colorable
-  version: ed8eb9e318d7a84ce5915b495b7d35e0cfe7b5a8
+  version: efa589957cd060542a26d2dd7832fd6a6c6c3ade
 - name: github.com/mattn/go-isatty
-  version: 30a891c33c7cde7b02a981314b4228ec99380cca
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
 - name: github.com/mattn/go-sqlite3
-  version: 5160b48509cf5c877bc22c11c373f8c7738cdb38
+  version: 3aefd9f0a162514f66d0e4ceda3edc44e66b502e
 - name: github.com/mrjones/oauth
   version: f4e24b6d100c9436cbfe5d439581653d455490e7
 - name: github.com/mschoch/smat
   version: 90eadee771aeab36e8bf796039b8c261bebebe4f
+- name: github.com/olivere/elastic
+  version: 0b4207ff59cee1311d491c4d9c04719c6902723a
+  subpackages:
+  - config
+  - uritemplates
+- name: github.com/onsi/ginkgo
+  version: 3774a09d95489ccaa16032e0770d08ea77ba6184
+- name: github.com/patrickmn/go-cache
+  version: 9f6ff22cfff829561052f5886ec80a2ac148b4eb
 - name: github.com/pborman/uuid
   version: c65b2f87fee37d1c7854c9164a450713c28d50cd
+- name: github.com/peterbourgon/diskv
+  version: 0646ccaebea1ed1539efcab30cae44019090093f
 - name: github.com/philhofer/fwd
   version: bb6d471dc95d4fe11e432687f8b70ff496cf3136
 - name: github.com/pkg/errors
   version: 816c9085562cd7ee03e7f8188a1cfd942858cded
+- name: github.com/qor/audited
+  version: b52c9c2f0571fc6e56dcdf2b7d3ae36d124602d4
 - name: github.com/RangelReale/osin
-  version: 06cbf43fd9bda76ed124a73e1c44416f7550b226
+  version: 0f3357bb07e801ea62327872d19913969001dd7a
 - name: github.com/RoaringBitmap/roaring
   version: 01d244c43a7e8d1191a4f369f5908ea9eb9bc9ac
   repo: https://github.com/RoaringBitmap/roaring
+- name: github.com/smartystreets/goconvey
+  version: ef6db91d284a0e7badaa1f0c404c30aa7dee3aed
+  subpackages:
+  - convey
 - name: github.com/sniperkit/iris-contrib-middleware
   version: 4e14059a1826898a4f8cc326f90efcb3525b69be
   subpackages:
+  - casbin
+  - cloudwatch
+  - cors
+  - csrf
+  - go-i18n
   - jwt
+  - newrelic
+  - permissionbolt
+  - prometheus
+  - raven
+  - secure
+  - tollboothic
 - name: github.com/steveyen/gtreap
   version: 0abe01ef9be25c4aedc174758ec2d917314d6d70
   repo: https://github.com/steveyen/gtreap
+- name: github.com/syndtr/goleveldb
+  version: 93fc893f2dadb96ffde441c7546cc67ea290a3a8
+  repo: https://github.com/syndtr/goleveldb
+  subpackages:
+  - leveldb
+  - leveldb/cache
+  - leveldb/comparer
+  - leveldb/errors
+  - leveldb/filter
+  - leveldb/iterator
+  - leveldb/journal
+  - leveldb/memdb
+  - leveldb/opt
+  - leveldb/storage
+  - leveldb/table
+  - leveldb/util
 - name: github.com/tinylib/msgp
   version: 54a3260d60646faaba5873316fa01ac61d49c1d5
   subpackages:
@@ -210,23 +319,46 @@ imports:
 - name: github.com/willf/bitset
   version: 2e6e8094ef4745224150c88c16191c7dceaad16f
   repo: https://github.com/willf/bitset
+- name: github.com/xyproto/cookie
+  version: 8ce3defb0907741a2a8c9b56cce0f716c933ce34
+- name: github.com/xyproto/permissionbolt
+  version: 3025da175761b09da0f0c810f83ee7212e86a075
+- name: github.com/xyproto/permissions2
+  version: 7e95477c484b72d97d3967aa298a98c8210b8cf6
+- name: github.com/xyproto/pinterface
+  version: 05fa0e3080664c781c213d0a890a9d22718f7afb
+- name: github.com/xyproto/recwatch
+  version: 1be1c88ac66d191f17b0581b515e6995015c366f
+- name: github.com/xyproto/simplebolt
+  version: 3933e7ecf0bf5220a02e0dfc38497b652f18b193
+- name: github.com/xyproto/siteengines
+  version: 1cdc99cc82e0baab4925e7541e21bb9f61963784
+- name: github.com/xyproto/workingdir
+  version: f48f4917bc24356d48279313d3e8d92edebc1dc1
 - name: golang.org/x/crypto
   version: a49355c7e3f8fe157a85be2f77e6e269a0f89602
   subpackages:
+  - bcrypt
+  - blowfish
   - md4
 - name: golang.org/x/net
-  version: f315505cf3349909cdf013ea56690da34e96a451
+  version: d0887baf81f4598189d4e12a37c6da86f0bba4d0
   subpackages:
   - context
+  - context/ctxhttp
   - websocket
 - name: golang.org/x/oauth2
-  version: 1364adb2c63445016c5ed4518fc71f6a3cda6169
+  version: ef147856a6ddbb60760db74283d2424e98c87bff
   subpackages:
   - internal
 - name: golang.org/x/sys
-  version: d75a52659825e75fff6158388dddc6a5b04f9ba5
+  version: ac767d655b305d4e9612f5f6e33120b9176c4ad4
   subpackages:
   - unix
+- name: golang.org/x/time
+  version: fbb02b2291d28baffd63558aa44b4b56f178d650
+  subpackages:
+  - rate
 - name: google.golang.org/appengine
   version: b1f26356af11148e710935ed1ac8a7f5702c7612
   subpackages:
@@ -238,4 +370,15 @@ imports:
   - internal/remote_api
   - internal/urlfetch
   - urlfetch
+- name: gopkg.in/olivere/elastic.v2
+  version: 2cd27b9ae892f6b4dd8dd6d73489797c99e9c6fa
+  subpackages:
+  - backoff
+  - uritemplates
+- name: gopkg.in/olivere/elastic.v3
+  version: 2e44df9ab69c95a7da9e6f62728216a9e3553ed5
+- name: gopkg.in/olivere/elastic.v5
+  version: 52741dc2ce53629cbe1e673869040d886cba2cd5
+- name: gopkg.in/olivere/elastic.v6
+  version: 229adca7643e572e471ea3e8e018d651b728713d
 testImports: []
