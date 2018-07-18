@@ -111,6 +111,7 @@ type URL struct {
 	Method      string `json:"method,omitempty" yaml:"method,omitempty" toml:"method,omitempty"`
 	ContentType string `json:"content_type,omitempty" yaml:"content_type,omitempty" toml:"content_type,omitempty"`
 	File        string `json:"file,omitempty" yaml:"file,omitempty" toml:"file,omitempty"`
+	Engine      string `default:"file" json:"engine,omitempty" yaml:"engine,omitempty" toml:"engine,omitempty"`
 	// PrefixPath  string            `json:"file,omitempty" yaml:"file,omitempty" toml:"file,omitempty"`
 	StatusCode int               `json:"status,omitempty" yaml:"status,omitempty" toml:"status,omitempty"`
 	Headers    map[string]string `json:"headers,omitempty" yaml:"headers,omitempty" toml:"headers,omitempty"`

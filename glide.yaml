@@ -9,11 +9,20 @@ import:
   version: master
   subpackages:
   - acme/autocert
+- package: github.com/jinzhu/configor
+  version: master
+- package: github.com/k0kubun/pp
+- package: github.com/RangelReale/osin
+- package: github.com/blevesearch/bleve
+  subpackages:
+  - document
 - package: github.com/iris-contrib/go.uuid
+- package: github.com/dgrijalva/jwt-go
 - package: github.com/fatih/color
 - package: github.com/go-sql-driver/mysql
 - package: github.com/googollee/go-socket.io
-- package: github.com/jinzhu/configor
+- package: github.com/gorilla/mux
+- package: github.com/gorilla/securecookie
 - package: github.com/jinzhu/gorm
   subpackages:
   - dialects/mssql
@@ -21,6 +30,44 @@ import:
   - dialects/postgres
   - dialects/sqlite
 - package: github.com/k0kubun/pp
+- package: github.com/markbates/goth
+  subpackages:
+  - providers/amazon
+  - providers/auth0
+  - providers/bitbucket
+  - providers/box
+  - providers/dailymotion
+  - providers/deezer
+  - providers/digitalocean
+  - providers/discord
+  - providers/dropbox
+  - providers/facebook
+  - providers/fitbit
+  - providers/github
+  - providers/gitlab
+  - providers/gplus
+  - providers/heroku
+  - providers/instagram
+  - providers/intercom
+  - providers/lastfm
+  - providers/linkedin
+  - providers/meetup
+  - providers/onedrive
+  - providers/openidConnect
+  - providers/paypal
+  - providers/salesforce
+  - providers/slack
+  - providers/soundcloud
+  - providers/spotify
+  - providers/steam
+  - providers/stripe
+  - providers/twitch
+  - providers/twitter
+  - providers/uber
+  - providers/wepay
+  - providers/xero
+  - providers/yahoo
+  - providers/yammer
 - package: github.com/markbates/grift
   subpackages:
   - cmd
@@ -33,11 +80,15 @@ import:
   - src/model/dash
 - package: github.com/sniperkit/iris
   subpackages:
+  - middleware/basicauth
   - middleware/logger
   - middleware/recover
   - mvc
   - sessions
   - websocket
+- package: github.com/sniperkit/iris-contrib-middleware
+  subpackages:
+  - jwt
 - package: golang.org/x/net
   subpackages:
   - websocket

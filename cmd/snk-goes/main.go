@@ -25,6 +25,7 @@ import (
 	// "github.com/sniperkit/iris/sessions"
 
 	"github.com/dgrijalva/jwt-go"
+	corsmiddleware "github.com/sniperkit/iris-contrib-middleware/cors"
 	jwtmiddleware "github.com/sniperkit/iris-contrib-middleware/jwt"
 
 	// debug
@@ -126,6 +127,54 @@ func main() {
 		)
 	}
 
+	// set in server.yml file
+	crs := corsmiddleware.New(corsmiddleware.Options{
+		// AllowedOrigins is a list of origins a cross-domain request can be executed from.
+		// If the special "*" value is present in the list, all origins will be allowed.
+		// An origin may contain a wildcard (*) to replace 0 or more characters
+		// (i.e.: http://*.domain.com). Usage of wildcards implies a small performance penalty.
+		// Only one wildcard can be used per origin.
+		// Default value is ["*"]
+		AllowedOrigins: []string{
+			"http://localhost:9200",
+			"http://localhost:7474",
+			"http://localhost:8080",
+			"http://localhost:3000",
+			"http://localhost:9528",
+		}, // allows everything, use that to change the hosts.
+
+		// AllowedMethods is a list of methods the client is allowed to use with
+		// cross-domain requests. Default value is simple methods (HEAD, GET and POST).
+		AllowedMethods: []string{"HEAD", "GET", "POST", "OPTIONS"},
+
+		// AllowedHeaders is list of non simple headers the client is allowed to use with
+		// cross-domain requests.
+		// If the special "*" value is present in the list, all headers will be allowed.
+		// Default value is [] but "Origin" is always appended to the list.
+		AllowedHeaders: []string{"Access-Control-Allow-Origin", "X-Auth-Token", "X-Token"},
+
+		// ExposedHeaders indicates which headers are safe to expose to the API of a CORS
+		// API specification
+		// ExposedHeaders []string{},
+
+		// MaxAge indicates how long (in seconds) the results of a preflight request
+		// can be cached
+		MaxAge: 3600,
+
+		// AllowCredentials indicates whether the request can include user credentials like
+		// cookies, HTTP authentication or client side SSL certificates.
+		AllowCredentials: true,
+
+		// OptionsPassthrough instructs preflight to let other potential next handlers to
+		// process the OPTIONS method. Turn this on if your application handles OPTIONS.
+		OptionsPassthrough: false,
+
+		// Debugging flag adds additional output to debug server side CORS issues
+		Debug: true,
+	})
+
+	// pp.Println("cors: ", crs)
+
 	if *jwtMode {
 		jwtHandler := jwtmiddleware.New(jwtmiddleware.Config{
 			ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
@@ -147,12 +196,44 @@ func main() {
 
 	// route.Route(app)
 
-	if errs := generateRoutes(app); len(errs) != 0 {
-		fmt.Printf("%d Error(s) in config: \n", len(errs))
-		for i, err := range errs {
-			fmt.Printf(" %d: %s\n", i+1, err.Error())
+	v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodOptions, iris.MethodPost, iris.MethodGet) // .AllowAll() // .AllowMethods(iris.MethodOptions) // <- important for the preflight.
+	{
+		if errs := generateRoutesParty(v1, iris.MethodOptions); len(errs) != 0 {
+			fmt.Printf("%d Error(s) in config: \n", len(errs))
+			for i, err := range errs {
+				fmt.Printf(" %d: %s\n", i+1, err.Error())
+			}
+			os.Exit(1)
 		}
-		os.Exit(1)
+	}
+
+	/*
+		v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodGet) // <- important for the preflight.
+		{
+			if errs := generateRoutesParty(v1, iris.MethodGet); len(errs) != 0 {
+				fmt.Printf("%d Error(s) in config: \n", len(errs))
+				for i, err := range errs {
+					fmt.Printf(" %d: %s\n", i+1, err.Error())
+				}
+				os.Exit(1)
+			}
+		}
+
+		v1 := app.Party("/api/v1", crs).AllowMethods(iris.MethodPost) // <- important for the preflight.
+		{
+			if errs := generateRoutesParty(v1, iris.MethodPost); len(errs) != 0 {
+				fmt.Printf("%d Error(s) in config: \n", len(errs))
+				for i, err := range errs {
+					fmt.Printf(" %d: %s\n", i+1, err.Error())
+				}
+				os.Exit(1)
+			}
+		}
+	*/
+
+	routes := app.GetRoutes()
+	for _, r := range routes {
+		pp.Println(r.Name)
 	}
 
 	/*

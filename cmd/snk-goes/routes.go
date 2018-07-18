@@ -1,13 +1,14 @@
 package main
 
 import (
-	// "errors"
 	"net/http"
 	"path/filepath"
 	"sort"
+	// "strings"
 
 	// external
 	"github.com/sniperkit/iris"
+	irouter "github.com/sniperkit/iris/core/router"
 
 	// internal
 	"github.com/sniperkit/snk.golang.vuejs-multi-backend/config"
@@ -35,6 +36,38 @@ func Route(app *iris.Application) {
 
 func nativeTestMiddleware(w http.ResponseWriter, r *http.Request) {
 	println("Request path: " + r.URL.Path)
+}
+
+func generateRoutesParty(route irouter.Party, method string) []error {
+	var errs []error
+	rootPath := config.Global.Api.Path
+
+	endpoints := make([]*config.Endpoint, 0, len(config.Global.Api.URLs)+(len(config.Global.Api.Resources)*7))
+
+	// validate and generate urls URLS
+	for _, url := range config.Global.Api.URLs {
+
+		u := url
+		if u.File != "" {
+			u.File = filepath.Join(*resPrefixPath, u.File) // to fix !!!
+		}
+
+		e, err := u.GetEndPoint(rootPath)
+		if err != nil {
+			errs = append(errs, err)
+			continue
+		}
+		endpoints = append(endpoints, e)
+	}
+	sort.Sort(config.Endpoints(endpoints))
+
+	for _, en := range endpoints {
+		// if strings.ToUpper(en.Method) == method {
+		route.Handle(en.Method, en.URL, en.Handler)
+		// }
+	}
+
+	return errs
 }
 
 // generate routes for all configuration entries.

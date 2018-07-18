@@ -76,6 +76,7 @@ func (u *URL) getHandle(root string) func(ctx iris.Context) {
 			}
 			ctx.StatusCode(u.StatusCode)
 			ctx.Write([]byte(""))
+			// ctx.EndRequest()
 		}
 	}
 	return func(ctx iris.Context) {
@@ -109,6 +110,7 @@ func (u *URL) getHandle(root string) func(ctx iris.Context) {
 		// fmt.Println("SIZE2:", len(dataBytes))
 		// io.Copy(w, data)
 		ctx.Write(dataBytes)
+		// ctx.EndRequest()
 	}
 }
 

@@ -1,24 +1,91 @@
-hash: 4c927493138da32c944fb6a52a8a17b4bca93e464ff023f311e2bfb8fbd0a09c
-updated: 2018-07-17T13:55:28.298517238+02:00
+hash: 360f4e52495714c03d5a3030558daff7e90e4fb7331e7db991536a29a19c2ab9
+updated: 2018-07-18T11:34:20.119104069+02:00
 imports:
 - name: cloud.google.com/go
   version: 24ff62bdf36b8c3c10021d8ffb46ef6f2d82da9c
   subpackages:
   - civil
+- name: github.com/blevesearch/bleve
+  version: ba906ce473b64d623be8624212e1199d56832591
+  subpackages:
+  - analysis
+  - analysis/analyzer/standard
+  - analysis/datetime/flexible
+  - analysis/datetime/optional
+  - analysis/lang/en
+  - analysis/token/lowercase
+  - analysis/token/porter
+  - analysis/token/stop
+  - analysis/tokenizer/unicode
+  - document
+  - geo
+  - index
+  - index/scorch
+  - index/scorch/mergeplan
+  - index/scorch/segment
+  - index/scorch/segment/zap
+  - index/store
+  - index/store/boltdb
+  - index/store/gtreap
+  - index/upsidedown
+  - mapping
+  - numeric
+  - registry
+  - search
+  - search/collector
+  - search/facet
+  - search/highlight
+  - search/highlight/format/html
+  - search/highlight/fragmenter/simple
+  - search/highlight/highlighter/html
+  - search/highlight/highlighter/simple
+  - search/query
+  - search/scorer
+  - search/searcher
+  - size
+- name: github.com/blevesearch/go-porterstemmer
+  version: 23a2c8e5cf1f380f27722c6d2ae8896431dc7d0e
+  repo: https://github.com/blevesearch/go-porterstemmer
+- name: github.com/blevesearch/segment
+  version: db70c57796cc8c310613541dfade3dce627d09c7
+  repo: https://github.com/blevesearch/segment
+- name: github.com/boltdb/bolt
+  version: 9da31745363232bc1e27dbab3569e77383a51585
+  repo: https://github.com/boltdb/bolt
 - name: github.com/BurntSushi/toml
   version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
+- name: github.com/couchbase/vellum
+  version: 77a271452dad6888851352f69597ddb214aa956e
+  subpackages:
+  - levenshtein
+  - regexp
+  - utf8
 - name: github.com/denisenkom/go-mssqldb
   version: 242fa5aa1b45aeb9fcdfeee88822982e3f548e22
   subpackages:
   - internal/cp
+- name: github.com/dgrijalva/jwt-go
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/edsrzf/mmap-go
+  version: 0bce6a6887123b67a60366d2c9fe2dfb74289d2e
 - name: github.com/fatih/color
   version: 2d684516a8861da43017284349b7e303e809ac21
+- name: github.com/glycerine/go-unsnap-stream
+  version: 9f0cb55181dd3a0a4c168d3dbc72d4aca4853126
 - name: github.com/go-sql-driver/mysql
   version: 749ddf1598b47e3cd909414bda735fe790ef3d30
 - name: github.com/golang/crypto
   version: a49355c7e3f8fe157a85be2f77e6e269a0f89602
   subpackages:
   - acme/autocert
+- name: github.com/golang/protobuf
+  version: 655cdfa588ea190e901bc5590e65d5621688847c
+  repo: https://github.com/golang/protobuf
+  subpackages:
+  - proto
+- name: github.com/golang/snappy
+  version: cef980a12b316c5b7e5bb3a8e168eb43ae999a88
+  repo: https://github.com/golang/snappy
 - name: github.com/googollee/go-engine.io
   version: 3c3145340e676971209507021a435520c2700d92
   subpackages:
@@ -29,6 +96,12 @@ imports:
   - websocket
 - name: github.com/googollee/go-socket.io
   version: f12da5711bc66c18a0724987fff7f4f3db35c70f
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: cb4698366aa625048f3b815af6a0dea8aef9280a
+- name: github.com/gorilla/securecookie
+  version: 78f3d318a8bf316cda921f25e96fd0b441c5173d
 - name: github.com/gorilla/websocket
   version: 5ed622c449da6d44c3c8329331ff47a9e5844f71
 - name: github.com/iris-contrib/go.uuid
@@ -51,6 +124,45 @@ imports:
   subpackages:
   - hstore
   - oid
+- name: github.com/markbates/goth
+  version: 421eacf05d86de32a116c221ed6944d1364162e8
+  subpackages:
+  - providers/amazon
+  - providers/auth0
+  - providers/bitbucket
+  - providers/box
+  - providers/dailymotion
+  - providers/deezer
+  - providers/digitalocean
+  - providers/discord
+  - providers/dropbox
+  - providers/facebook
+  - providers/fitbit
+  - providers/github
+  - providers/gitlab
+  - providers/gplus
+  - providers/heroku
+  - providers/instagram
+  - providers/intercom
+  - providers/lastfm
+  - providers/linkedin
+  - providers/meetup
+  - providers/onedrive
+  - providers/openidConnect
+  - providers/paypal
+  - providers/salesforce
+  - providers/slack
+  - providers/soundcloud
+  - providers/spotify
+  - providers/steam
+  - providers/stripe
+  - providers/twitch
+  - providers/twitter
+  - providers/uber
+  - providers/wepay
+  - providers/xero
+  - providers/yahoo
+  - providers/yammer
 - name: github.com/markbates/grift
   version: 85236aece32302d564c0cbccffc5bdb52a4f9f22
   subpackages:
@@ -69,8 +181,35 @@ imports:
   version: 30a891c33c7cde7b02a981314b4228ec99380cca
 - name: github.com/mattn/go-sqlite3
   version: 5160b48509cf5c877bc22c11c373f8c7738cdb38
+- name: github.com/mrjones/oauth
+  version: f4e24b6d100c9436cbfe5d439581653d455490e7
+- name: github.com/mschoch/smat
+  version: 90eadee771aeab36e8bf796039b8c261bebebe4f
+- name: github.com/pborman/uuid
+  version: c65b2f87fee37d1c7854c9164a450713c28d50cd
+- name: github.com/philhofer/fwd
+  version: bb6d471dc95d4fe11e432687f8b70ff496cf3136
 - name: github.com/pkg/errors
   version: 816c9085562cd7ee03e7f8188a1cfd942858cded
+- name: github.com/RangelReale/osin
+  version: 06cbf43fd9bda76ed124a73e1c44416f7550b226
+- name: github.com/RoaringBitmap/roaring
+  version: 01d244c43a7e8d1191a4f369f5908ea9eb9bc9ac
+  repo: https://github.com/RoaringBitmap/roaring
+- name: github.com/sniperkit/iris-contrib-middleware
+  version: 4e14059a1826898a4f8cc326f90efcb3525b69be
+  subpackages:
+  - jwt
+- name: github.com/steveyen/gtreap
+  version: 0abe01ef9be25c4aedc174758ec2d917314d6d70
+  repo: https://github.com/steveyen/gtreap
+- name: github.com/tinylib/msgp
+  version: 54a3260d60646faaba5873316fa01ac61d49c1d5
+  subpackages:
+  - msgp
+- name: github.com/willf/bitset
+  version: 2e6e8094ef4745224150c88c16191c7dceaad16f
+  repo: https://github.com/willf/bitset
 - name: golang.org/x/crypto
   version: a49355c7e3f8fe157a85be2f77e6e269a0f89602
   subpackages:
@@ -80,6 +219,10 @@ imports:
   subpackages:
   - context
   - websocket
+- name: golang.org/x/oauth2
+  version: 1364adb2c63445016c5ed4518fc71f6a3cda6169
+  subpackages:
+  - internal
 - name: golang.org/x/sys
   version: d75a52659825e75fff6158388dddc6a5b04f9ba5
   subpackages:
@@ -88,4 +231,11 @@ imports:
   version: b1f26356af11148e710935ed1ac8a7f5702c7612
   subpackages:
   - cloudsql
+  - internal
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
 testImports: []

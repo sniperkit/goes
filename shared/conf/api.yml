@@ -12,88 +12,92 @@ api:
     path: "./testdata/fake-api/static"
     url: static
   urls:
-  - url: "/api/searx/settings"
+  - url: "/searx/settings"
     file: "./testdata/fake-api/search/searx.json"
     status: 200
     method: GET
     headers:
       New-Header: header value
       Admin: 'true'
-  - url: "/api/{user}/enable"
+  - url: "/users/list"
+    status: 200
+    method: GET
+    engine: generator
+  - url: "/{user}/enable"
     status: 500
     method: POST
-  - url: "/api/user/login"
+  - url: "/user/login"
     status: 200
     content_type: application/json
     method: POST
     file: "./testdata/fake-api/user/login.json"
-  - url: "/api/user/logout"
+  - url: "/user/logout"
     status: 200
     method: POST
-  - url: "/api/user/info?token=admin"
+  - url: "/user/info?token=admin"
     status: 200
     content_type: application/json
     method: GET
     file: "./testdata/fake-api/user/info.admin.json"
-  - url: "/api/table/list"
+  - url: "/table/list"
     status: 200
     content_type: application/json
     method: GET
     file: "./testdata/fake-api/table/list.json"
-  - url: "/api/accounts"
+  - url: "/accounts"
     status: 200
     content_type: application/json
     method: POST
     file: "./testdata/fake-api/accounts/users.json"
-  - url: "/api/accounts/{id}"
+  - url: "/accounts/{id}"
     status: 200
     method: GET
     file: "./testdata/fake-api/accounts/users.json"
-  - url: "/api/shop/campaigns"
+  - url: "/shop/campaigns"
     status: 200
     method: GET
     file: "./testdata/fake-api/shop/campaigns.json"
-  - url: "/api/shop/campaigns/{id_campaign}"
+  - url: "/shop/campaigns/{id_campaign}"
     status: 200
     method: GET
     file: "./testdata/fake-api/shop/campaigns.json"
-  - url: "/api/shop/products"
+  - url: "/shop/products"
     status: 200
     method: GET
     file: "./testdata/fake-api/shop/products.json"
-  - url: "/api/shop/products/{id}"
+  - url: "/shop/products/{id}"
     status: 200
     method: GET
     file: "./testdata/fake-api/shop/products.json"
-  - url: "/api/social/facebook"
+  - url: "/social/facebook"
     status: 200
     method: GET
     file: "./testdata/fake-api/social/fb.json"
-  - url: "/api/social/flickr"
+  - url: "/social/flickr"
     status: 200
     method: GET
     file: "./testdata/fake-api/social/flickr.json"
-  - url: "/api/social/maps"
+  - url: "/social/maps"
     status: 200
     method: GET
     file: "./testdata/fake-api/social/maps.json"
-  - url: "/api/social/twitter"
+  - url: "/social/twitter"
     status: 200
     method: GET
     file: "./testdata/fake-api/social/twitter.json"
-  - url: "/api/social/youtube"
+  - url: "/social/youtube"
     status: 200
     method: GET
     file: "./testdata/fake-api/social/youtube.json"
-  - url: "/api/vcs/github/search"
+  - url: "/vcs/github/search"
     status: 200
     method: GET
     file: "./testdata/fake-api/vcs/gh-search.json"
-  - url: "/api/vcs/github/tree"
+  - url: "/vcs/github/tree"
     status: 200
     method: GET
     file: "./testdata/fake-api/vcs/gh-tree.json"
-  - url: "/api/vcs/github/tree/large"
+  - url: "/vcs/github/tree/large"
     status: 200
     method: GET
     file: "./testdata/fake-api/vcs/gh-tree.large.json"

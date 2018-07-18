@@ -2,7 +2,7 @@
 server:
   env: dev
   session_id: goesid
-  port: 8080
+  port: 3000
   engine: iris
   settings:
     iris:
