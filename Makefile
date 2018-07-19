@@ -1,8 +1,8 @@
 .PHONY: run build install deps core-deps local-deps nodejs-deps assets bindata staticfiles go-bindata
 
 # shorthands:
-# - go run -race ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared
-# - go run ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared
+# - go run -race ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared # (required to check race conditions)
+# - go run ./cmd/snk-iris/*.go --config-dir=./shared/conf --resource-dir=`pwd`/shared # (faster but not safer for debugging)
 run: bindata
 	@go run -race ./cmd/snk-iris/*.go \
 		--config-dir=./shared/conf \

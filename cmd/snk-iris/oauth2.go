@@ -67,7 +67,7 @@ func configureOauth2() *sessions.Sessions {
 	})
 }
 
-func initOauth2(app *iris.Application) *iris.Application {
+func setupOauth2Middleware(app *iris.Application) {
 
 	sessionsManager = configureOauth2()
 
@@ -212,7 +212,7 @@ func initOauth2(app *iris.Application) *iris.Application {
 		}
 	})
 
-	app.Get("/", func(ctx iris.Context) {
+	app.Get("/oauth2", func(ctx iris.Context) {
 
 		ctx.ViewData("", providerIndex)
 
@@ -221,7 +221,6 @@ func initOauth2(app *iris.Application) *iris.Application {
 		}
 	})
 
-	return app
 }
 
 type ProviderIndex struct {

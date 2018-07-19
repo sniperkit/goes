@@ -272,6 +272,8 @@ func main() {
 		// !!! to check !!!
 	}
 
+	setupOauth2Middleware(app)
+
 	// setup websocket/todo app routes (mvc)
 	setupWsMvcTodo(app)
 
