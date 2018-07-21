@@ -1,0 +1,31 @@
+---
+blog:
+  db: mongo
+  fields:
+    - title: string
+      attrs: {bsonTag: title, jsonTag: title}
+    - hits: int32
+    - Slug: string
+      flags: [unique]
+    - body: string
+    - create_date: time.Time
+      attrs: {bsonTag: create_date, jsonTag: create_date}
+      flags: [sort]
+    - user: int32
+    - is_published: bool
+      flags: [index]
+  indexes: [[user, is_published]]
+  table: test_blog
+  dbname: test
+
+category:
+  fields:
+    - cid: int64
+    - Name: string
+
+time_range:
+  fields:
+    - from: list<int64>
+      attrs: {bsonTag: from}
+    - to: list<int64>
+      attrs: {bsonTag: to}

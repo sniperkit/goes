@@ -34,7 +34,7 @@ func setupSocketIO(app *iris.Application) {
 	}
 
 	server.On("connection", func(so socketio.Socket) {
-		app.Logger().Infof("on connection")
+		app.Logger().Infof("on connection with socketio")
 		so.Join("chat")
 		so.On("chat message", func(msg string) {
 			app.Logger().Infof("emit: %v", so.Emit("chat message", msg))
@@ -147,19 +147,19 @@ func handleConnection(c websocket.Connection) {
 // ref. https://github.com/kataras/iris/blob/master/_examples/websocket/connectionlist/main.go
 func setupFakeWebsocket(app *iris.Application) {
 	Conn := make(map[websocket.Connection]bool)
-	var myChatRoom = "snk-web"
+	var userChatRoom = "snk-web"
 	var mutex = new(sync.Mutex)
 
 	ws.OnConnection(func(c websocket.Connection) {
-		c.Join(myChatRoom)
+		c.Join(userChatRoom)
 		mutex.Lock()
 		Conn[c] = true
 		mutex.Unlock()
 		c.On("snk", func(message string) {
 			if message == "leave" {
-				c.Leave(myChatRoom)
-				c.To(myChatRoom).Emit("chat", "Client with ID: "+c.ID()+" left from the room and cannot send or receive message to/from this room.")
-				c.Emit("snk", "You have left from the room: "+myChatRoom+" you cannot send or receive any messages from others inside that room.")
+				c.Leave(userChatRoom)
+				c.To(userChatRoom).Emit("chat", "Client with ID: "+c.ID()+" left from the room and cannot send or receive message to/from this room.")
+				c.Emit("snk", "You have left from the room: "+userChatRoom+" you cannot send or receive any messages from others inside that room.")
 				return
 			}
 		})

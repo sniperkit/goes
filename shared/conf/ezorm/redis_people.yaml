@@ -1,0 +1,65 @@
+blog:
+  dbs: [mysql, redis]
+  fields:
+    - id: int32
+      flags: [primary]
+    - user_id: int32
+      flags: [index]
+    - title: string
+    - content: string
+    - status: int32
+    - readed: int32
+    - created_at: timestamp
+    - updated_at: timestamp
+  table: blogs
+  dbname: ezorm
+  storetype: hash
+  import_sql: "SELECT `id`,`user_id`,`title`,`content`,`status`,`readed`, `created_at`, `updated_at` FROM blogs"
+
+user:
+  dbs: [mysql, redis]
+  fields:
+    - id: int32
+      flags: [primary]
+    - name: string
+      flags: [index]
+    - mailbox: string
+    - sex: bool
+    - longitude: float64
+    - latitude: float64
+    - description: string
+    - password: string
+    - head_url: string
+    - status: int32
+    - created_at: timestamp
+    - updated_at: timestamp
+  indexes: [[mailbox, password]]
+  table: users
+  dbname: ezorm
+  storetype: hash
+  import_sql: "SELECT `id`,`name`,`mailbox`,`sex`,`longitude`,`latitude`,`description`,`password`,`head_url`,`status`,`created_at`, `updated_at` FROM users"
+
+user_blog:
+  dbs: [redis, mysql]
+  storetype: set
+  valuetype: int32
+  modeltype: blog
+  dbname: ezorm
+  import_sql: "SELECT user_id, id FROM blogs"
+
+sort_user_blog:
+  dbs: [redis, mysql]
+  storetype: zset
+  valuetype: int32
+  modeltype: blog
+  dbname: ezorm
+  importSQL: "SELECT user_id, readed, id FROM blogs"
+
+user_location:
+  dbs: [redis, mysql]
+  storetype: geo
+  valuetype: int32
+  modeltype: user
+  dbname: ezorm
+  import_sql: "SELECT CONCAT('Sex:', sex), Longitude, Latitude, id AS v FROM users"
+

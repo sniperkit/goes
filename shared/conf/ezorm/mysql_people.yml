@@ -1,0 +1,35 @@
+---
+blog:
+  db: mysql
+  fields:
+    - blog_id: int32
+      flags: [noinc]
+    - title: string
+    - hits: int32
+    - slug: string
+      flags: [unique]
+    - body: string
+      flags: [nullable]
+    - user: int32
+      flags: [index]
+      fk: User.UserNumber
+    - is_published: bool
+      flags: [index]
+    - create: timestamp
+      flags: [index]
+    - update: datetime
+      flags: [index]
+  indexes: [[User, IsPublished]]
+  table: blog
+  dbname: Test
+
+user:
+  db: mysql
+  fields:
+    - user_id: int32
+    - user_number: int32
+      flags: [unique]
+    - name: string
+      flags: [index]
+  table: test_user
+  dbname: test

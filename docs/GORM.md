@@ -1,0 +1,19 @@
+# GORM
+
+## Projects
+- https://github.com/sezzle/generator-gin-api
+- https://github.com/baltazor5000/golang-restful
+- https://github.com/yingce/gin-gorm-template
+- https://github.com/russellwmy/gin-boilerplate
+- https://github.com/nathan-osman/api2go-resource
+- https://github.com/manyminds/api2go
+- https://github.com/Selvatico/go-mocket
+- https://github.com/smallnest/gen
+- https://github.com/ngorm/ngorm
+- https://github.com/acrosson/gingorm
+- https://github.com/MohamedBassem/gormgen
+- https://github.com/manyminds/api2go
+- https://github.com/stanisdev/indeed-clone
+- https://github.com/zonkiie/gorm_recursive_fetcher
+- https://github.com/snapp-food/gorm2gin
+- https://github.com/snapp-food/gorm2gin
